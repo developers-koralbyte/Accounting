@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koralbyte Advisory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1D2A3D; --ink-2:#243449; --paper:#F6F9FB; --paper-2:#EAEFF3;
+    --steel:#33678A; --sky:#78A6C9; --coral:#E55C4F; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(29,42,61,.62);
+    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:var(--font-body); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{color:inherit; text-decoration:none;}
+  img{display:block; max-width:100%; width:100%; height:100%; object-fit:cover;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  @media(max-width:640px){ .wrap{padding:0 20px;} }
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
+  .eyebrow.on-dark{ color:var(--ink-soft-dark); }
+  .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(29,42,61,.08); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; position:relative; }
+  .wordmark{ font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
+  .wordmark .dot{ background:var(--coral); }
+  .navlinks{ display:flex; gap:34px; font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+  .navlinks a{ position:relative; padding-bottom:4px; opacity:.85; }
+  .navlinks a.active{ opacity:1; }
+  .navlinks a.active::after, .navlinks a:hover::after{ width:100%; }
+  .navlinks a:hover{ opacity:1; }
+  .navlinks a::after{ content:""; position:absolute; left:0; bottom:0; height:2px; width:0; background:var(--coral); transition:width .3s ease; }
+  @media(max-width:859px){ .navlinks{display:none;} }
+  .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(29,42,61,.14); }
+  .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
+  .btn.filled:hover{ background:#d14a3d; border-color:#d14a3d; }
+  .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
+  .btn.on-dark:hover{ background:rgba(255,255,255,.08); }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero{ position:relative; padding:110px 0 80px; overflow:hidden; background:var(--ink); color:var(--white); }
+  .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.32; will-change:transform; }
+  .b1{ width:460px; height:460px; background:var(--steel); top:-140px; left:-100px; animation:float1 34s ease-in-out infinite alternate; }
+  .b2{ width:420px; height:420px; background:var(--sky); bottom:-160px; right:-100px; animation:float2 40s ease-in-out infinite alternate; }
+  .b3{ width:240px; height:240px; background:var(--coral); top:20%; right:18%; opacity:.16; animation:float3 30s ease-in-out infinite alternate; }
+  @keyframes float1{ from{transform:translate(0,0) scale(1);} to{transform:translate(60px,40px) scale(1.1);} }
+  @keyframes float2{ from{transform:translate(0,0) scale(1);} to{transform:translate(-50px,-40px) scale(1.12);} }
+  @keyframes float3{ from{transform:translate(0,0) scale(1);} to{transform:translate(-30px,30px) scale(1.2);} }
+  @media(prefers-reduced-motion: reduce){ .blob{ animation:none !important; } }
+  .hero-inner{ position:relative; z-index:1; text-align:center; max-width:760px; margin:0 auto; }
+  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(34px, 5.2vw, 54px); line-height:1.1; letter-spacing:-.01em; margin:20px 0 22px; }
+  .hero p.sub{ font-size:17px; line-height:1.65; color:var(--ink-soft-dark); max-width:52ch; margin:0 auto 34px; }
+  .hero .eyebrow{ justify-content:center; }
+  .hero .btn-row{ justify-content:center; }
+  section.pad{ padding:88px 0; }
+  @media(max-width:760px){ section.pad{ padding:56px 0; } }
+  .section-head{ max-width:640px; margin-bottom:48px; }
+  .section-head h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(27px,3.3vw,38px); line-height:1.16; margin-top:14px; color:var(--ink); }
+
+  .glance{ background:var(--paper-2); border-radius:18px; padding:36px 40px; }
+  .country-card{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:14px; padding:20px 16px; display:flex; flex-direction:column; gap:4px; font-size:20px; transition:transform .25s ease, box-shadow .25s ease; }
+  .country-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(29,42,61,.1); }
+  .country-card b{ font-family:var(--font-display); font-size:14px; margin-top:4px; }
+  .country-card span{ font-family:var(--font-mono); font-size:9.5px; color:var(--steel); letter-spacing:.05em; text-transform:uppercase; }
+  @media(max-width:800px){ .country-grid{ grid-template-columns:repeat(2,1fr) !important; } }
+  .glance-list{ display:grid; grid-template-columns:1fr 1fr; gap:12px 40px; margin-top:6px; }
+  @media(max-width:700px){ .glance-list{grid-template-columns:1fr;} }
+  .glance-item{ font-size:14.5px; padding:9px 0; border-bottom:1px solid rgba(29,42,61,.1); display:flex; align-items:center; gap:10px; }
+  .glance-item::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--coral); flex-shrink:0; }
+  .services{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  @media(max-width:800px){ .services{grid-template-columns:1fr;} }
+  .svc{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:16px; padding:30px; transition:transform .3s ease, box-shadow .3s ease; }
+  .svc:hover{ transform:translateY(-3px); box-shadow:0 16px 32px rgba(29,42,61,.08); }
+  .svc .num{ font-family:var(--font-mono); font-size:11px; color:var(--steel); letter-spacing:.1em; }
+  .svc h3{ font-family:var(--font-display); font-weight:600; font-size:20px; margin:10px 0 10px; }
+  .svc p{ color:var(--ink-soft-light); font-size:14px; line-height:1.6; margin-bottom:14px; }
+  .svc ul{ list-style:none; }
+  .svc li{ font-size:13.5px; color:var(--ink-soft-light); padding-left:16px; position:relative; margin-bottom:7px; line-height:1.5; }
+  .svc li::before{ content:""; position:absolute; left:0; top:8px; width:5px; height:5px; border-radius:50%; background:var(--coral); }
+
+  .process{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+  @media(max-width:800px){ .process{grid-template-columns:1fr 1fr;} }
+  @media(max-width:520px){ .process{grid-template-columns:1fr;} }
+  .step{ padding-top:18px; border-top:2px solid var(--sky); }
+  .step .num{ font-family:var(--font-mono); font-size:11px; color:var(--steel); letter-spacing:.1em; }
+  .step h4{ font-family:var(--font-display); font-weight:600; font-size:18px; margin:10px 0 8px; }
+  .step p{ font-size:13.5px; color:var(--ink-soft-light); line-height:1.6; }
+
+  .cta{ padding:100px 0; text-align:center; background:var(--paper-2); }
+  .cta h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(28px,4vw,42px); line-height:1.15; max-width:16ch; margin:16px auto 34px; color:var(--ink); }
+  .cta .btn-row{ justify-content:center; }
+  footer{ background:var(--ink); color:rgba(255,255,255,.5); padding:36px 0; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media(prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{scroll-behavior:auto;} }
+
+  .mega-item{ position:relative; }
+  .mega-panel{
+    display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:10px; z-index:100; margin-top:14px;
+  }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:flex; }
+  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(29,42,61,.08); padding-right:6px; }
+  .mega-country{ position:relative; }
+  .mega-country-head{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:12px 14px; border-radius:8px; cursor:pointer;
+    font-family:var(--font-body); font-size:13.5px; font-weight:600; color:var(--ink);
+    white-space:nowrap;
+  }
+  .mega-country-head .tag{ font-family:var(--font-mono); font-size:8.5px; color:var(--steel); letter-spacing:.04em; }
+  .mega-country:hover .mega-country-head, .mega-country:focus-within .mega-country-head{ background:var(--paper-2); }
+  .mega-country-body{
+    display:none; position:absolute; left:100%; top:0; width:560px;
+    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:22px 24px; margin-left:10px;
+  }
+  .mega-country:hover .mega-country-body, .mega-country:focus-within .mega-country-body{ display:block; }
+  .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
+  .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
+  .mega-cat ul{ list-style:none; }
+  .mega-cat li{ margin-bottom:5px; }
+  .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
+  .mega-cat a:hover{ color:var(--steel); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(29,42,61,.08); }
+  .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
+  .navlinks > li{ list-style:none; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="koralbyte-group-home.html" class="wordmark"><span class="dot"></span>KORALBYTE GROUP</a>
+    <ul class="navlinks">
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory.html">Advisory Services</a>
+      <div class="mega-panel">
+        <div class="mega-countries"><div class="mega-country" tabindex="0">
+          <div class="mega-country-head"><span>🇲🇾 Malaysia</span><span class="tag">GROUP HQ</span></div>
+          <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Advisory</h5><ul><li><a href="koralbyte-advisory-malaysia.html#advisory">Business Consulting</a></li><li><a href="koralbyte-advisory-malaysia.html#advisory">Fractional CFO Services</a></li></ul></div><div class="mega-cat"><h5>Formation</h5><ul><li><a href="koralbyte-advisory-malaysia.html#formation">Company Registration</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Company Secretary</a></li><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Business Licenses</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-malaysia.html#accounting">Bookkeeping & Accounting Compliance</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-malaysia.html#tax">Tax Compliance</a></li></ul></div><div class="mega-cat"><h5>HR Outsourcing</h5><ul><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">Payroll Outsourcing</a></li><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">PEO / Employer of Record</a></li></ul></div><div class="mega-cat"><h5>Immigration & Visa</h5><ul><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Employment Pass (MDEC)</a></li><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Residence Pass Talent (Talent Corp)</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-malaysia.html">View all Malaysia services &rarr;</a></div></div></div>
+        </div><div class="mega-country" tabindex="0">
+          <div class="mega-country-head"><span>🇮🇩 Indonesia</span><span class="tag">REGIONAL OFFICE</span></div>
+          <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping (QuickBooks, Xero, Journal)</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
+        </div></div>
+      </div>
+    </li>
+      <li><a href="koralbyte-ventures.html">Ventures</a></li>
+      <li><a href="koralbyte-about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn filled">Book a Discovery Call</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap hero-inner reveal">
+    <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>KORALBYTE ADVISORY</div>
+    <h1>Finance leadership for companies that plan to scale.</h1>
+    <p class="sub">We embed inside growing businesses to build the financial infrastructure, capital readiness, and operational discipline that lets them scale with control and investor confidence.</p>
+    <div class="btn-row">
+      <a href="#contact" class="btn filled">Book a Discovery Call</a>
+      <a href="#services" class="btn on-dark">See What We Offer</a>
+    </div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap reveal">
+    <div class="glance">
+      <div class="eyebrow"><span class="dot"></span>AT A GLANCE</div>
+      <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(22px,2.6vw,28px); margin:12px 0 4px;">Everything your finance function needs, in one place.</h2>
+      <div class="glance-list">
+        <div class="glance-item">Fractional &amp; Interim CFO</div>
+        <div class="glance-item">Finance Function Build-Out</div>
+        <div class="glance-item">Capital Raise &amp; Investor Readiness</div>
+        <div class="glance-item">Accounting &amp; Bookkeeping</div>
+        <div class="glance-item">External &amp; Internal Audit</div>
+        <div class="glance-item">Financial Due Diligence</div>
+        <div class="glance-item">Recruitment</div>
+        <div class="glance-item">Company Incorporation &amp; Compliance</div>
+        <div class="glance-item">HR &amp; Payroll</div>
+        <div class="glance-item">Employer of Record (EOR)</div>
+        <div class="glance-item">Corporate &amp; Personal Tax</div>
+        <div class="glance-item">Malaysia Digital (MD) Status &amp; MDEC Liaison</div>
+        <div class="glance-item">Residence Pass Talent (RP-T) Applications</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>BROWSE BY COUNTRY</div>
+      <h2>Every market, its own service list.</h2>
+    </div>
+    <div class="country-grid reveal" style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px; max-width:520px;">
+      <a href="koralbyte-advisory-malaysia.html" class="country-card">🇲🇾 <b>Malaysia</b><span>Group HQ</span></a>
+      <a href="koralbyte-advisory-indonesia.html" class="country-card">🇮🇩 <b>Indonesia</b><span>Regional Office</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot"></span>IN MORE DETAIL</div>
+      <h2>Engagements built around your stage.</h2>
+    </div>
+    <div class="services reveal">
+      <div class="svc">
+        <div class="num">01</div>
+        <h3>Fractional and Interim CFO</h3>
+        <p>C-suite financial leadership on a retainer or interim basis. We own financial strategy, board reporting, and capital structure so founders can focus on growth.</p>
+        <ul>
+          <li>Financial strategy and board reporting</li>
+          <li>Fundraising and investor relations</li>
+          <li>Cash flow and working capital management</li>
+          <li>Multi-jurisdiction compliance</li>
+          <li>M&amp;A due diligence and deal structuring</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">02</div>
+        <h3>Finance Function Build-Out</h3>
+        <p>Many growing companies have outsourced or neglected their finance infrastructure. We bring it in-house, build the team, implement the right systems, and set up processes that scale.</p>
+        <ul>
+          <li>In-house finance team design and recruitment</li>
+          <li>ERP implementation (NetSuite, Xero, QuickBooks)</li>
+          <li>Close cycle optimization</li>
+          <li>Chart of accounts and accounting policy setup</li>
+          <li>Inventory reconciliation for product businesses</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">03</div>
+        <h3>Capital Raise and Investor Readiness</h3>
+        <p>Financial models built and stress-tested, data rooms prepared, and numbers that hold up under institutional scrutiny.</p>
+        <ul>
+          <li>Financial model build and stress-testing</li>
+          <li>Investor deck financial narrative</li>
+          <li>Data room preparation and due diligence support</li>
+          <li>Post-close financial infrastructure setup</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">04</div>
+        <h3>Accounting, Bookkeeping and Due Diligence</h3>
+        <p>Ongoing financial operations and transaction-level diligence across multiple jurisdictions and reporting standards.</p>
+        <ul>
+          <li>Monthly bookkeeping and management accounts</li>
+          <li>Statutory and financial statement preparation</li>
+          <li>Buy-side and sell-side due diligence support</li>
+          <li>Agreed-upon procedures and special reviews</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">05</div>
+        <h3>External and Internal Audit</h3>
+        <p>Statutory and voluntary audit that enhances the credibility of your financial statements, alongside internal audit work that looks strategically at cost, risk, and efficiency.</p>
+        <ul>
+          <li>Statutory and voluntary external audit</li>
+          <li>Internal audit and controls review</li>
+          <li>Risk identification and evaluation</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">06</div>
+        <h3>HR and Payroll</h3>
+        <p>Cost-effective, secure, and compliant HR and payroll services that meet local regulations across our markets.</p>
+        <ul>
+          <li>Monthly payroll processing</li>
+          <li>Statutory contributions and filings</li>
+          <li>HR compliance across jurisdictions</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">07</div>
+        <h3>Employer of Record (EOR)</h3>
+        <p>Koralbyte becomes the legal employer of your in-market team while you retain full day-to-day control, letting you operate without establishing a local entity.</p>
+        <ul>
+          <li>Legal employment in-market</li>
+          <li>Compliant contracts and statutory benefits</li>
+          <li>No local entity required to hire</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">08</div>
+        <h3>Corporate and Personal Tax</h3>
+        <p>Proactive annual tax planning and structuring reviews that result in real, defensible tax savings for clients.</p>
+        <ul>
+          <li>Corporate tax planning and filing</li>
+          <li>Personal tax consultation and filing</li>
+          <li>Tax structure and strategy review</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">09</div>
+        <h3>Recruitment</h3>
+        <p>The right finance hire changes everything. We identify, assess, and place controllers, FP&amp;A analysts, and finance managers who fit your stage and culture.</p>
+        <ul>
+          <li>Role definition and competency mapping</li>
+          <li>Candidate sourcing and assessment</li>
+          <li>CFO, VP Finance, and Controller searches</li>
+          <li>Interim coverage during the search period</li>
+        </ul>
+      </div>
+      <div class="svc">
+        <div class="num">10</div>
+        <h3>Company Incorporation and Compliance</h3>
+        <p>Investor-ready, tax-efficient entity structuring for companies entering or operating across Southeast Asia.</p>
+        <ul>
+          <li>Entity structuring and incorporation</li>
+          <li>Regulatory registrations and licensing</li>
+          <li>Corporate secretarial support</li>
+          <li>Ongoing statutory compliance</li>
+          <li>Office location search and setup in Kuala Lumpur and Jakarta</li>
+        </ul>
+      </div>
+      <div class="svc" style="grid-column:1 / -1;">
+        <div class="num">11</div>
+        <h3>Malaysia Digital and Talent Registrations</h3>
+        <p>Specialist registration support for companies and individuals building a presence in Malaysia's digital economy.</p>
+        <ul>
+          <li>Malaysia Digital (MD) Status applications and eligibility assessment</li>
+          <li>MDEC liaison and application strategy</li>
+          <li>Guidance on MD Status incentives and benefits (tax exemptions, eligible activity structuring, grant and incentive access)</li>
+          <li>Residence Pass Talent (RP-T) applications for eligible professionals</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>PROCESS</div>
+      <h2>From first call to full integration.</h2>
+    </div>
+    <div class="process reveal">
+      <div class="step"><div class="num">01</div><h4>Discovery</h4><p>A conversation mapping your current state, gaps, and goals. No commitment, full candor about fit.</p></div>
+      <div class="step"><div class="num">02</div><h4>Diagnostic</h4><p>We assess your financial infrastructure, team, and compliance posture, then deliver a written findings report with prioritized recommendations.</p></div>
+      <div class="step"><div class="num">03</div><h4>Engagement Design</h4><p>We agree on scope, cadence, and outcomes. Flexible retainer or project-based, built around your stage and budget.</p></div>
+      <div class="step"><div class="num">04</div><h4>Embedded Execution</h4><p>We work as part of your leadership team, inside your tools and your meetings, accountable to your board and your business goals.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>READY WHEN YOU ARE</div>
+    <h2>Ready for a finance function that can carry your next stage of growth?</h2>
+    <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span>&copy; KORALBYTE GROUP</span>
+    <span>KUALA LUMPUR &middot; TORONTO &middot; JAKARTA</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

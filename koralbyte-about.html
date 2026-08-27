@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Koralbyte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1D2A3D; --ink-2:#243449; --paper:#F6F9FB; --paper-2:#EAEFF3;
+    --steel:#33678A; --sky:#78A6C9; --coral:#E55C4F; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(29,42,61,.62);
+    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ font-family:var(--font-body); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1100px; margin:0 auto; padding:0 32px;}
+  @media(max-width:640px){ .wrap{padding:0 20px;} }
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
+  .eyebrow.on-dark{ color:var(--ink-soft-dark); }
+  .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(29,42,61,.08); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; max-width:1180px; margin:0 auto; padding-left:32px; padding-right:32px; }
+  .wordmark{ font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
+  .wordmark .dot{ background:var(--coral); }
+  .navlinks{ display:flex; gap:34px; font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+  .navlinks a{ position:relative; padding-bottom:4px; opacity:.85; }
+  .navlinks a.active{ opacity:1; }
+  .navlinks a.active::after, .navlinks a:hover::after{ width:100%; }
+  .navlinks a:hover{ opacity:1; }
+  .navlinks a::after{ content:""; position:absolute; left:0; bottom:0; height:2px; width:0; background:var(--coral); transition:width .3s ease; }
+  @media(max-width:859px){ .navlinks{display:none;} }
+  .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(29,42,61,.14); }
+  .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
+  .btn.filled:hover{ background:#d14a3d; border-color:#d14a3d; }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .hero{ position:relative; padding:110px 0 70px; overflow:hidden; background:var(--ink); color:var(--white); text-align:center; }
+  .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.32; will-change:transform; }
+  .b1{ width:460px; height:460px; background:var(--steel); top:-140px; left:-100px; animation:float1 34s ease-in-out infinite alternate; }
+  .b2{ width:420px; height:420px; background:var(--sky); bottom:-160px; right:-100px; animation:float2 40s ease-in-out infinite alternate; }
+  .b3{ width:240px; height:240px; background:var(--coral); top:20%; right:18%; opacity:.16; animation:float3 30s ease-in-out infinite alternate; }
+  @keyframes float1{ from{transform:translate(0,0) scale(1);} to{transform:translate(60px,40px) scale(1.1);} }
+  @keyframes float2{ from{transform:translate(0,0) scale(1);} to{transform:translate(-50px,-40px) scale(1.12);} }
+  @keyframes float3{ from{transform:translate(0,0) scale(1);} to{transform:translate(-30px,30px) scale(1.2);} }
+  @media(prefers-reduced-motion: reduce){ .blob{ animation:none !important; } }
+  .hero-inner{ position:relative; z-index:1; max-width:740px; margin:0 auto; }
+  .hero .eyebrow{ justify-content:center; }
+  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(32px, 4.8vw, 50px); line-height:1.14; letter-spacing:-.01em; margin:20px 0 20px; }
+  .hero p.sub{ font-size:16.5px; line-height:1.6; color:var(--ink-soft-dark); }
+
+  section.pad{ padding:80px 0; }
+  @media(max-width:760px){ section.pad{ padding:52px 0; } }
+  .prose{ max-width:760px; }
+  .prose h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:14px 0 20px; }
+  .prose p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:16px; }
+
+  .whatwedo{ display:grid; grid-template-columns:1fr 1fr; gap:26px 40px; margin-top:16px; }
+  @media(max-width:760px){ .whatwedo{grid-template-columns:1fr;} }
+  .wd-item b{ font-family:var(--font-display); font-size:16px; display:block; margin-bottom:6px; }
+  .wd-item p{ font-size:14px; color:var(--ink-soft-light); line-height:1.6; }
+
+  .trackrecord{ background:var(--ink); color:var(--white); }
+  .trackrecord .prose p{ color:var(--ink-soft-dark); }
+  .trackrecord .eyebrow{ color:var(--ink-soft-dark); }
+
+  .fp-list{ margin-top:10px; }
+  .fp-item{ display:flex; justify-content:space-between; align-items:baseline; padding:14px 0; border-bottom:1px solid rgba(29,42,61,.1); font-family:var(--font-display); font-weight:500; font-size:17px; }
+  .fp-item span.tag{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-light); letter-spacing:.05em; }
+
+  .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:16px; }
+  @media(max-width:760px){ .why-grid{grid-template-columns:1fr;} }
+  .why-card{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:14px; padding:24px; }
+  .why-card h4{ font-family:var(--font-display); font-size:17px; margin-bottom:8px; }
+  .why-card p{ font-size:14px; color:var(--ink-soft-light); line-height:1.6; }
+
+  .cta{ padding:100px 0; text-align:center; }
+  .cta h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(26px,3.6vw,38px); line-height:1.2; max-width:18ch; margin:16px auto 30px; }
+  footer{ background:var(--ink); color:rgba(255,255,255,.5); padding:36px 0; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; }
+  .footer-inner{ max-width:1180px; margin:0 auto; padding:0 32px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media(prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{scroll-behavior:auto;} }
+
+  .mega-item{ position:relative; }
+  .mega-panel{
+    display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:10px; z-index:100; margin-top:14px;
+  }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:flex; }
+  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(29,42,61,.08); padding-right:6px; }
+  .mega-country{ position:relative; }
+  .mega-country-head{
+    display:flex; align-items:center; justify-content:space-between; gap:8px;
+    padding:12px 14px; border-radius:8px; cursor:pointer;
+    font-family:var(--font-body); font-size:13.5px; font-weight:600; color:var(--ink);
+    white-space:nowrap;
+  }
+  .mega-country-head .tag{ font-family:var(--font-mono); font-size:8.5px; color:var(--steel); letter-spacing:.04em; }
+  .mega-country:hover .mega-country-head, .mega-country:focus-within .mega-country-head{ background:var(--paper-2); }
+  .mega-country-body{
+    display:none; position:absolute; left:100%; top:0; width:560px;
+    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:22px 24px; margin-left:10px;
+  }
+  .mega-country:hover .mega-country-body, .mega-country:focus-within .mega-country-body{ display:block; }
+  .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
+  .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
+  .mega-cat ul{ list-style:none; }
+  .mega-cat li{ margin-bottom:5px; }
+  .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
+  .mega-cat a:hover{ color:var(--steel); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(29,42,61,.08); }
+  .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
+  .navlinks > li{ list-style:none; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="koralbyte-group-home.html" class="wordmark"><span class="dot"></span>KORALBYTE GROUP</a>
+    <ul class="navlinks">
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory.html">Advisory Services</a>
+      <div class="mega-panel">
+        <div class="mega-countries"><div class="mega-country" tabindex="0">
+          <div class="mega-country-head"><span>🇲🇾 Malaysia</span><span class="tag">GROUP HQ</span></div>
+          <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Advisory</h5><ul><li><a href="koralbyte-advisory-malaysia.html#advisory">Business Consulting</a></li><li><a href="koralbyte-advisory-malaysia.html#advisory">Fractional CFO Services</a></li></ul></div><div class="mega-cat"><h5>Formation</h5><ul><li><a href="koralbyte-advisory-malaysia.html#formation">Company Registration</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Company Secretary</a></li><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Business Licenses</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-malaysia.html#accounting">Bookkeeping & Accounting Compliance</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-malaysia.html#tax">Tax Compliance</a></li></ul></div><div class="mega-cat"><h5>HR Outsourcing</h5><ul><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">Payroll Outsourcing</a></li><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">PEO / Employer of Record</a></li></ul></div><div class="mega-cat"><h5>Immigration & Visa</h5><ul><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Employment Pass (MDEC)</a></li><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Residence Pass Talent (Talent Corp)</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-malaysia.html">View all Malaysia services &rarr;</a></div></div></div>
+        </div><div class="mega-country" tabindex="0">
+          <div class="mega-country-head"><span>🇮🇩 Indonesia</span><span class="tag">REGIONAL OFFICE</span></div>
+          <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping (QuickBooks, Xero, Journal)</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
+        </div></div>
+      </div>
+    </li>
+      <li><a href="koralbyte-ventures.html">Ventures</a></li>
+      <li><a href="koralbyte-about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn filled">Talk to Us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+  <div class="wrap hero-inner reveal">
+    <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>ABOUT KORALBYTE</div>
+    <h1>Built on Big 4 rigor. Built for the businesses of Southeast Asia.</h1>
+    <p class="sub">Koralbyte exists because too many ambitious companies are still run on spreadsheets that don't hold up and brands that don't stand out. We fix both.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap prose reveal">
+    <div class="eyebrow"><span class="dot"></span>WHO WE ARE</div>
+    <h2>A group built around two disciplines.</h2>
+    <p>Koralbyte is a Malaysia-headquartered group operating across Southeast Asia and North America, built around two disciplines: financial leadership and brand building.</p>
+    <p>Our advisory practice grew out of Big 4 training and more than a decade and a half of hands-on finance leadership inside real, high-growth companies: consumer brands scaling across DTC and retail, game studios shipping titles played by millions, and technology groups operating across multiple jurisdictions at once. That experience shaped how Koralbyte works: rigorous, evidence-led, and accountable at every level.</p>
+    <p>Alongside advisory, Koralbyte builds and owns its own ventures, platforms and studios where we apply the same standard to our own ideas that we bring to our clients' businesses.</p>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--paper-2);">
+  <div class="wrap prose reveal">
+    <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>OUR MISSION</div>
+    <h2>Closing the infrastructure gap.</h2>
+    <p>We believe that ambitious companies fail more often from weak infrastructure than from weak ideas. A brand without financial discipline cannot raise capital with confidence. A finance function without strategic backbone cannot support real growth.</p>
+    <p>Koralbyte's mission is to close that gap, on both sides. We give founders and operators the financial architecture to scale with control, and the brand and creative infrastructure to compete with companies twice their size. Our aim is not to hand over a deliverable and walk away. It is to become a long-term partner in how a company runs.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>WHAT WE DO</div>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:14px 0 6px;">Seven capabilities, one standard.</h2>
+    <div class="whatwedo">
+      <div class="wd-item"><b>Fractional and Interim CFO Leadership</b><p>Financial strategy, board reporting, capital structure, and investor relations for companies that need C-suite finance leadership without a full-time hire.</p></div>
+      <div class="wd-item"><b>Finance Function Build-Out</b><p>In-house finance team design, ERP implementation, close cycle optimization, and accounting policy setup for companies outgrowing outsourced or informal finance operations.</p></div>
+      <div class="wd-item"><b>Capital Raise and Investor Readiness</b><p>Financial modeling, data room preparation, and due diligence support for companies preparing to raise equity or debt.</p></div>
+      <div class="wd-item"><b>Accounting, Bookkeeping and Due Diligence</b><p>Ongoing financial operations and transaction due diligence across multiple jurisdictions and reporting standards.</p></div>
+      <div class="wd-item"><b>Recruitment</b><p>Sourcing, assessment, and placement of finance and technology talent, including interim coverage during a search.</p></div>
+      <div class="wd-item"><b>Company Incorporation and Compliance</b><p>Entity structuring, regulatory registration, and office location search and setup for companies entering or operating across Southeast Asian markets, including Kuala Lumpur and Jakarta.</p></div>
+      <div class="wd-item"><b>Malaysia Digital and Talent Registrations</b><p>Malaysia Digital (MD) Status applications and MDEC liaison, incentive and benefits guidance, and Residence Pass Talent (RP-T) applications for eligible professionals.</p></div>
+      <div class="wd-item"><b>Brand and Growth Creative</b><p>Naming, identity, pitch decks, e-commerce builds, and performance marketing through Koralbyte Studios, our in-house creative venture.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad trackrecord">
+  <div class="wrap prose reveal">
+    <div class="eyebrow"><span class="dot" style="background:var(--sky);"></span>TRACK RECORD</div>
+    <h2 style="color:var(--white);">Numbers that hold up under scrutiny.</h2>
+    <p>Koralbyte's advisory work has supported over $29 million in equity and debt raises. Engagements have included cutting a monthly close cycle from 22 days to 7 in three months for a consumer brand, rebuilding a financial model from the ground up to support a $6 million raise, and reducing operating costs by 34 percent while shortening a close cycle from 25 to 9 days for a globally distributed games studio.</p>
+    <p>Today, Koralbyte manages financial strategy and reporting across 7 legal entities in 6 countries for a Yahoo Japan Group-backed company, covering board reporting, investor relations, and multi-entity treasury consolidation.</p>
+    <p>Koralbyte's practice is built on Big 4 training and rigor, shaped by audit and advisory work spanning government bodies, listed companies, international nonprofits, and major financial institutions. Our wider network of accounting and corporate services professionals is drawn from top-tier accounting firms, giving every engagement the same standard of technical grounding regardless of which part of the group is doing the work.</p>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot"></span>REGIONAL PRESENCE</div>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:14px 0 20px;">Countries we operate in.</h2>
+    <p style="color:var(--ink-soft-light); font-size:15px; line-height:1.7; margin-bottom:10px; max-width:70ch;">Koralbyte is headquartered in Kuala Lumpur, Malaysia, with additional offices in Canada and Indonesia. We do not work at arm's length from the markets we serve. Where the work requires local knowledge of regulation, structuring, or market conditions, Koralbyte has it firsthand.</p>
+    <div class="fp-list">
+      <div class="fp-item"><span>Malaysia</span><span class="tag">GROUP HQ</span></div>
+      <div class="fp-item"><span>Canada</span><span class="tag">CORPORATE OFFICE</span></div>
+      <div class="fp-item"><span>Indonesia</span><span class="tag">REGIONAL OFFICE</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--paper-2);">
+  <div class="wrap reveal">
+    <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>WHY KORALBYTE</div>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:14px 0 6px;">What makes the group different.</h2>
+    <div class="why-grid">
+      <div class="why-card"><h4>Integrated, Not Fragmented</h4><p>Finance and brand are usually bought from different vendors who don't talk to each other. At Koralbyte, they come from the same standard of rigor.</p></div>
+      <div class="why-card"><h4>Built Inside Real Companies</h4><p>Our track record isn't theoretical. It comes from embedded roles inside consumer brands, game studios, and multi-entity groups, not from case studies written after the fact.</p></div>
+      <div class="why-card"><h4>Regional, Not Remote</h4><p>We operate inside Southeast Asia's markets, not at a distance from them.</p></div>
+      <div class="why-card"><h4>Skin in the Game</h4><p>Koralbyte doesn't just advise. Through Koralbyte Ventures, we build and own products under the same roof, holding ourselves to the same standard we bring to every client engagement.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>GET IN TOUCH</div>
+    <h2>Let's talk about what Koralbyte can build for you.</h2>
+    <div class="btn-row"><a href="#contact" class="btn filled">Start a Conversation</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>&copy; KORALBYTE GROUP</span>
+    <span>KUALA LUMPUR &middot; TORONTO &middot; JAKARTA</span>
+  </div>
+</footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
