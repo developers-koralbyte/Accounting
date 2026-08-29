@@ -18,6 +18,7 @@
   html{ scroll-behavior:smooth; }
   body{ font-family:var(--font-body); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
   a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; width:100%; height:100%; object-fit:cover; }
   .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
   @media(max-width:640px){ .wrap{padding:0 20px;} }
   .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
@@ -67,8 +68,9 @@
   .crumb a{ text-decoration:underline; }
   section.pad{ padding:64px 0; }
   .cat-block{ margin-bottom:52px; scroll-margin-top:90px; }
-  .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:22px; display:flex; align-items:center; gap:10px; }
+  .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
   .cat-block > h2::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
+  .cat-intro{ font-size:14px; color:var(--ink-soft-light); line-height:1.65; max-width:80ch; margin:0 0 20px 18px; }
   .svc-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
   .svc-card h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:10px; }
   .svc-card p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; max-width:74ch; }
@@ -85,11 +87,15 @@
   footer{ background:var(--ink); color:rgba(255,255,255,.5); padding:36px 0; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   .breadcrumb-svc{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-dark); margin-bottom:14px; }
   .breadcrumb-svc a{ text-decoration:underline; }
+  .svc-hero-photo{ height:260px; border-radius:16px; overflow:hidden; margin-top:28px; }
   .svc-detail-body{ max-width:74ch; }
   .svc-detail-body p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:18px; }
   .svc-detail-list{ list-style:none; margin:26px 0 34px; }
   .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(15,23,42,.1); position:relative; }
   .svc-detail-list li::before{ content:""; position:absolute; left:0; top:19px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
+  .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
+  .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
+  .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
 </style>
 </head>
 <body>
@@ -105,10 +111,13 @@
         </div><div class="mega-country" tabindex="0">
           <div class="mega-country-head"><span>🇮🇩 Indonesia</span><span class="tag">REGIONAL OFFICE</span></div>
           <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
+        </div><div class="mega-country" tabindex="0">
+          <div class="mega-country-head"><span>🇦🇪 UAE</span><span class="tag">NEW MARKET</span></div>
+          <div class="mega-country-body"><div class="mega-cats"><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-uae.html#company-formation">Mainland Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Free Zone Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Offshore Company Formation</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-governance">PRO Services & Government Liaison</a></li><li><a href="koralbyte-advisory-uae.html#corporate-governance">Trade Licence Renewal</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-uae.html#accounting">Bookkeeping & Financial Reporting</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-uae.html#tax">Corporate Tax Registration & Filing</a></li><li><a href="koralbyte-advisory-uae.html#tax">VAT Registration & Filing</a></li></ul></div><div class="mega-cat"><h5>Audit & Assurance</h5><ul><li><a href="koralbyte-advisory-uae.html#audit-assurance">Statutory Audit</a></li><li><a href="koralbyte-advisory-uae.html#audit-assurance">Internal Audit</a></li></ul></div><div class="mega-cat"><h5>HR & Payroll</h5><ul><li><a href="koralbyte-advisory-uae.html#hr-payroll">Payroll Outsourcing</a></li></ul></div><div class="mega-cat"><h5>Visa & Immigration</h5><ul><li><a href="koralbyte-advisory-uae.html#visa-immigration">Investor & Golden Visa</a></li><li><a href="koralbyte-advisory-uae.html#visa-immigration">Employment Visa & Establishment Card</a></li></ul></div><div class="mega-cat"><h5>Corporate Advisory</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Feasibility Study</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Business Valuation</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Fractional CFO Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-uae.html">View all UAE services &rarr;</a></div></div></div>
         </div></div></div>
     </li>
-      <li><a href="koralbyte-ventures.html">Ventures</a></li>
       <li><a href="koralbyte-about.html">About</a></li>
+      <li><a href="koralbyte-ventures.html" style="opacity:.65;">Ventures</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="#contact" class="btn filled">Talk to Us</a>
@@ -120,7 +129,8 @@
     <div class="crumb"><a href="koralbyte-advisory.html">Advisory Services</a> / Indonesia</div>
     <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>🇮🇩 KORALBYTE ADVISORY &middot; INDONESIA</div>
     <h1>Finance, tax, and corporate services in Indonesia.</h1>
-    <p class="sub">Full-service advisory coverage in Indonesia, from company formation through ongoing accounting, tax, HR, and finance leadership. Every service below is delivered to the same Big 4-trained standard as the rest of the Koralbyte Group.</p>
+    <p class="sub">Full-service advisory coverage in Indonesia, from company formation through ongoing accounting, tax, HR, and finance leadership.</p>
+    <div class="svc-hero-photo"><img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=1200" alt="Indonesia skyline"></div>
   </div>
 </section>
 <section class="pad">
@@ -128,126 +138,151 @@
     <div class="cat-block" id="market-entry"><h2>Market Entry</h2><div class="svc-card">
               <h3>Foreign Investment Company (PT PMA)</h3>
               <p>The standard vehicle for foreign investors operating in Indonesia, giving you full control over the business without a local partner. We manage the full formation process, from name approval and BKPM licensing through to your OSS business identification number, and advise on minimum capital requirements as they apply to your sector.</p>
+              <div class="info-box"><h4>What is a PT PMA?</h4><p>PT PMA (Penanaman Modal Asing) is Indonesia's foreign investment company structure, the standard vehicle for foreign investors who want direct control over an Indonesian business. It differs from a Local PT company, which has no foreign ownership but also no minimum capital requirement tied to foreign investment rules.</p></div>
               <ul><li>Full formation from name approval to OSS registration</li><li>Guidance on the Negative Investment List and sector restrictions</li><li>Capital structuring advice</li></ul>
               <a class="more" href="koralbyte-indonesia-foreign-investment-company-pt-pma.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Local PT Company</h3>
               <p>For sectors closed or restricted to foreign ownership, a local PT company, formed through an Indonesian nominee shareholder arrangement, is the practical route to market. We structure this properly and legally, with the safeguards your business needs.</p>
+              <div class="info-box"><h4>PT vs PT PMA: what's the difference?</h4><p>A Local PT company is Indonesia's standard domestic corporate structure, available to Indonesian citizens or, in restricted sectors, to foreign investors through a nominee shareholder arrangement. A PT PMA, by contrast, is built specifically for direct foreign ownership and carries its own capital and licensing requirements.</p></div>
               <ul><li>Local company formation and licensing</li><li>Nominee shareholder structuring</li><li>Compliance safeguards and documentation</li></ul>
               <a class="more" href="koralbyte-indonesia-local-pt-company.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Off-the-Shelf Company</h3>
               <p>A pre-registered, ready-to-operate company for businesses that need to start trading immediately rather than wait out a full incorporation timeline. We transfer ownership and handle the administrative handover so you can begin operating without delay.</p>
+              
               <ul><li>Pre-incorporated companies available immediately</li><li>Ownership transfer and documentation</li><li>Fast route to market for time-sensitive launches</li></ul>
               <a class="more" href="koralbyte-indonesia-off-the-shelf-company.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Representative Office</h3>
               <p>A non-trading presence for market research, liaison, and business development ahead of a full commercial launch. It's a lighter-weight way to establish a footprint in Indonesia before committing to a trading entity.</p>
+              
               <ul><li>Market research and liaison entity</li><li>Lower setup and compliance burden than a trading company</li><li>Pathway to full incorporation later</li></ul>
               <a class="more" href="koralbyte-indonesia-representative-office.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Nominee Shareholder</h3>
               <p>A structured local shareholder arrangement that lets foreign investors participate in sectors with local ownership requirements, backed by proper legal documentation to protect your interests as the underlying investor.</p>
+              
               <ul><li>Structured local shareholding arrangement</li><li>Legal documentation protecting investor interests</li><li>Used alongside local PT company formation</li></ul>
               <a class="more" href="koralbyte-indonesia-nominee-shareholder.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="payroll"><h2>Payroll</h2><div class="svc-card">
               <h3>Payroll Services</h3>
               <p>Monthly payroll processing, BPJS contributions, and statutory filings managed accurately and on schedule, so your team is paid correctly and your business stays compliant with Indonesian labour regulations.</p>
+              
               <ul><li>Monthly payroll processing and payslips</li><li>BPJS Ketenagakerjaan and Kesehatan contributions</li><li>Statutory reporting and filings</li></ul>
               <a class="more" href="koralbyte-indonesia-payroll-services.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Employer of Record (EOR)</h3>
               <p>Hire in Indonesia in days rather than months, without establishing a local entity first. Koralbyte becomes the legal employer for your team, handling contracts, payroll, tax withholding, and social security, while you keep full control of their day-to-day work.</p>
+              
               <ul><li>Legal employment without a local entity</li><li>Contracts, payroll, and tax withholding handled</li><li>Typically up to 60% lower cost than running HR in-house</li></ul>
               <a class="more" href="koralbyte-indonesia-employer-of-record-eor.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="accounting"><h2>Accounting</h2><div class="svc-card">
               <h3>Accounting & Bookkeeping</h3>
               <p>Monthly bookkeeping on QuickBooks, Xero, or your existing journal system, kept current and audit-ready. We reconcile accounts, prepare management reports, and make sure your books are ready whenever a filing, investor update, or audit requires them.</p>
+              
               <ul><li>Monthly bookkeeping on QuickBooks or Xero</li><li>Bank reconciliation and management reporting</li><li>Audit-ready financial records</li></ul>
               <a class="more" href="koralbyte-indonesia-accounting-bookkeeping.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="taxation"><h2>Taxation</h2><div class="svc-card">
               <h3>Corporate Tax Consultation & Filing</h3>
               <p>Corporate income tax computation, filing, and planning that keeps your business compliant with Indonesian tax law while identifying legitimate savings. We handle the filings and the strategy behind them.</p>
+              
               <ul><li>Corporate income tax computation and filing</li><li>Tax planning and structuring advice</li><li>Liaison with the Indonesian tax office</li></ul>
               <a class="more" href="koralbyte-indonesia-corporate-tax-consultation-filing.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Personal Tax Consultation & Filing</h3>
               <p>Individual tax filing and planning for expatriates and local employees alike, covering residency status, applicable rates, and annual return preparation.</p>
+              
               <ul><li>Individual tax return preparation and filing</li><li>Expatriate tax residency guidance</li><li>Annual compliance calendar management</li></ul>
               <a class="more" href="koralbyte-indonesia-personal-tax-consultation-filing.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Monthly Compliance</h3>
               <p>Ongoing monthly tax and regulatory filings handled on schedule, so nothing falls through the cracks between annual reporting cycles.</p>
+              
               <ul><li>Monthly tax return preparation and filing</li><li>VAT and withholding tax compliance</li><li>Deadline tracking and reminders</li></ul>
               <a class="more" href="koralbyte-indonesia-monthly-compliance.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="business-services"><h2>Business Services</h2><div class="svc-card">
               <h3>External Audit</h3>
               <p>Independent statutory and voluntary audits that give your financial statements credibility with investors, lenders, and regulators, conducted by qualified public accountants under Indonesian auditing standards.</p>
+              
               <ul><li>Statutory and voluntary financial statement audits</li><li>Reporting under Indonesian auditing standards</li><li>Investor and lender-ready audit opinions</li></ul>
               <a class="more" href="koralbyte-indonesia-external-audit.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Internal Audit</h3>
               <p>A strategic look at how your business controls cost, manages risk, and runs its operations, going beyond a compliance checklist to identify where controls actually need strengthening.</p>
+              
               <ul><li>Risk identification and controls review</li><li>Process and efficiency assessment</li><li>Findings report with prioritized recommendations</li></ul>
               <a class="more" href="koralbyte-indonesia-internal-audit.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Financial Due Diligence</h3>
               <p>Transaction-level financial review for buy-side or sell-side deals, giving you a clear, evidence-based picture of a target's financial position before capital changes hands.</p>
+              
               <ul><li>Buy-side and sell-side due diligence</li><li>Financial statement and quality-of-earnings review</li><li>Deal-ready findings report</li></ul>
               <a class="more" href="koralbyte-indonesia-financial-due-diligence.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Agreed Upon Procedures</h3>
               <p>Targeted, scoped procedures on specific financial data when a full audit isn't what the situation calls for, useful for lenders, partners, or internal verification needs.</p>
+              
               <ul><li>Scoped procedures on specific accounts or data</li><li>Factual findings without an audit opinion</li><li>Used for lender, partner, or internal verification</li></ul>
               <a class="more" href="koralbyte-indonesia-agreed-upon-procedures.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Business Advice & Consultation</h3>
               <p>Practical guidance for entrepreneurs, executives, and business owners navigating the Indonesian market, drawing on real operating experience rather than generic playbooks.</p>
+              
               <ul><li>Market-specific strategic guidance</li><li>Operating and structuring advice</li><li>Ongoing advisory relationship, not one-off consulting</li></ul>
               <a class="more" href="koralbyte-indonesia-business-advice-consultation.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="virtual-serviced-offices"><h2>Virtual & Serviced Offices</h2><div class="svc-card">
               <h3>Virtual Office</h3>
               <p>A registered business address in Indonesia without the overhead of a physical lease, suitable for representative offices and companies not yet ready to commit to dedicated space.</p>
+              
               <ul><li>Registered business address</li><li>Mail handling and forwarding</li><li>Meeting room access where needed</li></ul>
               <a class="more" href="koralbyte-indonesia-virtual-office.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Serviced Offices</h3>
               <p>Fully equipped office space ready to move into, for businesses that need a physical presence in Indonesia without the lead time or commitment of a traditional lease.</p>
+              
               <ul><li>Ready-to-use physical office space</li><li>Flexible lease terms</li><li>Business address and reception support</li></ul>
               <a class="more" href="koralbyte-indonesia-serviced-offices.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="visas-immigration"><h2>Visas & Immigration</h2><div class="svc-card">
               <h3>Social Visa (Social Budaya)</h3>
               <p>For extended personal or cultural visits to Indonesia that fall outside standard tourist visa terms, with a defined application process and validity period.</p>
+              
               <ul><li>Application preparation and submission</li><li>Extension processing</li><li>Guidance on validity and permitted activities</li></ul>
               <a class="more" href="koralbyte-indonesia-social-visa-social-budaya.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Spouse Visa</h3>
               <p>Residency for the foreign spouse of an Indonesian citizen, covering the initial application and the ongoing renewal process required to maintain valid status.</p>
+              
               <ul><li>Initial application and documentation</li><li>Annual renewal processing</li><li>Guidance on pathway to permanent residency</li></ul>
               <a class="more" href="koralbyte-indonesia-spouse-visa.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Investor KITAS</h3>
               <p>A residency permit for foreign investors with a qualifying stake in an Indonesian company, offering multi-year validity tied to your investment rather than an employment contract.</p>
+              <div class="info-box"><h4>What is an Investor KITAS?</h4><p>KITAS (Kartu Izin Tinggal Terbatas) is Indonesia's limited stay permit. The Investor KITAS variant is issued to foreign shareholders with a qualifying stake in an Indonesian company, offering multi-year residency tied to the investment rather than an employer.</p></div>
               <ul><li>Application tied to qualifying share ownership</li><li>Multi-year residency validity</li><li>Renewal and compliance management</li></ul>
               <a class="more" href="koralbyte-indonesia-investor-kitas.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Business Visa</h3>
               <p>Short-term entry for business meetings, negotiations, or exploratory activity in Indonesia that doesn't rise to the level of employment or investment.</p>
+              
               <ul><li>Single and multiple-entry options</li><li>Fast-turnaround application processing</li><li>Extension support where available</li></ul>
               <a class="more" href="koralbyte-indonesia-business-visa.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>KITAS & Work Permit</h3>
               <p>The combined work permit (IMTA/RPTKA) and limited stay permit (KITAS) required for foreign employees working in Indonesia, handled end to end including sponsor company compliance.</p>
+              
               <ul><li>Work permit (RPTKA) and KITAS application</li><li>Sponsor company compliance requirements</li><li>Renewal tracking before expiry</li></ul>
               <a class="more" href="koralbyte-indonesia-kitas-work-permit.html">Learn more &rarr;</a>
             </div></div><div class="cat-block" id="cfo-corporate-secretary"><h2>CFO & Corporate Secretary</h2><div class="svc-card">
               <h3>Virtual CFO</h3>
               <p>Senior financial leadership on a fractional basis, for companies that need real strategic finance input, board reporting, and capital planning without a full-time executive hire.</p>
+              
               <ul><li>Financial strategy and board reporting</li><li>Budgeting, forecasting, and cash management</li><li>Investor and stakeholder reporting support</li></ul>
               <a class="more" href="koralbyte-indonesia-virtual-cfo.html">Learn more &rarr;</a>
             </div><div class="svc-card">
               <h3>Corporate Secretary Services</h3>
               <p>Ongoing corporate secretarial support that keeps your Indonesian entity compliant, statutory registers current, and filings on schedule, so governance never becomes an afterthought.</p>
+              
               <ul><li>Statutory register and filing maintenance</li><li>Board resolution and meeting support</li><li>Regulatory compliance calendar management</li></ul>
               <a class="more" href="koralbyte-indonesia-corporate-secretary-services.html">Learn more &rarr;</a>
             </div></div>
@@ -258,7 +293,7 @@
     <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>INDONESIA</div>
     <h2>Ready to talk through what your business needs in Indonesia?</h2>
     <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
-    <div class="country-strip" style="justify-content:center;"><a href="koralbyte-advisory-malaysia.html" class="country-chip">🇲🇾 Malaysia</a><a href="koralbyte-advisory-indonesia.html" class="country-chip active">🇮🇩 Indonesia</a></div>
+    <div class="country-strip" style="justify-content:center;"><a href="koralbyte-advisory-malaysia.html" class="country-chip">🇲🇾 Malaysia</a><a href="koralbyte-advisory-indonesia.html" class="country-chip active">🇮🇩 Indonesia</a><a href="koralbyte-advisory-uae.html" class="country-chip">🇦🇪 UAE</a></div>
   </div>
 </section>
 <footer>
