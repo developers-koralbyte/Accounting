@@ -8,12 +8,14 @@ https://github.com/nextlevelbuilder/ui-ux-pro-max-skill
 Copyright (c) 2024 Next Level Builder, MIT License.
 
 Included skills: `banner-design`, `brand`, `design-system`, `slides`, `ui-styling`,
-`ui-ux-pro-max`.
+`ui-ux-pro-max`, `nlb-design`.
 
-The upstream repo also ships a `design` skill. It was intentionally left out here
-because its name collides with Claude's built-in `design` (Claude Design canvas)
-skill; adding it as a project skill would shadow the built-in one. See the
-project owner before adding it under a renamed slug.
+The upstream repo's `design` skill was renamed to `nlb-design` here because its
+original name collides with Claude's built-in `design` (Claude Design canvas)
+skill; keeping the upstream name would have shadowed the built-in one. Its
+`SKILL.md` and reference docs were updated to match (including fixing example
+commands that pointed at `~/.claude/skills/design/...`, which assumed a global
+plugin install rather than this repo's project-scoped layout).
 
 ## MIT License
 
