@@ -6,13 +6,13 @@
 <title>External Audit | Koralbyte Advisory Indonesia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1D2A3D; --ink-2:#243449; --paper:#F6F9FB; --paper-2:#EAEFF3;
-    --steel:#33678A; --sky:#78A6C9; --coral:#E55C4F; --white:#FFFFFF;
-    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(29,42,61,.62);
-    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'JetBrains Mono', monospace;
+    --ink:#0F172A; --ink-2:#1E293B; --paper:#F8FAFC; --paper-2:#E8ECF1;
+    --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
+    --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
@@ -23,7 +23,7 @@
   .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
   .eyebrow.on-dark{ color:var(--ink-soft-dark); }
   .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
-  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(29,42,61,.08); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(15,23,42,.08); }
   .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; position:relative; }
   .wordmark{ font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
   .wordmark .dot{ background:var(--coral); }
@@ -33,19 +33,19 @@
   .navlinks a:hover{ opacity:1; }
   @media(max-width:1050px){ .navlinks{display:none;} }
   .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
-  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(29,42,61,.14); }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
   .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
   .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .mega-item{ position:relative; }
-  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px; box-shadow:0 24px 48px rgba(29,42,61,.18); padding:10px; z-index:100; margin-top:14px; }
+  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:10px; z-index:100; margin-top:14px; }
   .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:flex; }
-  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(29,42,61,.08); padding-right:6px; }
+  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(15,23,42,.08); padding-right:6px; }
   .mega-country{ position:relative; }
   .mega-country-head{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:12px 14px; border-radius:8px; cursor:pointer; font-family:var(--font-body); font-size:13.5px; font-weight:600; color:var(--ink); white-space:nowrap; }
   .mega-country-head .tag{ font-family:var(--font-mono); font-size:8.5px; color:var(--steel); letter-spacing:.04em; }
   .mega-country:hover .mega-country-head, .mega-country:focus-within .mega-country-head{ background:var(--paper-2); }
-  .mega-country-body{ display:none; position:absolute; left:100%; top:0; width:620px; background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px; box-shadow:0 24px 48px rgba(29,42,61,.18); padding:22px 24px; margin-left:10px; }
+  .mega-country-body{ display:none; position:absolute; left:100%; top:0; width:620px; background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; margin-left:10px; }
   .mega-country:hover .mega-country-body, .mega-country:focus-within .mega-country-body{ display:block; }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
   .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
@@ -53,7 +53,7 @@
   .mega-cat li{ margin-bottom:5px; }
   .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
   .mega-cat a:hover{ color:var(--steel); }
-  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(29,42,61,.08); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(15,23,42,.08); }
   .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
   .hero{ position:relative; padding:90px 0 64px; overflow:hidden; background:var(--ink); color:var(--white); }
   .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
@@ -69,7 +69,7 @@
   .cat-block{ margin-bottom:52px; scroll-margin-top:90px; }
   .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:22px; display:flex; align-items:center; gap:10px; }
   .cat-block > h2::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
-  .svc-card{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
+  .svc-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
   .svc-card h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:10px; }
   .svc-card p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; max-width:74ch; }
   .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:14px; }
@@ -77,7 +77,7 @@
   .svc-card li::before{ content:""; position:absolute; left:0; top:6px; width:5px; height:5px; border-radius:50%; background:var(--steel); }
   .svc-card a.more{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
   .country-strip{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
-  .country-chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:8px 14px; border-radius:100px; border:1px solid rgba(29,42,61,.15); }
+  .country-chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:8px 14px; border-radius:100px; border:1px solid rgba(15,23,42,.15); }
   .country-chip.active{ background:var(--ink); color:var(--white); border-color:var(--ink); }
   .cta{ padding:90px 0; text-align:center; background:var(--paper-2); }
   .cta h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(26px,3.6vw,38px); margin:14px auto 28px; max-width:20ch; }
@@ -88,7 +88,7 @@
   .svc-detail-body{ max-width:74ch; }
   .svc-detail-body p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:18px; }
   .svc-detail-list{ list-style:none; margin:26px 0 34px; }
-  .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(29,42,61,.1); position:relative; }
+  .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(15,23,42,.1); position:relative; }
   .svc-detail-list li::before{ content:""; position:absolute; left:0; top:19px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
 </style>
 </head>

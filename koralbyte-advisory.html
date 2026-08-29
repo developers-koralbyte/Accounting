@@ -6,13 +6,13 @@
 <title>Koralbyte Advisory</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#1D2A3D; --ink-2:#243449; --paper:#F6F9FB; --paper-2:#EAEFF3;
-    --steel:#33678A; --sky:#78A6C9; --coral:#E55C4F; --white:#FFFFFF;
-    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(29,42,61,.62);
-    --font-display:'Space Grotesk', sans-serif; --font-body:'Inter', sans-serif; --font-mono:'JetBrains Mono', monospace;
+    --ink:#0F172A; --ink-2:#1E293B; --paper:#F8FAFC; --paper-2:#E8ECF1;
+    --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
+    --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
@@ -24,7 +24,7 @@
   .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
   .eyebrow.on-dark{ color:var(--ink-soft-dark); }
   .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
-  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(29,42,61,.08); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.88); backdrop-filter:blur(10px); border-bottom:1px solid rgba(15,23,42,.08); }
   .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; position:relative; }
   .wordmark{ font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
   .wordmark .dot{ background:var(--coral); }
@@ -36,9 +36,9 @@
   .navlinks a::after{ content:""; position:absolute; left:0; bottom:0; height:2px; width:0; background:var(--coral); transition:width .3s ease; }
   @media(max-width:859px){ .navlinks{display:none;} }
   .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease; }
-  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(29,42,61,.14); }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
   .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
-  .btn.filled:hover{ background:#d14a3d; border-color:#d14a3d; }
+  .btn.filled:hover{ background:#075985; border-color:#075985; }
   .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
   .btn.on-dark:hover{ background:rgba(255,255,255,.08); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
@@ -63,19 +63,19 @@
   .section-head h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(27px,3.3vw,38px); line-height:1.16; margin-top:14px; color:var(--ink); }
 
   .glance{ background:var(--paper-2); border-radius:18px; padding:36px 40px; }
-  .country-card{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:14px; padding:20px 16px; display:flex; flex-direction:column; gap:4px; font-size:20px; transition:transform .25s ease, box-shadow .25s ease; }
-  .country-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(29,42,61,.1); }
+  .country-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:20px 16px; display:flex; flex-direction:column; gap:4px; font-size:20px; transition:transform .25s ease, box-shadow .25s ease; }
+  .country-card:hover{ transform:translateY(-3px); box-shadow:0 14px 28px rgba(15,23,42,.1); }
   .country-card b{ font-family:var(--font-display); font-size:14px; margin-top:4px; }
   .country-card span{ font-family:var(--font-mono); font-size:9.5px; color:var(--steel); letter-spacing:.05em; text-transform:uppercase; }
   @media(max-width:800px){ .country-grid{ grid-template-columns:repeat(2,1fr) !important; } }
   .glance-list{ display:grid; grid-template-columns:1fr 1fr; gap:12px 40px; margin-top:6px; }
   @media(max-width:700px){ .glance-list{grid-template-columns:1fr;} }
-  .glance-item{ font-size:14.5px; padding:9px 0; border-bottom:1px solid rgba(29,42,61,.1); display:flex; align-items:center; gap:10px; }
+  .glance-item{ font-size:14.5px; padding:9px 0; border-bottom:1px solid rgba(15,23,42,.1); display:flex; align-items:center; gap:10px; }
   .glance-item::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--coral); flex-shrink:0; }
   .services{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
   @media(max-width:800px){ .services{grid-template-columns:1fr;} }
-  .svc{ background:var(--white); border:1px solid rgba(29,42,61,.08); border-radius:16px; padding:30px; transition:transform .3s ease, box-shadow .3s ease; }
-  .svc:hover{ transform:translateY(-3px); box-shadow:0 16px 32px rgba(29,42,61,.08); }
+  .svc{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:30px; transition:transform .3s ease, box-shadow .3s ease; }
+  .svc:hover{ transform:translateY(-3px); box-shadow:0 16px 32px rgba(15,23,42,.08); }
   .svc .num{ font-family:var(--font-mono); font-size:11px; color:var(--steel); letter-spacing:.1em; }
   .svc h3{ font-family:var(--font-display); font-weight:600; font-size:20px; margin:10px 0 10px; }
   .svc p{ color:var(--ink-soft-light); font-size:14px; line-height:1.6; margin-bottom:14px; }
@@ -102,11 +102,11 @@
   .mega-item{ position:relative; }
   .mega-panel{
     display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%);
-    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
-    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:10px; z-index:100; margin-top:14px;
+    background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(15,23,42,.18); padding:10px; z-index:100; margin-top:14px;
   }
   .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:flex; }
-  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(29,42,61,.08); padding-right:6px; }
+  .mega-countries{ display:flex; flex-direction:column; width:220px; border-right:1px solid rgba(15,23,42,.08); padding-right:6px; }
   .mega-country{ position:relative; }
   .mega-country-head{
     display:flex; align-items:center; justify-content:space-between; gap:8px;
@@ -118,8 +118,8 @@
   .mega-country:hover .mega-country-head, .mega-country:focus-within .mega-country-head{ background:var(--paper-2); }
   .mega-country-body{
     display:none; position:absolute; left:100%; top:0; width:560px;
-    background:var(--white); border:1px solid rgba(29,42,61,.1); border-radius:12px;
-    box-shadow:0 24px 48px rgba(29,42,61,.18); padding:22px 24px; margin-left:10px;
+    background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px;
+    box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; margin-left:10px;
   }
   .mega-country:hover .mega-country-body, .mega-country:focus-within .mega-country-body{ display:block; }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
@@ -128,7 +128,7 @@
   .mega-cat li{ margin-bottom:5px; }
   .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
   .mega-cat a:hover{ color:var(--steel); }
-  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(29,42,61,.08); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(15,23,42,.08); }
   .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
 
 </style>
