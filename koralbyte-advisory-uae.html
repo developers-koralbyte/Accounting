@@ -40,6 +40,7 @@
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .mega-item{ position:relative; }
   .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-panel::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
   .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
   .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
@@ -62,14 +63,13 @@
   section.pad{ padding:64px 0; }
   .cat-block{ margin-bottom:52px; scroll-margin-top:90px; }
   .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
-  .cat-block > h2::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
+  .cat-block > h2::before{ content:""; width:4px; height:20px; border-radius:2px; background:var(--coral); }
   .cat-intro{ font-size:14px; color:var(--ink-soft-light); line-height:1.65; max-width:80ch; margin:0 0 20px 18px; }
   .svc-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
   .svc-card h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:10px; }
   .svc-card p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; max-width:74ch; }
-  .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:14px; }
-  .svc-card li{ font-size:12.5px; color:var(--steel); padding-left:14px; position:relative; }
-  .svc-card li::before{ content:""; position:absolute; left:0; top:6px; width:5px; height:5px; border-radius:50%; background:var(--steel); }
+  .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .svc-card li{ font-size:12px; color:var(--steel); background:var(--paper-2); padding:5px 11px; border-radius:6px; }
   .svc-card a.more{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
   .country-strip{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
   .country-chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:8px 14px; border-radius:100px; border:1px solid rgba(15,23,42,.15); }
@@ -85,7 +85,7 @@
   .svc-detail-body p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:18px; }
   .svc-detail-list{ list-style:none; margin:26px 0 34px; }
   .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(15,23,42,.1); position:relative; }
-  .svc-detail-list li::before{ content:""; position:absolute; left:0; top:19px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
+  .svc-detail-list li::before{ content:"\2713"; position:absolute; left:0; top:11px; color:var(--coral); font-weight:700; font-size:13px; }
   .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
   .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
   .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
@@ -301,7 +301,7 @@
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <span>&copy; KORAL ADVISORY</span>
-    <span>KUALA LUMPUR &middot; TORONTO &middot; JAKARTA</span>
+    <span>KUALA LUMPUR &middot; JAKARTA &middot; DUBAI &middot; NEW YORK &middot; TORONTO</span>
   </div>
 </footer>
 <script>

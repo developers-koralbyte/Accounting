@@ -40,6 +40,7 @@
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .mega-item{ position:relative; }
   .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-panel::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
   .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
   .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
@@ -62,14 +63,13 @@
   section.pad{ padding:64px 0; }
   .cat-block{ margin-bottom:52px; scroll-margin-top:90px; }
   .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
-  .cat-block > h2::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
+  .cat-block > h2::before{ content:""; width:4px; height:20px; border-radius:2px; background:var(--coral); }
   .cat-intro{ font-size:14px; color:var(--ink-soft-light); line-height:1.65; max-width:80ch; margin:0 0 20px 18px; }
   .svc-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
   .svc-card h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:10px; }
   .svc-card p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; max-width:74ch; }
-  .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:14px; }
-  .svc-card li{ font-size:12.5px; color:var(--steel); padding-left:14px; position:relative; }
-  .svc-card li::before{ content:""; position:absolute; left:0; top:6px; width:5px; height:5px; border-radius:50%; background:var(--steel); }
+  .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .svc-card li{ font-size:12px; color:var(--steel); background:var(--paper-2); padding:5px 11px; border-radius:6px; }
   .svc-card a.more{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
   .country-strip{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
   .country-chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:8px 14px; border-radius:100px; border:1px solid rgba(15,23,42,.15); }
@@ -85,7 +85,7 @@
   .svc-detail-body p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:18px; }
   .svc-detail-list{ list-style:none; margin:26px 0 34px; }
   .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(15,23,42,.1); position:relative; }
-  .svc-detail-list li::before{ content:""; position:absolute; left:0; top:19px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
+  .svc-detail-list li::before{ content:"\2713"; position:absolute; left:0; top:11px; color:var(--coral); font-weight:700; font-size:13px; }
   .svc-steps{ counter-reset:step; margin:26px 0 34px; padding:0; list-style:none; }
   .svc-steps li{ position:relative; padding:0 0 20px 40px; font-size:14.5px; line-height:1.7; color:var(--ink-soft-light); }
   .svc-steps li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--white); font-family:var(--font-mono); font-size:12px; display:flex; align-items:center; justify-content:center; }
@@ -126,6 +126,7 @@
   .price-card li{ font-size:13px; line-height:1.6; color:var(--steel); padding:8px 0 8px 20px; position:relative; border-top:1px solid rgba(15,23,42,.06); }
   .price-card li:first-child{ border-top:none; }
   .price-card li::before{ content:"\2713"; position:absolute; left:0; top:8px; color:var(--coral); font-weight:700; }
+  .price-card .btn{ width:100%; justify-content:center; margin-top:auto; border:1.5px solid var(--ink); }
 </style>
 </head>
 <body>
@@ -238,7 +239,7 @@
     <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Pricing</div>
     <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3.2vw,32px); text-align:center; margin:14px auto 8px; max-width:24ch;">Staffing tiers built to scale with you</h2>
     <p style="text-align:center; color:var(--ink-soft-light); max-width:60ch; margin:0 auto; font-size:14.5px;">Every tier includes a dedicated accountant embedded in your business. Move up a tier as your books, your channels, and your reporting needs get more complex.</p>
-    <div class="pricing-grid"><div class="price-card"><h3>Junior Accountant</h3><div class="price-amount">$1,600/mo</div><div class="price-alt">or $15/hr</div><ul><li>Day-to-day bookkeeping and data entry</li><li>Bank and platform reconciliation</li><li>Accounts payable processing</li></ul></div><div class="price-card popular"><span class="price-tag">Popular</span><h3>Accountant</h3><div class="price-amount">$2,500/mo</div><div class="price-alt">or $20/hr</div><ul><li>Full-cycle bookkeeping and month-end support</li><li>AR/AP management and aging reports</li><li>Financial statement preparation</li></ul></div><div class="price-card"><span class="price-tag">Advanced</span><h3>Senior Accountant</h3><div class="price-amount">$4,200/mo</div><div class="price-alt">or $25/hr</div><ul><li>Month-end close ownership</li><li>Revenue recognition and KPI reporting</li><li>Systems and process improvement</li></ul></div><div class="price-card"><span class="price-tag">Enterprise</span><h3>Account Manager</h3><div class="price-amount">Let's Talk</div><div class="price-alt">custom scope & rate</div><ul><li>Dedicated account leadership</li><li>Fractional CFO-level oversight</li><li>Custom reporting and team scaling</li></ul></div></div>
+    <div class="pricing-grid"><div class="price-card"><h3>Junior Accountant</h3><div class="price-amount">$1,600/mo</div><div class="price-alt">or $15/hr</div><ul><li>Day-to-day bookkeeping and data entry</li><li>Bank and platform reconciliation</li><li>Accounts payable processing</li></ul><button type="button" class="btn price-book" data-message="I'm interested in the Junior Accountant plan ($1,600/mo).">Book Now</button></div><div class="price-card popular"><span class="price-tag">Popular</span><h3>Accountant</h3><div class="price-amount">$2,500/mo</div><div class="price-alt">or $20/hr</div><ul><li>Full-cycle bookkeeping and month-end support</li><li>AR/AP management and aging reports</li><li>Financial statement preparation</li></ul><button type="button" class="btn filled price-book" data-message="I'm interested in the Accountant plan ($2,500/mo).">Book Now</button></div><div class="price-card"><span class="price-tag">Advanced</span><h3>Senior Accountant</h3><div class="price-amount">$4,200/mo</div><div class="price-alt">or $25/hr</div><ul><li>Month-end close ownership</li><li>Revenue recognition and KPI reporting</li><li>Systems and process improvement</li></ul><button type="button" class="btn price-book" data-message="I'm interested in the Senior Accountant plan ($4,200/mo).">Book Now</button></div><div class="price-card"><span class="price-tag">Enterprise</span><h3>Account Manager</h3><div class="price-amount">Let's Talk</div><div class="price-alt">custom scope & rate</div><ul><li>Dedicated account leadership</li><li>Fractional CFO-level oversight</li><li>Custom reporting and team scaling</li></ul><button type="button" class="btn price-book" data-message="I'd like to schedule a discovery call to discuss Account Manager-level support for my business.">Schedule a Discovery Call</button></div></div>
   </div>
 </section>
 <section class="cta" id="contact">
@@ -285,7 +286,7 @@
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
     <span>&copy; KORAL ADVISORY</span>
-    <span>KUALA LUMPUR &middot; TORONTO &middot; JAKARTA</span>
+    <span>KUALA LUMPUR &middot; JAKARTA &middot; DUBAI &middot; NEW YORK &middot; TORONTO</span>
   </div>
 </footer>
 <script>
@@ -344,6 +345,20 @@
       });
     }
   })();
+</script>
+<script>
+(function(){
+  document.querySelectorAll('.price-book').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var message = btn.getAttribute('data-message');
+      var msgField = document.querySelector('#contact-form textarea[name="message"]');
+      var contact = document.getElementById('contact');
+      if (msgField && message) { msgField.value = message; }
+      if (contact) { contact.scrollIntoView({behavior:'smooth', block:'start'}); }
+      if (msgField) { setTimeout(function(){ msgField.focus(); }, 450); }
+    });
+  });
+})();
 </script>
 <a href="https://wa.me/60178769786" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <svg viewBox="0 0 32 32" fill="white" aria-hidden="true"><path d="M16.001 3C9.11 3 3.5 8.61 3.5 15.5c0 2.34.65 4.53 1.78 6.4L3 29l7.28-2.24a12.44 12.44 0 0 0 5.72 1.39h.01c6.9 0 12.5-5.61 12.5-12.5C28.51 8.61 22.9 3 16.001 3Zm0 22.75h-.01a10.3 10.3 0 0 1-5.24-1.44l-.38-.22-3.9 1.2 1.24-3.8-.25-.39a10.24 10.24 0 0 1-1.58-5.6c0-5.68 4.63-10.3 10.32-10.3 2.76 0 5.35 1.07 7.3 3.02a10.23 10.23 0 0 1 3.02 7.29c0 5.68-4.63 10.24-10.32 10.24Zm5.66-7.68c-.31-.16-1.83-.9-2.11-1.01-.28-.1-.49-.16-.69.16-.2.31-.79 1.01-.97 1.22-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.53-.92-.82-1.53-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.55.16-.18.2-.31.31-.51.1-.2.05-.39-.02-.55-.08-.16-.69-1.66-.94-2.27-.25-.6-.5-.51-.69-.52h-.59c-.2 0-.51.08-.78.39-.27.31-1.02 1-1.02 2.43s1.05 2.82 1.19 3.02c.14.2 2.06 3.14 4.99 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
