@@ -17,7 +17,23 @@ skill; keeping the upstream name would have shadowed the built-in one. Its
 commands that pointed at `~/.claude/skills/design/...`, which assumed a global
 plugin install rather than this repo's project-scoped layout).
 
+**marketingskills**
+https://github.com/coreyhaines31/marketingskills
+Copyright (c) 2025 Corey Haines, MIT License.
+
+Included skills: `copywriting`, `copy-editing`, `product-marketing`,
+`site-architecture`. The upstream repo ships ~50 marketing skills (ads, SEO,
+email, analytics, pricing, etc.) plus a large `tools/` directory of CLI
+wrappers for third-party marketing SaaS APIs. Only the four skills above were
+vendored, since they're the ones relevant to writing and structuring website
+copy; the rest (and all of `tools/`) were left out as out of scope for this
+project and, in the case of `tools/`, requiring API credentials this project
+has no use for.
+
 ## MIT License
+
+Both vendored repos above are MIT licensed, under their respective copyright
+holders noted above (Next Level Builder; Corey Haines). License text:
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
