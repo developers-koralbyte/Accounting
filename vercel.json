@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/koralbyte-group-home.html" }
+    { "source": "/", "destination": "/koral-advisory-home.html" }
   ]
 }
