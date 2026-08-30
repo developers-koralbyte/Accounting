@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registered Agent Services | Koral Advisory United States</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --ink-2:#1E293B; --paper:#F8FAFC; --paper-2:#E8ECF1;
+    --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
+    --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--font-body); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; width:100%; height:100%; object-fit:cover; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media(max-width:640px){ .wrap{padding:0 20px;} }
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
+  .eyebrow.on-dark{ color:var(--ink-soft-dark); }
+  .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(15,23,42,.08); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; position:relative; }
+  .wordmark{ font-family:var(--font-display); font-weight:600; font-size:19px; letter-spacing:-.01em; display:flex; align-items:center; gap:8px; }
+  .wordmark .dot{ background:var(--coral); }
+  .navlinks{ display:flex; gap:34px; font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+  .navlinks > li{ list-style:none; }
+  .navlinks a{ position:relative; padding-bottom:4px; opacity:.85; }
+  .navlinks a:hover{ opacity:1; }
+  @media(max-width:1050px){ .navlinks{display:none;} }
+  .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
+  .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
+  .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .mega-item{ position:relative; }
+  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
+  .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
+  .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
+  .mega-cat ul{ list-style:none; }
+  .mega-cat li{ margin-bottom:5px; }
+  .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
+  .mega-cat a:hover{ color:var(--steel); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(15,23,42,.08); }
+  .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
+  .hero{ position:relative; padding:90px 0 64px; overflow:hidden; background:var(--ink); color:var(--white); }
+  .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.3; }
+  .b1{ width:420px; height:420px; background:var(--steel); top:-140px; left:-100px; }
+  .b2{ width:380px; height:380px; background:var(--sky); bottom:-140px; right:-100px; }
+  .hero-inner{ position:relative; z-index:1; max-width:760px; }
+  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(30px, 4.4vw, 46px); line-height:1.12; margin:16px 0 16px; }
+  .hero p.sub{ font-size:15.5px; line-height:1.6; color:var(--ink-soft-dark); max-width:60ch; }
+  .crumb{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-dark); margin-bottom:6px; }
+  .crumb a{ text-decoration:underline; }
+  section.pad{ padding:64px 0; }
+  .cat-block{ margin-bottom:52px; scroll-margin-top:90px; }
+  .cat-block > h2{ font-family:var(--font-display); font-weight:600; font-size:24px; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
+  .cat-block > h2::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--coral); }
+  .cat-intro{ font-size:14px; color:var(--ink-soft-light); line-height:1.65; max-width:80ch; margin:0 0 20px 18px; }
+  .svc-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:26px 28px; margin-bottom:16px; }
+  .svc-card h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:10px; }
+  .svc-card p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; max-width:74ch; }
+  .svc-card ul{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 20px; margin-bottom:14px; }
+  .svc-card li{ font-size:12.5px; color:var(--steel); padding-left:14px; position:relative; }
+  .svc-card li::before{ content:""; position:absolute; left:0; top:6px; width:5px; height:5px; border-radius:50%; background:var(--steel); }
+  .svc-card a.more{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
+  .country-strip{ display:flex; gap:10px; flex-wrap:wrap; margin-top:26px; }
+  .country-chip{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:8px 14px; border-radius:100px; border:1px solid rgba(15,23,42,.15); }
+  .country-chip.active{ background:var(--ink); color:var(--white); border-color:var(--ink); }
+  .cta{ padding:90px 0; text-align:center; background:var(--paper-2); }
+  .cta h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(26px,3.6vw,38px); margin:14px auto 28px; max-width:20ch; }
+  .cta .btn-row{ justify-content:center; }
+  footer{ background:var(--ink); color:rgba(255,255,255,.5); padding:36px 0; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .breadcrumb-svc{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-dark); margin-bottom:14px; }
+  .breadcrumb-svc a{ text-decoration:underline; }
+  .svc-hero-photo{ height:260px; border-radius:16px; overflow:hidden; margin-top:28px; }
+  .svc-detail-body{ max-width:74ch; }
+  .svc-detail-body p{ font-size:15.5px; line-height:1.75; color:var(--ink-soft-light); margin-bottom:18px; }
+  .svc-detail-list{ list-style:none; margin:26px 0 34px; }
+  .svc-detail-list li{ font-size:14.5px; padding:12px 0 12px 22px; border-bottom:1px solid rgba(15,23,42,.1); position:relative; }
+  .svc-detail-list li::before{ content:""; position:absolute; left:0; top:19px; width:6px; height:6px; border-radius:50%; background:var(--coral); }
+  .svc-steps{ counter-reset:step; margin:26px 0 34px; padding:0; list-style:none; }
+  .svc-steps li{ position:relative; padding:0 0 20px 40px; font-size:14.5px; line-height:1.7; color:var(--ink-soft-light); }
+  .svc-steps li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0; width:26px; height:26px; border-radius:50%; background:var(--ink); color:var(--white); font-family:var(--font-mono); font-size:12px; display:flex; align-items:center; justify-content:center; }
+  .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
+  .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
+  .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
+  .info-box p.info-source{ margin-top:8px; font-size:11px; color:var(--steel); font-style:italic; }
+
+  .whatsapp-float{ position:fixed; right:22px; bottom:22px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .2s ease, box-shadow .2s ease; }
+  .whatsapp-float:hover{ transform:translateY(-3px) scale(1.05); box-shadow:0 12px 28px rgba(0,0,0,.3); }
+  .whatsapp-float svg{ width:30px; height:30px; }
+  @media(max-width:640px){ .whatsapp-float{ right:16px; bottom:16px; width:52px; height:52px; } .whatsapp-float svg{ width:27px; height:27px; } }
+  @media(prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } }
+
+  .contact-form{ max-width:640px; margin:40px auto 0; text-align:left; background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:32px; }
+  .contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:600px){ .contact-form .form-row{ grid-template-columns:1fr; } }
+  .contact-form label{ display:block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft-light); margin-bottom:16px; }
+  .contact-form input, .contact-form select, .contact-form textarea{ display:block; width:100%; margin-top:6px; padding:11px 13px; border:1px solid rgba(15,23,42,.15); border-radius:8px; font-family:var(--font-body); font-size:14px; color:var(--ink); background:var(--paper); }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{ outline:2px solid var(--coral); outline-offset:1px; }
+  .contact-form textarea{ resize:vertical; min-height:96px; }
+  .contact-form button[type="submit"]{ width:100%; justify-content:center; border:none; cursor:pointer; }
+  .contact-form button[type="submit"]:disabled{ opacity:.6; cursor:not-allowed; }
+  .form-status{ margin-top:14px; font-size:13.5px; text-align:center; min-height:1.4em; }
+  .form-status.success{ color:#15803d; }
+  .form-status.error{ color:#b91c1c; }
+
+  .pricing-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:36px; text-align:left; }
+  @media(max-width:980px){ .pricing-grid{ grid-template-columns:1fr 1fr; } }
+  @media(max-width:600px){ .pricing-grid{ grid-template-columns:1fr; } }
+  .price-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:26px 22px; display:flex; flex-direction:column; }
+  .price-card.popular{ border-color:var(--coral); box-shadow:0 16px 36px rgba(3,105,161,.14); position:relative; }
+  .price-tag{ font-family:var(--font-mono); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); background:rgba(3,105,161,.1); border-radius:100px; padding:4px 10px; display:inline-block; margin-bottom:12px; align-self:flex-start; }
+  .price-card h3{ font-family:var(--font-display); font-weight:600; font-size:17px; margin-bottom:6px; }
+  .price-amount{ font-family:var(--font-display); font-weight:700; font-size:26px; margin-bottom:2px; }
+  .price-alt{ font-size:12px; color:var(--ink-soft-light); margin-bottom:16px; }
+  .price-card ul{ list-style:none; margin-bottom:20px; flex-grow:1; }
+  .price-card li{ font-size:13px; line-height:1.6; color:var(--steel); padding:8px 0 8px 20px; position:relative; border-top:1px solid rgba(15,23,42,.06); }
+  .price-card li:first-child{ border-top:none; }
+  .price-card li::before{ content:"\2713"; position:absolute; left:0; top:8px; color:var(--coral); font-weight:700; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="koral-advisory-home.html" class="wordmark"><span class="dot"></span>KORAL ADVISORY</a>
+    <ul class="navlinks">
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory-malaysia.html">🇲🇾 Malaysia</a>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Advisory</h5><ul><li><a href="koralbyte-advisory-malaysia.html#advisory">Business Consulting</a></li><li><a href="koralbyte-advisory-malaysia.html#advisory">Fractional CFO Services</a></li></ul></div><div class="mega-cat"><h5>Formation</h5><ul><li><a href="koralbyte-advisory-malaysia.html#formation">Company Registration</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Company Secretary</a></li><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Business Licenses</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-malaysia.html#accounting">Bookkeeping & Accounting Compliance</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-malaysia.html#tax">Tax Compliance</a></li></ul></div><div class="mega-cat"><h5>HR Outsourcing</h5><ul><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">Payroll Outsourcing</a></li><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">PEO / Employer of Record</a></li></ul></div><div class="mega-cat"><h5>Immigration & Visa</h5><ul><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Employment Pass (MDEC)</a></li><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Residence Pass Talent (Talent Corp)</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-malaysia.html">View all Malaysia services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory-indonesia.html">🇮🇩 Indonesia</a>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory-uae.html">🇦🇪 UAE</a>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-uae.html#company-formation">Mainland Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Free Zone Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Offshore Company Formation</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-governance">PRO Services & Government Liaison</a></li><li><a href="koralbyte-advisory-uae.html#corporate-governance">Trade Licence Renewal</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-uae.html#accounting">Bookkeeping & Financial Reporting</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-uae.html#tax">Corporate Tax Registration & Filing</a></li><li><a href="koralbyte-advisory-uae.html#tax">VAT Registration & Filing</a></li></ul></div><div class="mega-cat"><h5>Audit & Assurance</h5><ul><li><a href="koralbyte-advisory-uae.html#audit-assurance">Statutory Audit</a></li><li><a href="koralbyte-advisory-uae.html#audit-assurance">Internal Audit</a></li></ul></div><div class="mega-cat"><h5>HR & Payroll</h5><ul><li><a href="koralbyte-advisory-uae.html#hr-payroll">Payroll Outsourcing</a></li></ul></div><div class="mega-cat"><h5>Visa & Immigration</h5><ul><li><a href="koralbyte-advisory-uae.html#visa-immigration">Investor & Golden Visa</a></li><li><a href="koralbyte-advisory-uae.html#visa-immigration">Employment Visa & Establishment Card</a></li></ul></div><div class="mega-cat"><h5>Corporate Advisory</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Feasibility Study</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Business Valuation</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Fractional CFO Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-uae.html">View all UAE services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory-united-states.html">🇺🇸 United States</a>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-united-states.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-united-states.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-united-states.html#company-formation">Delaware/LLC Incorporation</a></li><li><a href="koralbyte-advisory-united-states.html#company-formation">Registered Agent Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-united-states.html">View all United States services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <a href="koralbyte-advisory-canada.html">🇨🇦 Canada</a>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-canada.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-canada.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-canada.html#company-formation">Federal/Provincial Incorporation</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-canada.html">View all Canada services &rarr;</a></div></div></div>
+    </li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn filled">Talk to Us</a>
+  </div>
+</header>
+<section class="hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
+  <div class="wrap hero-inner">
+    <div class="crumb"><a href="koral-advisory-home.html">Advisory Services</a> / <a href="koralbyte-advisory-united-states.html">United States</a> / Registered Agent Services</div>
+    <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>🇺🇸 UNITED STATES &middot; COMPANY FORMATION</div>
+    <h1>Registered Agent Services</h1>
+    <p class="sub">Reliable registered agent coverage in your state of formation, so legal and state correspondence never gets missed.</p>
+    <div class="svc-hero-photo"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&q=80&w=900" alt="Registered Agent Services"></div>
+  </div>
+</section>
+<section class="pad">
+  <div class="wrap svc-detail-body">
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <ul class="svc-detail-list"><li>Registered agent address in your state of formation</li><li>Legal document receipt and forwarding</li><li>Annual report and compliance deadline tracking</li></ul>
+    <p>A missed service of process or a lapsed annual report can put your good standing at risk without you ever knowing it happened. Our registered agent service makes sure nothing gets missed and nothing gets lost in a forwarding delay.</p><p>You get a dedicated point of contact, not a mailbox that occasionally sends you a scanned PDF three weeks late.</p>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:34px 0 6px;">How it works</h2>
+    <ol class="svc-steps"><li>We serve as your registered agent of record in your state of formation</li><li>We forward legal and state documents to you the same day they arrive</li><li>We track annual report and compliance deadlines so nothing lapses</li></ol>
+  </div>
+</section>
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>United States</div>
+    <h2>Ready to talk through registered agent services?</h2>
+    <div class="btn-row">
+      <a href="#contact" class="btn filled">Book a Discovery Call</a>
+      <a href="koralbyte-advisory-united-states.html" class="btn">See all United States services</a>
+    </div>
+    <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="fadf68e3-fb60-47f9-8ebd-bc38d1a28099">
+      <input type="hidden" name="subject" value="New Contact from Koral Advisory">
+      <div class="form-row">
+        <label>Full Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Company
+          <input type="text" name="company">
+        </label>
+        <label>Country
+          <select name="country" id="contact-country" required>
+            <option value="">Select country</option>
+            <option value="Malaysia">Malaysia</option><option value="Indonesia">Indonesia</option><option value="UAE">UAE</option><option value="United States">United States</option><option value="Canada">Canada</option>
+          </select>
+        </label>
+      </div>
+      <label>Services Needed
+        <select name="services_needed" id="contact-services" required>
+          <option value="">Select a country first</option>
+        </select>
+      </label>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn filled">Send Message</button>
+      <div id="contact-form-status" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span>&copy; KORAL ADVISORY</span>
+    <span>KUALA LUMPUR &middot; TORONTO &middot; JAKARTA</span>
+  </div>
+</footer>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+  revealEls.forEach(el=>io.observe(el));
+
+
+  (function(){
+    var serviceCategories = {
+      Malaysia: ["Advisory","Formation","Corporate Governance","Accounting","Tax","HR Outsourcing","Immigration & Visa"],
+      Indonesia: ["Market Entry","Payroll","Accounting","Taxation","Business Services","Virtual & Serviced Offices","Visas & Immigration","CFO & Corporate Secretary"],
+      UAE: ["Company Formation","Corporate Governance","Accounting","Tax","Audit & Assurance","HR & Payroll","Visa & Immigration","Corporate Advisory"],
+      "United States": ["CFO & Finance Leadership","E-commerce & Marketplace Accounting","Core Accounting & Bookkeeping","Systems & Reporting","Company Formation"],
+      Canada: ["CFO & Finance Leadership","E-commerce & Marketplace Accounting","Core Accounting & Bookkeeping","Systems & Reporting","Company Formation"]
+    };
+    var countrySelect = document.getElementById('contact-country');
+    var servicesSelect = document.getElementById('contact-services');
+    if (countrySelect && servicesSelect) {
+      countrySelect.addEventListener('change', function(){
+        var cats = serviceCategories[countrySelect.value] || [];
+        var opts = '<option value="">Select a service category</option>';
+        cats.forEach(function(c){ opts += '<option value="' + c + '">' + c + '</option>'; });
+        servicesSelect.innerHTML = opts;
+      });
+    }
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var statusEl = document.getElementById('contact-form-status');
+        var submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        statusEl.textContent = 'Sending...';
+        statusEl.className = 'form-status';
+        fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        }).then(function(res){ return res.json(); }).then(function(data){
+          if (data.success) {
+            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.className = 'form-status success';
+            contactForm.reset();
+            servicesSelect.innerHTML = '<option value="">Select a country first</option>';
+          } else {
+            statusEl.textContent = data.message || 'Something went wrong. Please try again or reach us on WhatsApp.';
+            statusEl.className = 'form-status error';
+          }
+          submitBtn.disabled = false;
+        }).catch(function(){
+          statusEl.textContent = 'Something went wrong. Please try again or reach us on WhatsApp.';
+          statusEl.className = 'form-status error';
+          submitBtn.disabled = false;
+        });
+      });
+    }
+  })();
+</script>
+<a href="https://wa.me/60178769786" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white" aria-hidden="true"><path d="M16.001 3C9.11 3 3.5 8.61 3.5 15.5c0 2.34.65 4.53 1.78 6.4L3 29l7.28-2.24a12.44 12.44 0 0 0 5.72 1.39h.01c6.9 0 12.5-5.61 12.5-12.5C28.51 8.61 22.9 3 16.001 3Zm0 22.75h-.01a10.3 10.3 0 0 1-5.24-1.44l-.38-.22-3.9 1.2 1.24-3.8-.25-.39a10.24 10.24 0 0 1-1.58-5.6c0-5.68 4.63-10.3 10.32-10.3 2.76 0 5.35 1.07 7.3 3.02a10.23 10.23 0 0 1 3.02 7.29c0 5.68-4.63 10.24-10.32 10.24Zm5.66-7.68c-.31-.16-1.83-.9-2.11-1.01-.28-.1-.49-.16-.69.16-.2.31-.79 1.01-.97 1.22-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.53-.92-.82-1.53-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.55.16-.18.2-.31.31-.51.1-.2.05-.39-.02-.55-.08-.16-.69-1.66-.94-2.27-.25-.6-.5-.51-.69-.52h-.59c-.2 0-.51.08-.78.39-.27.31-1.02 1-1.02 2.43s1.05 2.82 1.19 3.02c.14.2 2.06 3.14 4.99 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
+</a>
+</body>
+</html>
