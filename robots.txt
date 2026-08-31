@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://accounting-koralbytestudios.vercel.app/sitemap.xml
+Sitemap: https://www.koraladvisory.com/sitemap.xml
