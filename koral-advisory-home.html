@@ -63,14 +63,28 @@
   .mega-cat a:hover{ color:var(--steel); }
   .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(15,23,42,.08); }
   .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
-  .hero{ position:relative; padding:90px 0 64px; overflow:hidden; background:var(--ink); color:var(--white); }
-  .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
-  .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.3; }
-  .b1{ width:420px; height:420px; background:var(--steel); top:-140px; left:-100px; }
-  .b2{ width:380px; height:380px; background:var(--sky); bottom:-140px; right:-100px; }
-  .hero-inner{ position:relative; z-index:1; max-width:760px; }
-  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(30px, 4.4vw, 46px); line-height:1.12; margin:16px 0 16px; }
-  .hero p.sub{ font-size:15.5px; line-height:1.6; color:var(--ink-soft-dark); max-width:60ch; }
+  .hero{ position:relative; overflow:hidden; background:var(--ink); color:var(--white); }
+  .hero-split{ display:flex; min-height:600px; }
+  @media(max-width:900px){ .hero-split{ flex-direction:column; min-height:0; } }
+  .hero-inner{ position:relative; z-index:1; width:38%; flex-shrink:0; display:flex; flex-direction:column; justify-content:center; padding:90px 40px 64px 32px; }
+  @media(min-width:1600px){ .hero-inner{ padding-left:max(32px, calc((100vw - 1180px)/2)); } }
+  @media(max-width:900px){ .hero-inner{ width:100%; padding:70px 24px 36px; } }
+  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(26px, 2.6vw, 38px); line-height:1.15; margin:16px 0 16px; }
+  @media(max-width:900px){ .hero h1{ font-size:clamp(28px,6vw,38px); } }
+  .hero p.sub{ font-size:15px; line-height:1.6; color:var(--ink-soft-dark); max-width:48ch; }
+  .hero-cities{ width:62%; display:flex; }
+  @media(max-width:900px){ .hero-cities{ width:100%; height:220px; order:2; } }
+  @media(max-width:600px){ .hero-cities{ height:160px; } }
+  .city-panel{ position:relative; flex:1; overflow:hidden; }
+  .city-panel img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(.25) brightness(.72) contrast(1.05); transition:transform .6s ease; }
+  .city-panel:hover img{ transform:scale(1.05); }
+  .city-panel::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(15,23,42,.22) 0%, rgba(15,23,42,.5) 55%, rgba(15,23,42,.88) 100%); }
+  .city-panel.img-fallback{ background:linear-gradient(165deg, var(--ink-2), var(--ink)); }
+  .city-panel.img-fallback img{ display:none; }
+  .city-caption{ position:absolute; left:0; right:0; bottom:20px; text-align:center; z-index:2; padding:0 4px; }
+  .city-caption .name{ font-family:var(--font-mono); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--white); }
+  @media(max-width:600px){ .city-caption .name{ font-size:8px; letter-spacing:.08em; } }
+  .city-underline{ width:24px; height:2px; background:var(--coral); margin:8px auto 0; }
   .crumb{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-dark); margin-bottom:6px; }
   .crumb a{ text-decoration:underline; }
   section.pad{ padding:64px 0; }
@@ -218,14 +232,18 @@
   </div>
 </header>
 <section class="hero">
-  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
-  <div class="wrap hero-inner">
-    <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>KORAL ADVISORY</div>
-    <h1>Fractional CFOs and accountants who keep your books, compliance, and boardroom numbers in order.</h1>
-    <p class="sub">From company formation and monthly close to investor-ready reporting, we run the full finance function, not just the strategy layer, across Malaysia, Indonesia, the UAE, the United States, and Canada.</p>
-    <div class="btn-row">
-      <a href="#contact" class="btn filled">Book a Discovery Call</a>
-      <a href="#glance" class="btn on-dark">See What We Offer</a>
+  <div class="hero-split">
+    <div class="hero-inner">
+      <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>KORAL ADVISORY</div>
+      <h1>Fractional CFOs and accountants who keep your books, compliance, and boardroom numbers in order.</h1>
+      <p class="sub">From company formation and monthly close to investor-ready reporting, we run the full finance function, not just the strategy layer, across Malaysia, Indonesia, the UAE, the United States, and Canada.</p>
+      <div class="btn-row">
+        <a href="#contact" class="btn filled">Book a Discovery Call</a>
+        <a href="#glance" class="btn on-dark">See What We Offer</a>
+      </div>
+    </div>
+    <div class="hero-cities">
+      <div class="city-panel"><img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=700" alt="Kuala Lumpur skyline" loading="eager" onerror="this.parentElement.classList.add('img-fallback')"><div class="city-caption"><span class="name">Kuala Lumpur</span><div class="city-underline"></div></div></div><div class="city-panel"><img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=700" alt="Jakarta skyline" loading="eager" onerror="this.parentElement.classList.add('img-fallback')"><div class="city-caption"><span class="name">Jakarta</span><div class="city-underline"></div></div></div><div class="city-panel"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=700" alt="Dubai skyline" loading="eager" onerror="this.parentElement.classList.add('img-fallback')"><div class="city-caption"><span class="name">Dubai</span><div class="city-underline"></div></div></div><div class="city-panel"><img src="https://images.unsplash.com/photo-1517090504586-fde19ea6066f?auto=format&fit=crop&q=80&w=700" alt="Toronto skyline" loading="eager" onerror="this.parentElement.classList.add('img-fallback')"><div class="city-caption"><span class="name">Toronto</span><div class="city-underline"></div></div></div><div class="city-panel"><img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&q=80&w=700" alt="New York skyline" loading="eager" onerror="this.parentElement.classList.add('img-fallback')"><div class="city-caption"><span class="name">New York</span><div class="city-underline"></div></div></div>
     </div>
   </div>
 </section>
