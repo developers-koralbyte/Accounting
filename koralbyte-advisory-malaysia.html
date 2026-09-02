@@ -46,8 +46,8 @@
   .navlinks > li{ list-style:none; }
   .navlinks a{ position:relative; padding-bottom:4px; opacity:.85; }
   .navlinks a:hover{ opacity:1; }
-  .mega-item > a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--coral); transform:scaleX(0); transform-origin:center; transition:transform .25s ease; }
-  .mega-item > a:hover::after, .mega-item:focus-within > a::after{ transform:scaleX(1); }
+  .mega-item-row > a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--coral); transform:scaleX(0); transform-origin:center; transition:transform .25s ease; }
+  .mega-item-row > a:hover::after, .mega-item:focus-within .mega-item-row > a::after{ transform:scaleX(1); }
   @media(max-width:1050px){ .navlinks{display:none;} }
   .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
   .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
@@ -125,6 +125,46 @@
   .form-status{ margin-top:14px; font-size:13.5px; text-align:center; min-height:1.4em; }
   .form-status.success{ color:#15803d; }
   .form-status.error{ color:#b91c1c; }
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; color:var(--ink); }
+  .nav-toggle svg{ width:24px; height:24px; display:block; }
+  @media(max-width:1050px){ .nav-toggle{ display:flex; align-items:center; justify-content:center; } }
+  .mobile-nav-head{ display:none; }
+  .nav-close{ background:none; border:none; cursor:pointer; padding:6px; color:var(--white); }
+  .nav-close svg{ width:22px; height:22px; display:block; }
+  @media(max-width:1050px){
+    .navlinks{
+      display:none; position:fixed; inset:0; z-index:200; background:var(--ink);
+      flex-direction:column; overflow-y:auto; padding:16px 24px 40px; gap:0;
+    }
+    .navlinks.mobile-open{ display:flex; }
+    body.mobile-nav-locked{ overflow:hidden; }
+    /* header's backdrop-filter creates a containing block for position:fixed
+       descendants, which would shrink .navlinks to header's own box instead
+       of the full viewport -- suspend it while the mobile menu is open */
+    body.mobile-nav-locked header{ backdrop-filter:none; }
+    /* the floating WhatsApp button sits at z-index:999, above the menu's
+       z-index:200 -- keep it from floating on top of the full-screen nav */
+    body.mobile-nav-locked .whatsapp-float{ display:none; }
+    .mobile-nav-head{ display:flex; justify-content:flex-end; padding-bottom:6px; }
+    .navlinks > li{ border-bottom:1px solid rgba(255,255,255,.1); list-style:none; }
+    .navlinks > li:last-child{ border-bottom:none; }
+    .navlinks > li > a, .mega-item-row > a{ display:block; padding:18px 2px; font-size:13px; color:var(--white); opacity:1; }
+    .mega-item-row{ display:flex; align-items:center; justify-content:space-between; }
+    .mega-item-row > a{ flex:1; }
+    .mega-toggle{ background:none; border:none; cursor:pointer; padding:14px 2px; color:var(--ink-soft-dark); flex-shrink:0; }
+    .mega-toggle svg{ width:16px; height:16px; display:block; transition:transform .25s ease; }
+    .mega-item.mobile-open .mega-toggle svg{ transform:rotate(180deg); }
+    .mega-item-row > a::after{ display:none; }
+    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; }
+    .mega-panel::before{ display:none; }
+    .mega-item.mobile-open .mega-panel{ display:block; }
+    .mega-cats{ grid-template-columns:1fr; gap:16px; }
+    .mega-cat h5{ color:var(--sky); }
+    .mega-cat a{ color:var(--ink-soft-dark); padding:6px 0; display:block; font-size:13.5px; }
+    .mega-viewall{ border-top-color:rgba(255,255,255,.12); }
+    .mega-viewall a{ color:var(--sky); }
+  }
 </style>
 </head>
 <body>
@@ -132,30 +172,31 @@
   <div class="wrap nav">
     <a href="koral-advisory-home.html" class="wordmark"><span class="dot"></span>KORAL ADVISORY</a>
     <ul class="navlinks">
+      <li class="mobile-nav-head"><button type="button" class="nav-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button></li>
       <li class="mega-item" tabindex="0">
-      <a href="koralbyte-advisory-malaysia.html">Malaysia</a>
+      <div class="mega-item-row"><a href="koralbyte-advisory-malaysia.html">Malaysia</a><button type="button" class="mega-toggle" aria-label="Expand Malaysia services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Advisory</h5><ul><li><a href="koralbyte-advisory-malaysia.html#advisory">Business Consulting</a></li><li><a href="koralbyte-advisory-malaysia.html#advisory">Fractional CFO Services</a></li></ul></div><div class="mega-cat"><h5>Formation</h5><ul><li><a href="koralbyte-advisory-malaysia.html#formation">Company Registration</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Company Secretary</a></li><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Business Licenses</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-malaysia.html#accounting">Bookkeeping & Accounting Compliance</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-malaysia.html#tax">Tax Compliance</a></li></ul></div><div class="mega-cat"><h5>HR Outsourcing</h5><ul><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">Payroll Outsourcing</a></li><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">PEO / Employer of Record</a></li></ul></div><div class="mega-cat"><h5>Immigration & Visa</h5><ul><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Employment Pass (MDEC)</a></li><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Residence Pass Talent (Talent Corp)</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-malaysia.html">View all Malaysia services &rarr;</a></div></div></div>
     </li>
       <li class="mega-item" tabindex="0">
-      <a href="koralbyte-advisory-indonesia.html">Indonesia</a>
+      <div class="mega-item-row"><a href="koralbyte-advisory-indonesia.html">Indonesia</a><button type="button" class="mega-toggle" aria-label="Expand Indonesia services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
     </li>
       <li class="mega-item" tabindex="0">
-      <a href="koralbyte-advisory-uae.html">UAE</a>
+      <div class="mega-item-row"><a href="koralbyte-advisory-uae.html">UAE</a><button type="button" class="mega-toggle" aria-label="Expand UAE services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-uae.html#company-formation">Mainland Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Free Zone Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Offshore Company Formation</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-governance">PRO Services & Government Liaison</a></li><li><a href="koralbyte-advisory-uae.html#corporate-governance">Trade Licence Renewal</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-uae.html#accounting">Bookkeeping & Financial Reporting</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-uae.html#tax">Corporate Tax Registration & Filing</a></li><li><a href="koralbyte-advisory-uae.html#tax">VAT Registration & Filing</a></li></ul></div><div class="mega-cat"><h5>Audit & Assurance</h5><ul><li><a href="koralbyte-advisory-uae.html#audit-assurance">Statutory Audit</a></li><li><a href="koralbyte-advisory-uae.html#audit-assurance">Internal Audit</a></li></ul></div><div class="mega-cat"><h5>HR & Payroll</h5><ul><li><a href="koralbyte-advisory-uae.html#hr-payroll">Payroll Outsourcing</a></li></ul></div><div class="mega-cat"><h5>Visa & Immigration</h5><ul><li><a href="koralbyte-advisory-uae.html#visa-immigration">Investor & Golden Visa</a></li><li><a href="koralbyte-advisory-uae.html#visa-immigration">Employment Visa & Establishment Card</a></li></ul></div><div class="mega-cat"><h5>Corporate Advisory</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Feasibility Study</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Business Valuation</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Fractional CFO Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-uae.html">View all UAE services &rarr;</a></div></div></div>
     </li>
       <li class="mega-item" tabindex="0">
-      <a href="koralbyte-advisory-united-states.html">United States</a>
+      <div class="mega-item-row"><a href="koralbyte-advisory-united-states.html">United States</a><button type="button" class="mega-toggle" aria-label="Expand United States services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-united-states.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-united-states.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-united-states.html#company-formation">Delaware/LLC Incorporation</a></li><li><a href="koralbyte-advisory-united-states.html#company-formation">Registered Agent Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-united-states.html">View all United States services &rarr;</a></div></div></div>
     </li>
       <li class="mega-item" tabindex="0">
-      <a href="koralbyte-advisory-canada.html">Canada</a>
+      <div class="mega-item-row"><a href="koralbyte-advisory-canada.html">Canada</a><button type="button" class="mega-toggle" aria-label="Expand Canada services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
       <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-canada.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-canada.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-canada.html#company-formation">Federal/Provincial Incorporation</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-canada.html">View all Canada services &rarr;</a></div></div></div>
     </li>
       <li><a href="koral-advisory-about.html">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="btn filled">Talk to Us</a>
+    <div class="nav-actions"><a href="#contact" class="btn filled">Talk to Us</a><button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
   </div>
 </header>
 <section class="hero">
@@ -346,6 +387,37 @@
         });
       });
     }
+  })();
+
+  (function(){
+    var navToggle = document.querySelector('.nav-toggle');
+    var navClose = document.querySelector('.nav-close');
+    var navLinksEl = document.querySelector('.navlinks');
+    function openNav(){
+      if (!navLinksEl) return;
+      navLinksEl.classList.add('mobile-open');
+      document.body.classList.add('mobile-nav-locked');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav(){
+      if (!navLinksEl) return;
+      navLinksEl.classList.remove('mobile-open');
+      document.body.classList.remove('mobile-nav-locked');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (navToggle) navToggle.addEventListener('click', openNav);
+    if (navClose) navClose.addEventListener('click', closeNav);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
+    document.querySelectorAll('.mega-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.closest('.mega-item');
+        var isOpen = item.classList.toggle('mobile-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.addEventListener('click', function(){ closeNav(); });
+    });
   })();
 </script>
 <a href="https://wa.me/60178769786" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
