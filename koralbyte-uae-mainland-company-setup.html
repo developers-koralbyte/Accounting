@@ -216,7 +216,7 @@
 <section class="pad">
   <div class="wrap svc-detail-body">
     
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Trade licence application and activity approval</li><li>100% foreign ownership guidance by activity</li><li>Local office and Ejari registration support</li></ul>
     <p>A mainland licence trades some free zone convenience for the ability to trade directly across the UAE without restriction. If your business model depends on that reach, mainland is usually the right call, and we handle the licence, office, and Ejari registration end to end.</p>
   </div>
@@ -314,7 +314,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';

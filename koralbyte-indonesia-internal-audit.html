@@ -216,7 +216,7 @@
 <section class="pad">
   <div class="wrap svc-detail-body">
     
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Risk identification and controls review</li><li>Process and efficiency assessment</li><li>Findings report with prioritized recommendations</li></ul>
     <p>The value here tends to come less from finding fraud, which is rare, and more from catching process gaps before they compound: approval workflows nobody follows anymore, reconciliations that have quietly stopped happening, controls that existed on paper but never in practice. We prioritize findings by what actually changes your risk exposure, not by volume.</p>
   </div>
@@ -314,7 +314,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';

@@ -216,7 +216,7 @@
 <section class="pad">
   <div class="wrap svc-detail-body">
     
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Statutory financial statement audit</li><li>Free zone authority-compliant reporting</li><li>Bank and investor-ready audit opinions</li></ul>
     <p>Which standards your audit needs to satisfy depends on your free zone authority, and getting that wrong means redoing the engagement. We confirm the right reporting basis upfront and deliver an opinion that banks and investors accept without follow-up questions.</p>
   </div>
@@ -314,7 +314,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';

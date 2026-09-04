@@ -216,7 +216,7 @@
 <section class="pad">
   <div class="wrap svc-detail-body">
     
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Monthly bookkeeping and bank reconciliation</li><li>Year-end financial statements under MFRS</li><li>Management reporting and audit coordination</li></ul>
     <p>Your books get reconciled to source documents every month, not tidied up once a year before the auditor arrives. Where MFRS treatment gets complicated, on revenue recognition or lease accounting for instance, we flag it early rather than leaving it for year end.</p>
   </div>
@@ -314,7 +314,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';

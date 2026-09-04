@@ -233,7 +233,7 @@
 </section>
 <section class="pad">
   <div class="wrap svc-detail-body">
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Structured close calendar and checklist</li><li>Full account reconciliation each period</li><li>Finalized close package on a fixed date</li></ul>
     <p>A close process without a fixed calendar tends to drift later every month, and the numbers lose reliability along with the timeline. We run a structured close with clear ownership at each step, so the schedule holds.</p><p>Every account is reconciled against supporting documentation, and every material variance is explained before the close is considered final.</p>
     <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin:34px 0 6px;">How it works</h2>
@@ -328,7 +328,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';

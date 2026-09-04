@@ -216,7 +216,7 @@
 <section class="pad">
   <div class="wrap svc-detail-body">
     
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What's included</h2>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:22px; margin-bottom:16px;">What is included</h2>
     <ul class="svc-detail-list"><li>Market entry and expansion strategy</li><li>Operating model and org design review</li><li>Growth planning and scenario modelling</li></ul>
     <p>Most engagements start with a working session mapping where the business actually stands today, not where the deck says it stands. From there we build the plan together, with checkpoints along the way so strategy gets tested against real numbers before it gets locked in.</p>
   </div>
@@ -314,7 +314,7 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we've received your message and will get back to you shortly.";
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
             statusEl.className = 'form-status success';
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';
