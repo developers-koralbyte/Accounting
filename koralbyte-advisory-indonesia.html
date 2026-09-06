@@ -109,6 +109,14 @@
   .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
   .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
   .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
+  .guarantee-banner{ background:var(--paper-2); border-left:4px solid var(--coral); border-radius:12px; padding:32px 36px; display:flex; flex-direction:column; gap:16px; }
+  @media(max-width:640px){ .guarantee-banner{ padding:24px 22px; } }
+  .guarantee-text{ font-family:var(--font-display); font-weight:600; font-size:clamp(17px,2.1vw,21px); line-height:1.4; max-width:60ch; margin:0; }
+  .cta-strip{ padding:36px 0; border-top:1px solid rgba(15,23,42,.08); border-bottom:1px solid rgba(15,23,42,.08); background:var(--white); }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+  .cta-strip p{ font-family:var(--font-display); font-weight:600; font-size:clamp(16px,2vw,19px); margin:0; max-width:38ch; }
+  .cta-strip .btn-row{ margin:0; }
+  .flex-note{ font-size:13.5px; color:var(--ink-soft-light); margin-top:14px; max-width:60ch; }
   .info-box p.info-source{ margin-top:8px; font-size:11px; color:var(--steel); font-style:italic; }
 
   .whatsapp-float{ position:fixed; right:22px; bottom:22px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .2s ease, box-shadow .2s ease; }
@@ -214,6 +222,15 @@
     <div class="svc-hero-photo"><img src="https://images.unsplash.com/photo-1555899434-94d1368aa7af?auto=format&fit=crop&q=80&w=1200" alt="Indonesia skyline"></div>
   </div>
 </section>
+<section class="pad" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="guarantee-banner">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>OUR COMMITMENT</div>
+      <p class="guarantee-text">We respond to every question within one business day, directly from the person running your account, not a ticket queue.</p>
+      <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+    </div>
+  </div>
+</section>
 <section class="pad">
   <div class="wrap">
     <div class="cat-block" id="market-entry"><h2>Market Entry</h2><div class="svc-card">
@@ -258,7 +275,20 @@
               
               <ul><li>Legal employment without a local entity</li><li>Contracts, payroll, and tax withholding handled</li><li>Typically up to 60% lower cost than running HR in-house</li></ul>
               <a class="more" href="koralbyte-indonesia-employer-of-record-eor.html">Learn more &rarr;</a>
-            </div></div><div class="cat-block" id="accounting"><h2>Accounting</h2><div class="svc-card">
+            </div></div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Not sure where your finance function actually stands?</p>
+    <div class="btn-row"><a href="koral-advisory-readiness-check.html" class="btn filled">Try the Readiness Check</a></div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cat-block" id="accounting"><h2>Accounting</h2><div class="svc-card">
               <h3>Accounting & Bookkeeping</h3>
               <p>Monthly bookkeeping on QuickBooks, Xero, or your existing journal system, kept current and audit-ready. We reconcile accounts, prepare management reports, and make sure your books are ready whenever a filing, investor update, or audit requires them.</p>
               
@@ -324,7 +354,20 @@
               
               <ul><li>Ready-to-use physical office space</li><li>Flexible lease terms</li><li>Business address and reception support</li></ul>
               <a class="more" href="koralbyte-indonesia-serviced-offices.html">Learn more &rarr;</a>
-            </div></div><div class="cat-block" id="visas-immigration"><h2>Visas & Immigration</h2><div class="svc-card">
+            </div></div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Ready to talk through what your business needs in Indonesia?</p>
+    <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cat-block" id="visas-immigration"><h2>Visas & Immigration</h2><div class="svc-card">
               <h3>Social Visa (Social Budaya)</h3>
               <p>For extended personal or cultural visits to Indonesia that fall outside standard tourist visa terms, with a defined application process and validity period.</p>
               

@@ -112,6 +112,14 @@
   .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
   .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
   .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
+  .guarantee-banner{ background:var(--paper-2); border-left:4px solid var(--coral); border-radius:12px; padding:32px 36px; display:flex; flex-direction:column; gap:16px; }
+  @media(max-width:640px){ .guarantee-banner{ padding:24px 22px; } }
+  .guarantee-text{ font-family:var(--font-display); font-weight:600; font-size:clamp(17px,2.1vw,21px); line-height:1.4; max-width:60ch; margin:0; }
+  .cta-strip{ padding:36px 0; border-top:1px solid rgba(15,23,42,.08); border-bottom:1px solid rgba(15,23,42,.08); background:var(--white); }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+  .cta-strip p{ font-family:var(--font-display); font-weight:600; font-size:clamp(16px,2vw,19px); margin:0; max-width:38ch; }
+  .cta-strip .btn-row{ margin:0; }
+  .flex-note{ font-size:13.5px; color:var(--ink-soft-light); margin-top:14px; max-width:60ch; }
   .info-box p.info-source{ margin-top:8px; font-size:11px; color:var(--steel); font-style:italic; }
 
   .whatsapp-float{ position:fixed; right:22px; bottom:22px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .2s ease, box-shadow .2s ease; }
@@ -232,6 +240,15 @@
     <div class="svc-hero-photo"><img src="https://images.unsplash.com/photo-1503614472-8c93d56e92ce?auto=format&fit=crop&q=80&w=1200" alt="Canada skyline"></div>
   </div>
 </section>
+<section class="pad" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="guarantee-banner">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>OUR COMMITMENT</div>
+      <p class="guarantee-text">We respond to every question within one business day, directly from the person running your account, not a ticket queue.</p>
+      <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+    </div>
+  </div>
+</section>
 <section class="pad">
   <div class="wrap">
     <div class="cat-block" id="cfo-finance-leadership"><h2>CFO & Finance Leadership</h2><div class="svc-card">
@@ -259,7 +276,20 @@
               <p>Inventory accounting that keeps pace with cross-border shipping, multiple warehouses, and the landed costs that come with both.</p>
               <ul><li>Landed cost calculation across CAD and USD</li><li>Inventory valuation and reconciliation</li><li>Warehouse and 3PL tracking support</li></ul>
               <a class="more" href="koralbyte-canada-inventory-order-management-accounting.html">Learn more &rarr;</a>
-            </div></div><div class="cat-block" id="core-accounting-bookkeeping"><h2>Core Accounting & Bookkeeping</h2><div class="svc-card">
+            </div></div>
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Not sure where your finance function actually stands?</p>
+    <div class="btn-row"><a href="koral-advisory-readiness-check.html" class="btn filled">Try the Readiness Check</a></div>
+  </div>
+</section>
+
+<section class="pad">
+  <div class="wrap">
+    <div class="cat-block" id="core-accounting-bookkeeping"><h2>Core Accounting & Bookkeeping</h2><div class="svc-card">
               <h3>Month-End Close</h3>
               <p>A disciplined month-end close process that produces reliable numbers on a predictable schedule, every month.</p>
               <ul><li>Structured close calendar and checklist</li><li>Full account reconciliation each period</li><li>Finalized close package on a fixed date</li></ul>
@@ -303,8 +333,17 @@
     <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3.2vw,32px); text-align:center; margin:14px auto 8px; max-width:24ch;">Staffing tiers built to scale with you</h2>
     <p style="text-align:center; color:var(--ink-soft-light); max-width:60ch; margin:0 auto; font-size:14.5px;">Every tier includes a dedicated accountant embedded in your business. Move up a tier as your books, your channels, and your reporting needs get more complex.</p>
     <div class="pricing-grid"><div class="price-card"><h3>Junior Accountant</h3><div class="price-amount">$1,600/mo</div><div class="price-alt">or $15/hr</div><ul><li>Day-to-day bookkeeping and data entry</li><li>Bank and platform reconciliation</li><li>Accounts payable processing</li></ul><button type="button" class="btn price-book" data-message="I am interested in the Junior Accountant plan ($1,600/mo).">Book Now</button></div><div class="price-card popular"><span class="price-tag">Popular</span><h3>Accountant</h3><div class="price-amount">$2,500/mo</div><div class="price-alt">or $20/hr</div><ul><li>Full-cycle bookkeeping and month-end support</li><li>AR/AP management and aging reports</li><li>Financial statement preparation</li></ul><button type="button" class="btn filled price-book" data-message="I am interested in the Accountant plan ($2,500/mo).">Book Now</button></div><div class="price-card"><span class="price-tag">Advanced</span><h3>Senior Accountant</h3><div class="price-amount">$4,200/mo</div><div class="price-alt">or $25/hr</div><ul><li>Month-end close ownership</li><li>Revenue recognition and KPI reporting</li><li>Systems and process improvement</li></ul><button type="button" class="btn price-book" data-message="I am interested in the Senior Accountant plan ($4,200/mo).">Book Now</button></div><div class="price-card"><span class="price-tag">Enterprise</span><h3>Account Manager</h3><div class="price-amount">Let Us Talk</div><div class="price-alt">custom scope & rate</div><ul><li>Dedicated account leadership</li><li>Fractional CFO-level oversight</li><li>Custom reporting and team scaling</li></ul><button type="button" class="btn price-book" data-message="I would like to schedule a discovery call to discuss Account Manager-level support for my business.">Schedule a Discovery Call</button></div></div>
+    <p class="flex-note" style="text-align:center; margin:24px auto 0;">No long-term contracts. Engagements run month-to-month, so you can move between tiers, scale up, scale down, or step away as your needs change.</p>
   </div>
 </section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Ready to talk through what your business needs in Canada?</p>
+    <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+  </div>
+</section>
+
 <section class="cta" id="contact">
   <div class="wrap">
     <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Canada</div>

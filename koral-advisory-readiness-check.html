@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png">
+<meta name="description" content="A free six-question diagnostic that scores how ready your finance function actually is, covering bookkeeping, monthly close, reporting, entity structure, and compliance ownership.">
+<link rel="canonical" href="https://www.koraladvisory.com/koral-advisory-readiness-check.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Koral Advisory">
+<meta property="og:title" content="Koral Advisory | Finance Readiness Check">
+<meta property="og:description" content="A free six-question diagnostic that scores how ready your finance function actually is, covering bookkeeping, monthly close, reporting, entity structure, and compliance ownership.">
+<meta property="og:url" content="https://www.koraladvisory.com/koral-advisory-readiness-check.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Koral Advisory | Finance Readiness Check">
+<meta name="twitter:description" content="A free six-question diagnostic that scores how ready your finance function actually is, covering bookkeeping, monthly close, reporting, entity structure, and compliance ownership.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&q=80&w=1200">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Finance Readiness Check", "url": "https://www.koraladvisory.com/koral-advisory-readiness-check.html", "description": "A free six-question diagnostic that scores how ready your finance function actually is, covering bookkeeping, monthly close, reporting, entity structure, and compliance ownership.", "isPartOf": {"@type": "WebSite", "name": "Koral Advisory", "url": "https://www.koraladvisory.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.koraladvisory.com/"}, {"@type": "ListItem", "position": 2, "name": "Finance Readiness Check", "item": "https://www.koraladvisory.com/koral-advisory-readiness-check.html"}]}</script>
+<title>Koral Advisory | Finance Readiness Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F172A; --ink-2:#1E293B; --paper:#F8FAFC; --paper-2:#E8ECF1;
+    --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
+    --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
+    --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
+  }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{ font-family:var(--font-body); background:var(--paper); color:var(--ink); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  a{ color:inherit; text-decoration:none; }
+  img{ display:block; max-width:100%; width:100%; height:100%; object-fit:cover; }
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+  @media(max-width:640px){ .wrap{padding:0 20px;} }
+  .eyebrow{ font-family:var(--font-mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; display:flex; align-items:center; gap:10px; color:var(--ink-soft-light); }
+  .eyebrow.on-dark{ color:var(--ink-soft-dark); }
+  .dot{ width:7px; height:7px; border-radius:50%; display:inline-block; background:var(--steel); }
+  header{ position:sticky; top:0; z-index:50; background:rgba(246,249,251,.92); backdrop-filter:blur(10px); border-bottom:1px solid rgba(15,23,42,.08); }
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding:20px 0; position:relative; }
+  .wordmark{ display:flex; align-items:center; margin-left:32px; }
+  .wordmark img{ display:block; height:32px; width:auto; }
+  @media(max-width:640px){ .wordmark{ margin-left:20px; } }
+  .navlinks{ display:flex; gap:34px; font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
+  .navlinks > li{ list-style:none; }
+  .navlinks a{ position:relative; padding-bottom:4px; opacity:.85; }
+  .navlinks a:hover{ opacity:1; }
+  .mega-item-row > a::after{ content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px; background:var(--coral); transform:scaleX(0); transform-origin:center; transition:transform .25s ease; }
+  .mega-item-row > a:hover::after, .mega-item:focus-within .mega-item-row > a::after{ transform:scaleX(1); }
+  @media(max-width:1050px){ .navlinks{display:none;} }
+  .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
+  .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
+  .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
+  .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
+  .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
+  .mega-item{ position:relative; }
+  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-panel::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
+  .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
+  .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
+  .mega-cat ul{ list-style:none; }
+  .mega-cat li{ margin-bottom:5px; }
+  .mega-cat a{ font-size:12.5px; color:var(--ink-soft-light); }
+  .mega-cat a:hover{ color:var(--steel); }
+  .mega-viewall{ grid-column:1/-1; margin-top:6px; padding-top:10px; border-top:1px solid rgba(15,23,42,.08); }
+  .mega-viewall a{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--coral); }
+  .hero{ position:relative; padding:90px 0 64px; overflow:hidden; background:var(--ink); color:var(--white); }
+  .mesh{ position:absolute; inset:0; z-index:0; overflow:hidden; }
+  .blob{ position:absolute; border-radius:50%; filter:blur(100px); opacity:.3; }
+  .b1{ width:420px; height:420px; background:var(--steel); top:-140px; left:-100px; }
+  .b2{ width:380px; height:380px; background:var(--sky); bottom:-140px; right:-100px; }
+  .hero-inner{ position:relative; z-index:1; max-width:760px; }
+  .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(30px, 4.4vw, 46px); line-height:1.12; margin:16px 0 16px; }
+  .hero p.sub{ font-size:15.5px; line-height:1.6; color:var(--ink-soft-dark); max-width:60ch; }
+  .crumb{ font-family:var(--font-mono); font-size:10.5px; color:var(--ink-soft-dark); margin-bottom:6px; }
+  .crumb a{ text-decoration:underline; }
+  section.pad{ padding:64px 0; }
+  .cta{ padding:90px 0; text-align:center; background:var(--paper-2); }
+  .cta h2{ font-family:var(--font-display); font-weight:600; font-size:clamp(26px,3.6vw,38px); margin:14px auto 28px; max-width:20ch; }
+  .cta .btn-row{ justify-content:center; }
+  footer{ background:var(--ink); color:rgba(255,255,255,.5); padding:36px 0; font-family:var(--font-mono); font-size:11px; letter-spacing:.05em; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+
+  .quiz-card{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:36px 40px; scroll-margin-top:100px; }
+  @media(max-width:640px){ .quiz-card{ padding:26px 22px; } }
+  .quiz-progress{ height:6px; border-radius:100px; background:var(--paper-2); overflow:hidden; margin-bottom:10px; }
+  .quiz-progress-bar{ height:100%; background:var(--coral); width:16.66%; transition:width .3s ease; }
+  .quiz-step-label{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--steel); margin-bottom:22px; }
+  .quiz-question h3{ font-family:var(--font-display); font-weight:600; font-size:clamp(18px,2.4vw,22px); margin-bottom:20px; line-height:1.35; }
+  .quiz-options{ display:flex; flex-direction:column; gap:10px; }
+  .quiz-option{ display:flex; align-items:center; gap:12px; padding:14px 16px; border:1.5px solid rgba(15,23,42,.12); border-radius:10px; cursor:pointer; transition:border-color .2s ease, background .2s ease; font-size:14.5px; }
+  .quiz-option:hover{ border-color:var(--coral); }
+  .quiz-option input{ accent-color:var(--coral); width:16px; height:16px; flex-shrink:0; }
+  .quiz-option.selected{ border-color:var(--coral); background:rgba(3,105,161,.05); }
+  .quiz-nav{ display:flex; justify-content:space-between; margin-top:28px; }
+  .quiz-nav .btn{ cursor:pointer; }
+  .quiz-nav .btn:disabled{ opacity:.4; cursor:not-allowed; }
+  .quiz-nav .btn:disabled:hover{ transform:none; box-shadow:none; }
+  .quiz-score-tier{ font-family:var(--font-display); font-weight:700; font-size:clamp(28px,4vw,38px); color:var(--coral); margin:14px 0 12px; }
+  .quiz-score-explain{ font-size:15px; line-height:1.7; color:var(--ink-soft-light); max-width:60ch; margin-bottom:28px; }
+  .quiz-email-form{ max-width:440px; }
+  .quiz-email-form label{ display:block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft-light); margin-bottom:16px; }
+  .quiz-email-form input{ display:block; width:100%; margin-top:6px; padding:11px 13px; border:1px solid rgba(15,23,42,.15); border-radius:8px; font-family:var(--font-body); font-size:14px; color:var(--ink); background:var(--paper); }
+  .quiz-email-form input:focus{ outline:2px solid var(--coral); outline-offset:1px; }
+  .quiz-email-form button[type="submit"]{ border:none; cursor:pointer; }
+  .quiz-email-form button[type="submit"]:disabled{ opacity:.6; cursor:not-allowed; }
+
+  .whatsapp-float{ position:fixed; right:22px; bottom:22px; z-index:999; width:58px; height:58px; border-radius:50%; background:#25D366; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 24px rgba(0,0,0,.25); transition:transform .2s ease, box-shadow .2s ease; }
+  .whatsapp-float:hover{ transform:translateY(-3px) scale(1.05); box-shadow:0 12px 28px rgba(0,0,0,.3); }
+  .whatsapp-float svg{ width:30px; height:30px; }
+  @media(max-width:640px){ .whatsapp-float{ right:16px; bottom:16px; width:52px; height:52px; } .whatsapp-float svg{ width:27px; height:27px; } }
+  @media(prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } }
+
+  .contact-form{ max-width:640px; margin:40px auto 0; text-align:left; background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:32px; }
+  .contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media(max-width:600px){ .contact-form .form-row{ grid-template-columns:1fr; } }
+  .contact-form label{ display:block; font-family:var(--font-mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft-light); margin-bottom:16px; }
+  .contact-form input, .contact-form select, .contact-form textarea{ display:block; width:100%; margin-top:6px; padding:11px 13px; border:1px solid rgba(15,23,42,.15); border-radius:8px; font-family:var(--font-body); font-size:14px; color:var(--ink); background:var(--paper); }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{ outline:2px solid var(--coral); outline-offset:1px; }
+  .contact-form textarea{ resize:vertical; min-height:96px; }
+  .contact-form button[type="submit"]{ width:100%; justify-content:center; border:none; cursor:pointer; }
+  .contact-form button[type="submit"]:disabled{ opacity:.6; cursor:not-allowed; }
+  .form-status{ margin-top:14px; font-size:13.5px; text-align:center; min-height:1.4em; }
+  .form-status.success{ color:#15803d; }
+  .form-status.error{ color:#b91c1c; }
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-toggle{ display:none; background:none; border:none; cursor:pointer; padding:6px; color:var(--ink); }
+  .nav-toggle svg{ width:24px; height:24px; display:block; }
+  @media(max-width:1050px){ .nav-toggle{ display:flex; align-items:center; justify-content:center; } }
+  .mobile-nav-head{ display:none; }
+  .nav-close{ background:none; border:none; cursor:pointer; padding:6px; color:var(--white); }
+  .nav-close svg{ width:22px; height:22px; display:block; }
+  @media(max-width:1050px){
+    .navlinks{
+      display:none; position:fixed; inset:0; z-index:200; background:var(--ink);
+      flex-direction:column; overflow-y:auto; padding:16px 24px 40px; gap:0;
+    }
+    .navlinks.mobile-open{ display:flex; }
+    body.mobile-nav-locked{ overflow:hidden; }
+    /* header's backdrop-filter creates a containing block for position:fixed
+       descendants, which would shrink .navlinks to header's own box instead
+       of the full viewport -- suspend it while the mobile menu is open */
+    body.mobile-nav-locked header{ backdrop-filter:none; }
+    /* the floating WhatsApp button sits at z-index:999, above the menu's
+       z-index:200 -- keep it from floating on top of the full-screen nav */
+    body.mobile-nav-locked .whatsapp-float{ display:none; }
+    .mobile-nav-head{ display:flex; justify-content:flex-end; padding-bottom:6px; }
+    .navlinks > li{ border-bottom:1px solid rgba(255,255,255,.1); list-style:none; }
+    .navlinks > li:last-child{ border-bottom:none; }
+    .navlinks > li > a, .mega-item-row > a{ display:block; padding:18px 2px; font-size:13px; color:var(--white); opacity:1; }
+    .mega-item-row{ display:flex; align-items:center; justify-content:space-between; }
+    .mega-item-row > a{ flex:1; }
+    .mega-toggle{ background:none; border:none; cursor:pointer; padding:14px 2px; color:var(--ink-soft-dark); flex-shrink:0; }
+    .mega-toggle svg{ width:16px; height:16px; display:block; transition:transform .25s ease; }
+    .mega-item.mobile-open .mega-toggle svg{ transform:rotate(180deg); }
+    .mega-item-row > a::after{ display:none; }
+    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; }
+    .mega-panel::before{ display:none; }
+    .mega-item.mobile-open .mega-panel{ display:block; }
+    .mega-cats{ grid-template-columns:1fr; gap:16px; }
+    .mega-cat h5{ color:var(--sky); }
+    .mega-cat a{ color:var(--ink-soft-dark); padding:6px 0; display:block; font-size:13.5px; }
+    .mega-viewall{ border-top-color:rgba(255,255,255,.12); }
+    .mega-viewall a{ color:var(--sky); }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="koral-advisory-home.html" class="wordmark"><img src="images/logo-koral-advisory-transparent.png" alt="Koral Advisory" width="1050" height="436"></a>
+    <ul class="navlinks">
+      <li class="mobile-nav-head"><button type="button" class="nav-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="6" y1="18" x2="18" y2="6"/></svg></button></li>
+      <li class="mega-item" tabindex="0">
+      <div class="mega-item-row"><a href="koralbyte-advisory-malaysia.html">Malaysia</a><button type="button" class="mega-toggle" aria-label="Expand Malaysia services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Advisory</h5><ul><li><a href="koralbyte-advisory-malaysia.html#advisory">Business Consulting</a></li><li><a href="koralbyte-advisory-malaysia.html#advisory">Fractional CFO Services</a></li></ul></div><div class="mega-cat"><h5>Formation</h5><ul><li><a href="koralbyte-advisory-malaysia.html#formation">Company Registration</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Company Secretary</a></li><li><a href="koralbyte-advisory-malaysia.html#corporate-governance">Business Licenses</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-malaysia.html#accounting">Bookkeeping & Accounting Compliance</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-malaysia.html#tax">Tax Compliance</a></li></ul></div><div class="mega-cat"><h5>HR Outsourcing</h5><ul><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">Payroll Outsourcing</a></li><li><a href="koralbyte-advisory-malaysia.html#hr-outsourcing">PEO / Employer of Record</a></li></ul></div><div class="mega-cat"><h5>Immigration & Visa</h5><ul><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Employment Pass (MDEC)</a></li><li><a href="koralbyte-advisory-malaysia.html#immigration-visa">Residence Pass Talent (Talent Corp)</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-malaysia.html">View all Malaysia services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <div class="mega-item-row"><a href="koralbyte-advisory-indonesia.html">Indonesia</a><button type="button" class="mega-toggle" aria-label="Expand Indonesia services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Market Entry</h5><ul><li><a href="koralbyte-advisory-indonesia.html#market-entry">Foreign Investment Company (PT PMA)</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Local PT Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Off-the-Shelf Company</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Representative Office</a></li><li><a href="koralbyte-advisory-indonesia.html#market-entry">Nominee Shareholder</a></li></ul></div><div class="mega-cat"><h5>Payroll</h5><ul><li><a href="koralbyte-advisory-indonesia.html#payroll">Payroll Services</a></li><li><a href="koralbyte-advisory-indonesia.html#payroll">Employer of Record (EOR)</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-indonesia.html#accounting">Accounting & Bookkeeping</a></li></ul></div><div class="mega-cat"><h5>Taxation</h5><ul><li><a href="koralbyte-advisory-indonesia.html#taxation">Corporate Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Personal Tax Consultation & Filing</a></li><li><a href="koralbyte-advisory-indonesia.html#taxation">Monthly Compliance</a></li></ul></div><div class="mega-cat"><h5>Business Services</h5><ul><li><a href="koralbyte-advisory-indonesia.html#business-services">External Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Internal Audit</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Financial Due Diligence</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Agreed Upon Procedures</a></li><li><a href="koralbyte-advisory-indonesia.html#business-services">Business Advice & Consultation</a></li></ul></div><div class="mega-cat"><h5>Virtual & Serviced Offices</h5><ul><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Virtual Office</a></li><li><a href="koralbyte-advisory-indonesia.html#virtual-serviced-offices">Serviced Offices</a></li></ul></div><div class="mega-cat"><h5>Visas & Immigration</h5><ul><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Social Visa (Social Budaya)</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Spouse Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Investor KITAS</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">Business Visa</a></li><li><a href="koralbyte-advisory-indonesia.html#visas-immigration">KITAS & Work Permit</a></li></ul></div><div class="mega-cat"><h5>CFO & Corporate Secretary</h5><ul><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Virtual CFO</a></li><li><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary">Corporate Secretary Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-indonesia.html">View all Indonesia services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <div class="mega-item-row"><a href="koralbyte-advisory-uae.html">UAE</a><button type="button" class="mega-toggle" aria-label="Expand UAE services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-uae.html#company-formation">Mainland Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Free Zone Company Setup</a></li><li><a href="koralbyte-advisory-uae.html#company-formation">Offshore Company Formation</a></li></ul></div><div class="mega-cat"><h5>Corporate Governance</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-governance">PRO Services & Government Liaison</a></li><li><a href="koralbyte-advisory-uae.html#corporate-governance">Trade Licence Renewal</a></li></ul></div><div class="mega-cat"><h5>Accounting</h5><ul><li><a href="koralbyte-advisory-uae.html#accounting">Bookkeeping & Financial Reporting</a></li></ul></div><div class="mega-cat"><h5>Tax</h5><ul><li><a href="koralbyte-advisory-uae.html#tax">Corporate Tax Registration & Filing</a></li><li><a href="koralbyte-advisory-uae.html#tax">VAT Registration & Filing</a></li></ul></div><div class="mega-cat"><h5>Audit & Assurance</h5><ul><li><a href="koralbyte-advisory-uae.html#audit-assurance">Statutory Audit</a></li><li><a href="koralbyte-advisory-uae.html#audit-assurance">Internal Audit</a></li></ul></div><div class="mega-cat"><h5>HR & Payroll</h5><ul><li><a href="koralbyte-advisory-uae.html#hr-payroll">Payroll Outsourcing</a></li></ul></div><div class="mega-cat"><h5>Visa & Immigration</h5><ul><li><a href="koralbyte-advisory-uae.html#visa-immigration">Investor & Golden Visa</a></li><li><a href="koralbyte-advisory-uae.html#visa-immigration">Employment Visa & Establishment Card</a></li></ul></div><div class="mega-cat"><h5>Corporate Advisory</h5><ul><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Feasibility Study</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Business Valuation</a></li><li><a href="koralbyte-advisory-uae.html#corporate-advisory">Fractional CFO Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-uae.html">View all UAE services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <div class="mega-item-row"><a href="koralbyte-advisory-united-states.html">United States</a><button type="button" class="mega-toggle" aria-label="Expand United States services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-united-states.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-united-states.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-united-states.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-united-states.html#company-formation">Delaware/LLC Incorporation</a></li><li><a href="koralbyte-advisory-united-states.html#company-formation">Registered Agent Services</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-united-states.html">View all United States services &rarr;</a></div></div></div>
+    </li>
+      <li class="mega-item" tabindex="0">
+      <div class="mega-item-row"><a href="koralbyte-advisory-canada.html">Canada</a><button type="button" class="mega-toggle" aria-label="Expand Canada services" aria-expanded="false"><svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></button></div>
+      <div class="mega-panel"><div class="mega-cats"><div class="mega-cat"><h5>CFO & Finance Leadership</h5><ul><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Fractional CFO Services</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Financial Strategy & Board Reporting</a></li><li><a href="koralbyte-advisory-canada.html#cfo-finance-leadership">Capital Raise & Investor Readiness</a></li></ul></div><div class="mega-cat"><h5>E-commerce & Marketplace Accounting</h5><ul><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Shopify & Marketplace Accounting</a></li><li><a href="koralbyte-advisory-canada.html#ecommerce-marketplace-accounting">Inventory & Order Management Accounting</a></li></ul></div><div class="mega-cat"><h5>Core Accounting & Bookkeeping</h5><ul><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Month-End Close</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Revenue Recognition & SaaS Metrics</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Financial Cleanup & Catch-Up Bookkeeping</a></li><li><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping">Accounts Receivable & Payable Management</a></li></ul></div><div class="mega-cat"><h5>Systems & Reporting</h5><ul><li><a href="koralbyte-advisory-canada.html#systems-reporting">NetSuite Implementation & Support</a></li><li><a href="koralbyte-advisory-canada.html#systems-reporting">KPI & Management Reporting</a></li></ul></div><div class="mega-cat"><h5>Company Formation</h5><ul><li><a href="koralbyte-advisory-canada.html#company-formation">Federal/Provincial Incorporation</a></li></ul></div><div class="mega-viewall"><a href="koralbyte-advisory-canada.html">View all Canada services &rarr;</a></div></div></div>
+    </li>
+      <li><a href="koral-advisory-news.html">News &amp; Insights</a></li>
+      <li><a href="koral-advisory-about.html">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions"><a href="#contact" class="btn filled">Talk to Us</a><button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button></div>
+  </div>
+</header>
+<section class="hero">
+  <div class="mesh"><div class="blob b1"></div><div class="blob b2"></div></div>
+  <div class="wrap hero-inner">
+    <div class="crumb"><a href="koral-advisory-home.html">Advisory Services</a> / Finance Readiness Check</div>
+    <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>FREE DIAGNOSTIC</div>
+    <h1>How ready is your finance function, really?</h1>
+    <p class="sub">Six questions on how your bookkeeping, monthly close, reporting, and compliance actually work today. Answer honestly and get a clear, specific read on where you stand, plus what to fix first.</p>
+  </div>
+</section>
+<section class="pad">
+  <div class="wrap" style="max-width:720px;">
+    <div class="quiz-card" id="quiz-card">
+      <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-progress-bar"></div></div>
+      <p class="quiz-step-label" id="quiz-step-label">Question 1 of 6</p>
+
+      <div class="quiz-question" data-q="0">
+        <h3>How is your bookkeeping currently handled?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q0" value="4"><span>In-house, with a dedicated finance hire</span></label>
+          <label class="quiz-option"><input type="radio" name="q0" value="3"><span>Outsourced to a bookkeeper or accounting firm</span></label>
+          <label class="quiz-option"><input type="radio" name="q0" value="2"><span>Handled inconsistently, by whoever has time</span></label>
+          <label class="quiz-option"><input type="radio" name="q0" value="1"><span>Not sure</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-q="1" hidden>
+        <h3>How long does your monthly close typically take?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q1" value="4"><span>Within 5 business days</span></label>
+          <label class="quiz-option"><input type="radio" name="q1" value="3"><span>Between 6 and 10 business days</span></label>
+          <label class="quiz-option"><input type="radio" name="q1" value="2"><span>More than 10 business days</span></label>
+          <label class="quiz-option"><input type="radio" name="q1" value="1"><span>We do not have a defined close process</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-q="2" hidden>
+        <h3>Do you have a formal monthly management report?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q2" value="4"><span>Yes, produced and reviewed on a set schedule every month</span></label>
+          <label class="quiz-option"><input type="radio" name="q2" value="2"><span>Something exists, but it is inconsistent or often late</span></label>
+          <label class="quiz-option"><input type="radio" name="q2" value="1"><span>No formal report exists</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-q="3" hidden>
+        <h3>Is your entity structure set up correctly for where you actually operate and raise capital?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q3" value="4"><span>Yes, reviewed recently and it fits how we operate today</span></label>
+          <label class="quiz-option"><input type="radio" name="q3" value="2"><span>It was correct at setup, but we have grown or changed markets since</span></label>
+          <label class="quiz-option"><input type="radio" name="q3" value="1"><span>Not sure</span></label>
+          <label class="quiz-option"><input type="radio" name="q3" value="1"><span>No, we already know it needs to change</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-q="4" hidden>
+        <h3>Do you have a dedicated person or team responsible for compliance deadlines?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q4" value="4"><span>Yes, a dedicated person or team owns this</span></label>
+          <label class="quiz-option"><input type="radio" name="q4" value="3"><span>Yes, but it is one of several responsibilities for that person</span></label>
+          <label class="quiz-option"><input type="radio" name="q4" value="1"><span>No one owns this specifically</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-question" data-q="5" hidden>
+        <h3>Are you preparing for, or have you completed, a capital raise in the last 12 months?</h3>
+        <div class="quiz-options">
+          <label class="quiz-option"><input type="radio" name="q5" value="raising"><span>Yes, actively preparing for one now</span></label>
+          <label class="quiz-option"><input type="radio" name="q5" value="completed"><span>Yes, completed one in the last 12 months</span></label>
+          <label class="quiz-option"><input type="radio" name="q5" value="none"><span>Not currently</span></label>
+          <label class="quiz-option"><input type="radio" name="q5" value="unsure"><span>Not sure</span></label>
+        </div>
+      </div>
+
+      <div class="quiz-nav">
+        <button type="button" class="btn" id="quiz-back" disabled>Back</button>
+        <button type="button" class="btn filled" id="quiz-next" disabled>Next</button>
+      </div>
+    </div>
+
+    <div class="quiz-card" id="quiz-result" hidden>
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>YOUR RESULT</div>
+      <div class="quiz-score-tier" id="quiz-tier">Developing</div>
+      <p class="quiz-score-explain" id="quiz-explain"></p>
+      <form class="quiz-email-form" id="quiz-email-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="fadf68e3-fb60-47f9-8ebd-bc38d1a28099">
+        <input type="hidden" name="subject" value="Finance Readiness Check Result">
+        <input type="hidden" name="result_tier" id="quiz-tier-hidden" value="">
+        <input type="hidden" name="result_score" id="quiz-score-hidden" value="">
+        <label>Email your result to yourself
+          <input type="email" name="email" required placeholder="you@company.com">
+        </label>
+        <button type="submit" class="btn filled">Email Me My Result</button>
+        <div id="quiz-email-status" class="form-status" role="status" aria-live="polite"></div>
+      </form>
+      <div class="btn-row" style="margin-top:24px;"><a href="#contact" class="btn">Book a Discovery Call to Go Over Your Results</a></div>
+    </div>
+  </div>
+</section>
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>TALK TO THE TEAM</div>
+    <h2>Ready to talk through what your business needs?</h2>
+    <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+    <form class="contact-form reveal" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="fadf68e3-fb60-47f9-8ebd-bc38d1a28099">
+      <input type="hidden" name="subject" value="New Contact from Koral Advisory">
+      <div class="form-row">
+        <label>Full Name
+          <input type="text" name="name" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <div class="form-row">
+        <label>Company
+          <input type="text" name="company">
+        </label>
+        <label>Country
+          <select name="country" id="contact-country" required>
+            <option value="">Select country</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="UAE">UAE</option>
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+          </select>
+        </label>
+      </div>
+      <label>Services Needed
+        <select name="services_needed" id="contact-services" required>
+          <option value="">Select a country first</option>
+        </select>
+      </label>
+      <label>Message
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <button type="submit" class="btn filled">Send Message</button>
+      <div id="contact-form-status" class="form-status" role="status" aria-live="polite"></div>
+    </form>
+
+  </div>
+</section>
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span>&copy; KORAL ADVISORY</span>
+    <span>KUALA LUMPUR &middot; JAKARTA &middot; DUBAI &middot; NEW YORK &middot; TORONTO</span>
+  </div>
+</footer>
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+  revealEls.forEach(el=>io.observe(el));
+
+
+  (function(){
+    var serviceCategories = {
+      Malaysia: ["Advisory","Formation","Corporate Governance","Accounting","Tax","HR Outsourcing","Immigration & Visa"],
+      Indonesia: ["Market Entry","Payroll","Accounting","Taxation","Business Services","Virtual & Serviced Offices","Visas & Immigration","CFO & Corporate Secretary"],
+      UAE: ["Company Formation","Corporate Governance","Accounting","Tax","Audit & Assurance","HR & Payroll","Visa & Immigration","Corporate Advisory"],
+      "United States": ["CFO & Finance Leadership","E-commerce & Marketplace Accounting","Core Accounting & Bookkeeping","Systems & Reporting","Company Formation"],
+      Canada: ["CFO & Finance Leadership","E-commerce & Marketplace Accounting","Core Accounting & Bookkeeping","Systems & Reporting","Company Formation"]
+    };
+    var countrySelect = document.getElementById('contact-country');
+    var servicesSelect = document.getElementById('contact-services');
+    if (countrySelect && servicesSelect) {
+      countrySelect.addEventListener('change', function(){
+        var cats = serviceCategories[countrySelect.value] || [];
+        var opts = '<option value="">Select a service category</option>';
+        cats.forEach(function(c){ opts += '<option value="' + c + '">' + c + '</option>'; });
+        servicesSelect.innerHTML = opts;
+      });
+    }
+    var contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e){
+        e.preventDefault();
+        var statusEl = document.getElementById('contact-form-status');
+        var submitBtn = contactForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        statusEl.textContent = 'Sending...';
+        statusEl.className = 'form-status';
+        fetch(contactForm.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(contactForm)
+        }).then(function(res){ return res.json(); }).then(function(data){
+          if (data.success) {
+            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
+            statusEl.className = 'form-status success';
+            contactForm.reset();
+            servicesSelect.innerHTML = '<option value="">Select a country first</option>';
+          } else {
+            statusEl.textContent = data.message || 'Something went wrong. Please try again or reach us on WhatsApp.';
+            statusEl.className = 'form-status error';
+          }
+          submitBtn.disabled = false;
+        }).catch(function(){
+          statusEl.textContent = 'Something went wrong. Please try again or reach us on WhatsApp.';
+          statusEl.className = 'form-status error';
+          submitBtn.disabled = false;
+        });
+      });
+    }
+  })();
+
+  (function(){
+    var navToggle = document.querySelector('.nav-toggle');
+    var navClose = document.querySelector('.nav-close');
+    var navLinksEl = document.querySelector('.navlinks');
+    function openNav(){
+      if (!navLinksEl) return;
+      navLinksEl.classList.add('mobile-open');
+      document.body.classList.add('mobile-nav-locked');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeNav(){
+      if (!navLinksEl) return;
+      navLinksEl.classList.remove('mobile-open');
+      document.body.classList.remove('mobile-nav-locked');
+      if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+    }
+    if (navToggle) navToggle.addEventListener('click', openNav);
+    if (navClose) navClose.addEventListener('click', closeNav);
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeNav(); });
+    document.querySelectorAll('.mega-toggle').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.closest('.mega-item');
+        var isOpen = item.classList.toggle('mobile-open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+    document.querySelectorAll('.navlinks a').forEach(function(a){
+      a.addEventListener('click', function(){ closeNav(); });
+    });
+  })();
+
+  (function(){
+    var TOTAL = 6;
+    var current = 0;
+    var answers = {};
+    var quizCard = document.getElementById('quiz-card');
+    var resultCard = document.getElementById('quiz-result');
+    var questions = quizCard ? Array.prototype.slice.call(quizCard.querySelectorAll('.quiz-question')) : [];
+    var progressBar = document.getElementById('quiz-progress-bar');
+    var stepLabel = document.getElementById('quiz-step-label');
+    var backBtn = document.getElementById('quiz-back');
+    var nextBtn = document.getElementById('quiz-next');
+    if (!quizCard || !questions.length) return;
+
+    function currentChecked(idx){
+      return quizCard.querySelector('input[name="q' + idx + '"]:checked');
+    }
+
+    function showQuestion(idx){
+      questions.forEach(function(q){
+        q.hidden = parseInt(q.getAttribute('data-q'), 10) !== idx;
+      });
+      stepLabel.textContent = 'Question ' + (idx + 1) + ' of ' + TOTAL;
+      progressBar.style.width = (((idx + 1) / TOTAL) * 100) + '%';
+      backBtn.disabled = idx === 0;
+      nextBtn.disabled = !currentChecked(idx);
+      nextBtn.textContent = idx === TOTAL - 1 ? 'See My Results' : 'Next';
+    }
+
+    questions.forEach(function(q){
+      var idx = parseInt(q.getAttribute('data-q'), 10);
+      q.querySelectorAll('input[type="radio"]').forEach(function(input){
+        input.addEventListener('change', function(){
+          q.querySelectorAll('.quiz-option').forEach(function(opt){ opt.classList.remove('selected'); });
+          input.closest('.quiz-option').classList.add('selected');
+          if (idx === current) nextBtn.disabled = false;
+        });
+      });
+    });
+
+    backBtn.addEventListener('click', function(){
+      if (current > 0) {
+        current--;
+        showQuestion(current);
+      }
+    });
+
+    nextBtn.addEventListener('click', function(){
+      var checked = currentChecked(current);
+      if (!checked) return;
+      answers['q' + current] = checked.value;
+      if (current < TOTAL - 1) {
+        current++;
+        showQuestion(current);
+      } else {
+        showResult();
+      }
+    });
+
+    function showResult(){
+      var score = 0;
+      for (var i = 0; i < 5; i++) {
+        score += parseInt(answers['q' + i], 10) || 0;
+      }
+      var tier, explain;
+      if (score <= 9) {
+        tier = 'Foundational';
+        explain = 'Your finance function covers the basics, but there is no consistent system in place yet. This is common at your stage, and it is also exactly when small gaps, a late filing, an inconsistent close, start to compound. The highest-leverage next step is usually establishing one dedicated owner and one repeatable monthly process before adding anything else.';
+      } else if (score <= 15) {
+        tier = 'Developing';
+        explain = 'You have real structure in place. Some part of your finance function, likely the close, the reporting cadence, or the entity setup, would benefit from tightening before it gets tested by a lender, an investor, or a compliance deadline. You are closer to investor-ready than you might think.';
+      } else {
+        tier = 'Investor-Ready';
+        explain = "Your finance function looks like one that could hold up to real scrutiny: a lender's underwriting, an investor's due diligence, or a regulator's review. The work now is less about fixing gaps and more about maintaining the standard as you grow into new markets or bigger raises.";
+      }
+
+      var raiseNote = '';
+      if (answers.q5 === 'raising') {
+        raiseNote = ' Since you are actively preparing for a capital raise, closing any of these gaps now, rather than during due diligence, is worth prioritizing.';
+      } else if (answers.q5 === 'completed') {
+        raiseNote = ' Since you have raised in the last 12 months, keeping this standard consistent matters for reporting to your new investors.';
+      }
+
+      document.getElementById('quiz-tier').textContent = tier;
+      document.getElementById('quiz-explain').textContent = explain + raiseNote;
+      document.getElementById('quiz-tier-hidden').value = tier;
+      document.getElementById('quiz-score-hidden').value = score + ' out of 20 (' + tier + ')';
+
+      quizCard.hidden = true;
+      resultCard.hidden = false;
+      resultCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    showQuestion(0);
+  })();
+
+  (function(){
+    var emailForm = document.getElementById('quiz-email-form');
+    if (!emailForm) return;
+    emailForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var statusEl = document.getElementById('quiz-email-status');
+      var submitBtn = emailForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      statusEl.textContent = 'Sending...';
+      statusEl.className = 'form-status';
+      fetch(emailForm.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(emailForm)
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if (data.success) {
+          statusEl.textContent = 'Sent. Check your inbox for your result.';
+          statusEl.className = 'form-status success';
+        } else {
+          statusEl.textContent = data.message || 'Something went wrong. Please try again or reach us on WhatsApp.';
+          statusEl.className = 'form-status error';
+        }
+        submitBtn.disabled = false;
+      }).catch(function(){
+        statusEl.textContent = 'Something went wrong. Please try again or reach us on WhatsApp.';
+        statusEl.className = 'form-status error';
+        submitBtn.disabled = false;
+      });
+    });
+  })();
+</script>
+<a href="https://wa.me/60178769786" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="white" aria-hidden="true"><path d="M16.001 3C9.11 3 3.5 8.61 3.5 15.5c0 2.34.65 4.53 1.78 6.4L3 29l7.28-2.24a12.44 12.44 0 0 0 5.72 1.39h.01c6.9 0 12.5-5.61 12.5-12.5C28.51 8.61 22.9 3 16.001 3Zm0 22.75h-.01a10.3 10.3 0 0 1-5.24-1.44l-.38-.22-3.9 1.2 1.24-3.8-.25-.39a10.24 10.24 0 0 1-1.58-5.6c0-5.68 4.63-10.3 10.32-10.3 2.76 0 5.35 1.07 7.3 3.02a10.23 10.23 0 0 1 3.02 7.29c0 5.68-4.63 10.24-10.32 10.24Zm5.66-7.68c-.31-.16-1.83-.9-2.11-1.01-.28-.1-.49-.16-.69.16-.2.31-.79 1.01-.97 1.22-.18.2-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.53-.92-.82-1.53-1.83-1.72-2.14-.18-.31-.02-.48.14-.63.14-.14.31-.36.47-.55.16-.18.2-.31.31-.51.1-.2.05-.39-.02-.55-.08-.16-.69-1.66-.94-2.27-.25-.6-.5-.51-.69-.52h-.59c-.2 0-.51.08-.78.39-.27.31-1.02 1-1.02 2.43s1.05 2.82 1.19 3.02c.14.2 2.06 3.14 4.99 4.4.7.3 1.24.48 1.67.61.7.22 1.34.19 1.84.12.56-.08 1.83-.75 2.09-1.47.26-.72.26-1.34.18-1.47-.08-.13-.28-.2-.59-.36Z"/></svg>
+</a>
+</body>
+</html>

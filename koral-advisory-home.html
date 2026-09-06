@@ -126,6 +126,14 @@
   .info-box{ background:var(--paper-2); border-left:3px solid var(--coral); border-radius:8px; padding:20px 24px; margin:24px 0; }
   .info-box h4{ font-family:var(--font-display); font-size:14px; margin-bottom:8px; }
   .info-box p{ font-size:13.5px; line-height:1.65; color:var(--ink-soft-light); margin:0; }
+  .guarantee-banner{ background:var(--paper-2); border-left:4px solid var(--coral); border-radius:12px; padding:32px 36px; display:flex; flex-direction:column; gap:16px; }
+  @media(max-width:640px){ .guarantee-banner{ padding:24px 22px; } }
+  .guarantee-text{ font-family:var(--font-display); font-weight:600; font-size:clamp(17px,2.1vw,21px); line-height:1.4; max-width:60ch; margin:0; }
+  .cta-strip{ padding:36px 0; border-top:1px solid rgba(15,23,42,.08); border-bottom:1px solid rgba(15,23,42,.08); background:var(--white); }
+  .cta-strip .wrap{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px; }
+  .cta-strip p{ font-family:var(--font-display); font-weight:600; font-size:clamp(16px,2vw,19px); margin:0; max-width:38ch; }
+  .cta-strip .btn-row{ margin:0; }
+  .flex-note{ font-size:13.5px; color:var(--ink-soft-light); margin-top:14px; max-width:60ch; }
 
   .glance{ background:var(--paper-2); border-radius:18px; padding:36px 40px; }
   .glance-list{ display:grid; grid-template-columns:1fr; gap:6px 20px; margin-top:6px; }
@@ -298,6 +306,16 @@
   <div class="hero-strip"></div>
 </section>
 
+<section class="pad" style="padding:44px 0; background:var(--paper-2); border-bottom:1px solid rgba(15,23,42,.08);">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+    <div>
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>FREE DIAGNOSTIC</div>
+      <p style="font-family:var(--font-display); font-weight:600; font-size:clamp(18px,2.4vw,24px); margin:10px 0 0; max-width:46ch;">Not sure where your finance function actually stands? Take our free Finance Readiness Check for a clear picture of what to fix first.</p>
+    </div>
+    <a href="koral-advisory-readiness-check.html" class="btn filled">Try the Readiness Check</a>
+  </div>
+</section>
+
 <section class="marquee-section">
   <div class="wrap" style="margin-bottom:16px;">
     <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>THE STACK WE WORK INSIDE</div>
@@ -329,6 +347,15 @@
     </div>
   </div>
 </section>
+<section class="pad" style="padding-top:0;">
+  <div class="wrap">
+    <div class="guarantee-banner">
+      <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>OUR COMMITMENT</div>
+      <p class="guarantee-text">We respond to every question within one business day, directly from the person running your account, not a ticket queue.</p>
+      <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+    </div>
+  </div>
+</section>
 <section class="pad" id="glance">
   <div class="wrap">
     <div class="glance">
@@ -355,6 +382,13 @@
   </div>
 </section>
 
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Want a second opinion on where your books actually stand?</p>
+    <div class="btn-row"><a href="koral-advisory-readiness-check.html" class="btn filled">Try the Readiness Check</a></div>
+  </div>
+</section>
+
 <section class="pad trust-strip">
   <div class="wrap">
     <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>WHY ONE TEAM, NOT FIVE VENDORS</div>
@@ -364,8 +398,17 @@
       <div class="trust-stat"><div class="big">77</div><p>Services across those five markets, from first incorporation filing through investor-ready reporting, each delivered by people who own the outcome.</p></div>
       <div class="trust-stat"><div class="big">1</div><p>Point of contact. The finance lead who scopes your engagement is the one who shows up to your board meeting, not a rotating cast of handlers.</p></div>
     </div>
+    <p class="flex-note" style="color:var(--ink-soft-dark); text-align:center; margin:32px auto 0;">No long-term contracts. Engagements run month-to-month, so you can move between tiers, scale up, scale down, or step away as your needs change.</p>
   </div>
 </section>
+
+<section class="cta-strip">
+  <div class="wrap">
+    <p>Ready to talk through what your business needs?</p>
+    <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
+  </div>
+</section>
+
 <section class="pad" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="section-head">
