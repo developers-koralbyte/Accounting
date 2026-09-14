@@ -29,6 +29,7 @@
     --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
     --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
     --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
+    --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); --ease-drawer:cubic-bezier(.32,.72,0,1);
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
@@ -54,13 +55,16 @@
   @media(max-width:1050px){ .navlinks{display:none;} }
   .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
   .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
+  .btn:active{ transform:scale(.97); transition:transform 120ms ease-out; }
+  @media(prefers-reduced-motion: reduce){ .btn:active{ transform:none; } }
   .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
   .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .mega-item{ position:relative; }
-  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-panel{ position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-6px) scale(.97); transform-origin:top center; background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms; }
   .mega-panel::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
-  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0) scale(1); pointer-events:auto; transition:opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 0s; }
+  @media(prefers-reduced-motion: reduce){ .mega-panel{ transition:opacity 150ms ease, visibility 0s linear 150ms; transform:translateX(-50%) !important; } .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ transition:opacity 150ms ease, visibility 0s linear 0s; transform:translateX(-50%) !important; } }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
   .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
   .mega-cat ul{ list-style:none; }
@@ -86,6 +90,14 @@
   .hero-inner{ position:relative; z-index:1; padding:110px 0 90px; }
   @media(max-width:900px){ .hero-inner{ padding:80px 0 24px; } }
   .hero-text-col{ max-width:480px; }
+  .hero-text-col > *{ opacity:0; animation:hero-in 700ms var(--ease-out) forwards; }
+  .hero-text-col > *:nth-child(1){ animation-delay:80ms; }
+  .hero-text-col > *:nth-child(2){ animation-delay:160ms; }
+  .hero-text-col > *:nth-child(3){ animation-delay:240ms; }
+  .hero-text-col > *:nth-child(4){ animation-delay:320ms; }
+  @keyframes hero-in{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:translateY(0); } }
+  @keyframes hero-in-reduced{ from{ opacity:0; } to{ opacity:1; } }
+  @media(prefers-reduced-motion: reduce){ .hero-text-col > *{ animation:hero-in-reduced 300ms ease forwards; } }
   .hero h1{ font-family:var(--font-display); font-weight:600; font-size:clamp(28px, 3.6vw, 42px); line-height:1.15; margin:16px 0 16px; }
   @media(max-width:900px){ .hero h1{ font-size:clamp(28px,6vw,38px); } }
   .hero p.sub{ font-size:15px; line-height:1.6; color:var(--ink-soft-dark); max-width:48ch; }
@@ -159,6 +171,22 @@
   @media(max-width:640px){ .whatsapp-float{ right:16px; bottom:16px; width:52px; height:52px; } .whatsapp-float svg{ width:27px; height:27px; } }
   @media(prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } }
 
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media(prefers-reduced-motion: reduce){ .reveal{ transition:opacity 300ms ease; transform:none; } }
+  .trust-grid .reveal:nth-child(1){ transition-delay:0ms; }
+  .trust-grid .reveal:nth-child(2){ transition-delay:80ms; }
+  .trust-grid .reveal:nth-child(3){ transition-delay:160ms; }
+  .country-grid .reveal:nth-child(1){ transition-delay:0ms; }
+  .country-grid .reveal:nth-child(2){ transition-delay:60ms; }
+  .country-grid .reveal:nth-child(3){ transition-delay:120ms; }
+  .country-grid .reveal:nth-child(4){ transition-delay:180ms; }
+  .country-grid .reveal:nth-child(5){ transition-delay:240ms; }
+  .process .reveal:nth-child(1){ transition-delay:0ms; }
+  .process .reveal:nth-child(2){ transition-delay:60ms; }
+  .process .reveal:nth-child(3){ transition-delay:120ms; }
+  .process .reveal:nth-child(4){ transition-delay:180ms; }
+
   .contact-form{ max-width:640px; margin:40px auto 0; text-align:left; background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:32px; }
   .contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   @media(max-width:600px){ .contact-form .form-row{ grid-template-columns:1fr; } }
@@ -171,6 +199,10 @@
   .form-status{ margin-top:14px; font-size:13.5px; text-align:center; min-height:1.4em; }
   .form-status.success{ color:#15803d; }
   .form-status.error{ color:#b91c1c; }
+  .form-success-inline{ display:inline-flex; align-items:center; gap:6px; opacity:0; transform:scale(.9); transition:opacity 300ms var(--ease-out), transform 300ms var(--ease-out); }
+  .form-success-inline.in{ opacity:1; transform:scale(1); }
+  .form-success-inline svg{ width:16px; height:16px; flex-shrink:0; }
+  @media(prefers-reduced-motion: reduce){ .form-success-inline{ transition:opacity 200ms ease; transform:none; } }
 
   .marquee-section{ padding:40px 0; border-top:1px solid rgba(15,23,42,.06); border-bottom:1px solid rgba(15,23,42,.06); background:var(--white); }
   .marquee-rows{ position:relative; overflow:hidden; }
@@ -193,7 +225,9 @@
   .pillar-pill{ font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:9px 16px; border-radius:100px; border:1px solid rgba(15,23,42,.15); background:var(--white); cursor:pointer; transition:all .2s ease; }
   .pillar-pill:hover{ border-color:var(--coral); }
   .pillar-pill.active{ background:var(--ink); color:var(--white); border-color:var(--ink); }
-  .pillar-detail{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:26px 28px; margin-top:22px; min-height:158px; }
+  .pillar-detail{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:26px 28px; margin-top:22px; min-height:158px; transition:opacity 150ms ease-out, transform 150ms ease-out; }
+  .pillar-detail.is-updating{ opacity:0; transform:translateY(4px); }
+  @media(prefers-reduced-motion: reduce){ .pillar-detail.is-updating{ transform:none; } }
   .pillar-detail h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:8px; }
   .pillar-detail p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; }
   .pillar-avail-label{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--steel); margin-bottom:8px; display:block; }
@@ -225,10 +259,16 @@
   .nav-close svg{ width:22px; height:22px; display:block; }
   @media(max-width:1050px){
     .navlinks{
-      display:none; position:fixed; inset:0; z-index:200; background:var(--ink);
+      display:flex; position:fixed; inset:0; z-index:200; background:var(--ink);
       flex-direction:column; overflow-y:auto; padding:16px 24px 40px; gap:0;
+      opacity:0; visibility:hidden; pointer-events:none; transform:translateX(4%);
+      transition:opacity 260ms var(--ease-drawer), transform 260ms var(--ease-drawer), visibility 0s linear 260ms;
     }
-    .navlinks.mobile-open{ display:flex; }
+    .navlinks.mobile-open{ opacity:1; visibility:visible; pointer-events:auto; transform:translateX(0); transition:opacity 260ms var(--ease-drawer), transform 260ms var(--ease-drawer), visibility 0s linear 0s; }
+    @media(prefers-reduced-motion: reduce){
+      .navlinks{ transition:opacity 200ms ease, visibility 0s linear 200ms; transform:none; }
+      .navlinks.mobile-open{ transition:opacity 200ms ease, visibility 0s linear 0s; transform:none; }
+    }
     body.mobile-nav-locked{ overflow:hidden; }
     /* header's backdrop-filter creates a containing block for position:fixed
        descendants, which would shrink .navlinks to header's own box instead
@@ -247,7 +287,7 @@
     .mega-toggle svg{ width:16px; height:16px; display:block; transition:transform .25s ease; }
     .mega-item.mobile-open .mega-toggle svg{ transform:rotate(180deg); }
     .mega-item-row > a::after{ display:none; }
-    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; }
+    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; opacity:1; visibility:visible; pointer-events:auto; transition:none; }
     .mega-panel::before{ display:none; }
     .mega-item.mobile-open .mega-panel{ display:block; }
     .mega-cats{ grid-template-columns:1fr; gap:16px; }
@@ -307,7 +347,7 @@
 </section>
 
 <section class="pad" style="padding:44px 0; background:var(--paper-2); border-bottom:1px solid rgba(15,23,42,.08);">
-  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+  <div class="wrap reveal" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px;">
     <div>
       <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>FREE DIAGNOSTIC</div>
       <p style="font-family:var(--font-display); font-weight:600; font-size:clamp(18px,2.4vw,24px); margin:10px 0 0; max-width:46ch;">Not sure where your finance function actually stands? Take our free Finance Readiness Check for a clear picture of what to fix first.</p>
@@ -328,7 +368,7 @@
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span>OUR SERVICES</div>
     <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:12px 0 4px; max-width:22ch;">Six pillars, five markets, one team behind all of it.</h2>
-    <div class="services-hub">
+    <div class="services-hub reveal">
       <div>
         <div class="pillar-pills" id="pillar-pills"><button type="button" class="pillar-pill active" data-idx="0">CFO & Finance Leadership</button><button type="button" class="pillar-pill" data-idx="1">Company Formation</button><button type="button" class="pillar-pill" data-idx="2">Accounting & Bookkeeping</button><button type="button" class="pillar-pill" data-idx="3">Tax & Compliance</button><button type="button" class="pillar-pill" data-idx="4">HR, Payroll & Visas</button><button type="button" class="pillar-pill" data-idx="5">Governance & Reporting Systems</button></div>
         <div class="pillar-detail" id="pillar-detail">
@@ -349,7 +389,7 @@
 </section>
 <section class="pad" style="padding-top:0;">
   <div class="wrap">
-    <div class="guarantee-banner">
+    <div class="guarantee-banner reveal">
       <div class="eyebrow"><span class="dot" style="background:var(--coral);"></span>OUR COMMITMENT</div>
       <p class="guarantee-text">We respond to every question within one business day, directly from the person running your account, not a ticket queue.</p>
       <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
@@ -358,7 +398,7 @@
 </section>
 <section class="pad" id="glance">
   <div class="wrap">
-    <div class="glance">
+    <div class="glance reveal">
       <div class="eyebrow"><span class="dot"></span>AT A GLANCE</div>
       <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(22px,2.6vw,28px); margin:12px 0 4px;">Five markets. Every category covered.</h2>
       <div class="glance-list" style="grid-template-columns:repeat(5,1fr); display:grid;"><div>
@@ -383,7 +423,7 @@
 </section>
 
 <section class="cta-strip">
-  <div class="wrap">
+  <div class="wrap reveal">
     <p>Want a second opinion on where your books actually stand?</p>
     <div class="btn-row"><a href="koral-advisory-readiness-check.html" class="btn filled">Try the Readiness Check</a></div>
   </div>
@@ -394,16 +434,16 @@
     <div class="eyebrow on-dark"><span class="dot" style="background:var(--sky);"></span>WHY ONE TEAM, NOT FIVE VENDORS</div>
     <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:12px 0 0; max-width:26ch;">The same team from your first filing to your next board meeting.</h2>
     <div class="trust-grid">
-      <div class="trust-stat"><div class="big">5</div><p>Countries under one team, not five local firms handed off to separately. Malaysia, Indonesia, the UAE, the United States, and Canada.</p></div>
-      <div class="trust-stat"><div class="big">77</div><p>Services across those five markets, from first incorporation filing through investor-ready reporting, each delivered by people who own the outcome.</p></div>
-      <div class="trust-stat"><div class="big">1</div><p>Point of contact. The finance lead who scopes your engagement is the one who shows up to your board meeting, not a rotating cast of handlers.</p></div>
+      <div class="trust-stat reveal"><div class="big" data-target="5">5</div><p>Countries under one team, not five local firms handed off to separately. Malaysia, Indonesia, the UAE, the United States, and Canada.</p></div>
+      <div class="trust-stat reveal"><div class="big" data-target="77">77</div><p>Services across those five markets, from first incorporation filing through investor-ready reporting, each delivered by people who own the outcome.</p></div>
+      <div class="trust-stat reveal"><div class="big" data-target="1">1</div><p>Point of contact. The finance lead who scopes your engagement is the one who shows up to your board meeting, not a rotating cast of handlers.</p></div>
     </div>
     <p class="flex-note" style="color:var(--ink-soft-dark); text-align:center; margin:32px auto 0;">No long-term contracts. Engagements run month-to-month, so you can move between tiers, scale up, scale down, or step away as your needs change.</p>
   </div>
 </section>
 
 <section class="cta-strip">
-  <div class="wrap">
+  <div class="wrap reveal">
     <p>Ready to talk through what your business needs?</p>
     <div class="btn-row"><a href="#contact" class="btn filled">Book a Discovery Call</a></div>
   </div>
@@ -416,7 +456,7 @@
       <h2>Every market, its own service list.</h2>
     </div>
     <div class="country-grid" style="display:grid; grid-template-columns:repeat(5,1fr); gap:14px; max-width:100%;">
-      <a href="koralbyte-advisory-malaysia.html" class="country-card"><b>Malaysia</b><span>GROUP HQ</span></a><a href="koralbyte-advisory-indonesia.html" class="country-card"><b>Indonesia</b><span>REGIONAL OFFICE</span></a><a href="koralbyte-advisory-uae.html" class="country-card"><b>UAE</b><span>NEW MARKET</span></a><a href="koralbyte-advisory-united-states.html" class="country-card"><b>United States</b><span>NEW MARKET</span></a><a href="koralbyte-advisory-canada.html" class="country-card"><b>Canada</b><span>NEW MARKET</span></a>
+      <a href="koralbyte-advisory-malaysia.html" class="country-card reveal"><b>Malaysia</b><span>GROUP HQ</span></a><a href="koralbyte-advisory-indonesia.html" class="country-card reveal"><b>Indonesia</b><span>REGIONAL OFFICE</span></a><a href="koralbyte-advisory-uae.html" class="country-card reveal"><b>UAE</b><span>NEW MARKET</span></a><a href="koralbyte-advisory-united-states.html" class="country-card reveal"><b>United States</b><span>NEW MARKET</span></a><a href="koralbyte-advisory-canada.html" class="country-card reveal"><b>Canada</b><span>NEW MARKET</span></a>
     </div>
   </div>
 </section>
@@ -428,10 +468,10 @@
       <h2>From first call to full integration.</h2>
     </div>
     <div class="process">
-      <div class="step"><div class="num">01</div><h4>Discovery</h4><p>A conversation mapping your current state, gaps, and goals. No commitment, full candor about fit.</p></div>
-      <div class="step"><div class="num">02</div><h4>Diagnostic</h4><p>We assess your financial infrastructure, team, and compliance posture, then deliver a written findings report with prioritized recommendations.</p></div>
-      <div class="step"><div class="num">03</div><h4>Engagement Design</h4><p>We agree on scope, cadence, and outcomes. Flexible retainer or project-based, built around your stage and budget.</p></div>
-      <div class="step"><div class="num">04</div><h4>Embedded Execution</h4><p>We work as part of your leadership team, inside your tools and your meetings, accountable to your board and your business goals.</p></div>
+      <div class="step reveal"><div class="num">01</div><h4>Discovery</h4><p>A conversation mapping your current state, gaps, and goals. No commitment, full candor about fit.</p></div>
+      <div class="step reveal"><div class="num">02</div><h4>Diagnostic</h4><p>We assess your financial infrastructure, team, and compliance posture, then deliver a written findings report with prioritized recommendations.</p></div>
+      <div class="step reveal"><div class="num">03</div><h4>Engagement Design</h4><p>We agree on scope, cadence, and outcomes. Flexible retainer or project-based, built around your stage and budget.</p></div>
+      <div class="step reveal"><div class="num">04</div><h4>Embedded Execution</h4><p>We work as part of your leadership team, inside your tools and your meetings, accountable to your board and your business goals.</p></div>
     </div>
   </div>
 </section>
@@ -492,6 +532,32 @@
   const io = new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
   revealEls.forEach(el=>io.observe(el));
 
+  (function(){
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var statEls = document.querySelectorAll('.trust-stat .big[data-target]');
+    if (!statEls.length) return;
+    function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+    function tween(el){
+      var target = parseInt(el.getAttribute('data-target'), 10) || 0;
+      if (reduceMotion) { el.textContent = String(target); return; }
+      var duration = 900;
+      var start = null;
+      function step(ts){
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var value = Math.round(target * easeOutCubic(progress));
+        el.textContent = String(value);
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    var statIo = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { tween(e.target); statIo.unobserve(e.target); }
+      });
+    }, {threshold:.4});
+    statEls.forEach(function(el){ el.textContent = '0'; statIo.observe(el); });
+  })();
 
   (function(){
     var serviceCategories = {
@@ -526,8 +592,10 @@
           body: new FormData(contactForm)
         }).then(function(res){ return res.json(); }).then(function(data){
           if (data.success) {
-            statusEl.textContent = "Thanks, we have received your message and will get back to you shortly.";
+            statusEl.innerHTML = '<span class="form-success-inline" id="form-success-inline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Thanks, we have received your message and will get back to you shortly.</span>';
             statusEl.className = 'form-status success';
+            var successInline = document.getElementById('form-success-inline');
+            requestAnimationFrame(function(){ requestAnimationFrame(function(){ if (successInline) successInline.classList.add('in'); }); });
             contactForm.reset();
             servicesSelect.innerHTML = '<option value="">Select a country first</option>';
           } else {
@@ -551,7 +619,9 @@
     var titleEl = document.getElementById('pillar-title');
     var descEl = document.getElementById('pillar-desc');
     var availEl = document.getElementById('pillar-avail');
-    function render(idx) {
+    var detailEl = document.getElementById('pillar-detail');
+    var swapTimer = null;
+    function renderContent(idx) {
       var p = pillars[idx];
       if (!p) return;
       titleEl.textContent = p.title;
@@ -566,9 +636,19 @@
       pills.forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(idx)); });
       nodes.forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(idx)); });
     }
+    function render(idx) {
+      if (!detailEl) { renderContent(idx); return; }
+      if (swapTimer) clearTimeout(swapTimer);
+      detailEl.classList.add('is-updating');
+      swapTimer = setTimeout(function() {
+        renderContent(idx);
+        detailEl.classList.remove('is-updating');
+        swapTimer = null;
+      }, 150);
+    }
     pills.forEach(function(el) { el.addEventListener('click', function() { render(el.getAttribute('data-idx')); }); });
     nodes.forEach(function(el) { el.addEventListener('click', function() { render(el.getAttribute('data-idx')); }); });
-    render(0);
+    renderContent(0);
   })();
 
   (function(){

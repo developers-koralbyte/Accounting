@@ -30,6 +30,7 @@
     --steel:#334155; --sky:#38BDF8; --coral:#0369A1; --white:#FFFFFF;
     --ink-soft-dark:rgba(255,255,255,.66); --ink-soft-light:rgba(15,23,42,.62);
     --font-display:'Plus Jakarta Sans', sans-serif; --font-body:'Plus Jakarta Sans', sans-serif; --font-mono:'JetBrains Mono', monospace;
+    --ease-out:cubic-bezier(.23,1,.32,1); --ease-in-out:cubic-bezier(.77,0,.175,1); --ease-drawer:cubic-bezier(.32,.72,0,1);
   }
   *{ box-sizing:border-box; margin:0; padding:0; }
   html{ scroll-behavior:smooth; }
@@ -55,13 +56,16 @@
   @media(max-width:1050px){ .navlinks{display:none;} }
   .btn{ font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; padding:13px 22px; border:1.5px solid var(--ink); border-radius:100px; display:inline-flex; align-items:center; gap:10px; transition:transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease; }
   .btn:hover{ transform:translateY(-2px); box-shadow:0 8px 20px rgba(15,23,42,.14); }
+  .btn:active{ transform:scale(.97); transition:transform 120ms ease-out; }
+  @media(prefers-reduced-motion: reduce){ .btn:active{ transform:none; } }
   .btn.filled{ background:var(--coral); border-color:var(--coral); color:var(--white); }
   .btn.on-dark{ border-color:rgba(255,255,255,.4); color:var(--white); }
   .btn-row{ display:flex; gap:14px; flex-wrap:wrap; }
   .mega-item{ position:relative; }
-  .mega-panel{ display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; }
+  .mega-panel{ position:absolute; top:100%; left:50%; transform:translateX(-50%) translateY(-6px) scale(.97); transform-origin:top center; background:var(--white); border:1px solid rgba(15,23,42,.1); border-radius:12px; box-shadow:0 24px 48px rgba(15,23,42,.18); padding:22px 24px; z-index:100; margin-top:14px; width:620px; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 180ms; }
   .mega-panel::before{ content:""; position:absolute; top:-14px; left:0; right:0; height:14px; }
-  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ display:block; }
+  .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ opacity:1; visibility:visible; transform:translateX(-50%) translateY(0) scale(1); pointer-events:auto; transition:opacity 180ms var(--ease-out), transform 180ms var(--ease-out), visibility 0s linear 0s; }
+  @media(prefers-reduced-motion: reduce){ .mega-panel{ transition:opacity 150ms ease, visibility 0s linear 150ms; transform:translateX(-50%) !important; } .mega-item:hover .mega-panel, .mega-item:focus-within .mega-panel{ transition:opacity 150ms ease, visibility 0s linear 0s; transform:translateX(-50%) !important; } }
   .mega-cats{ display:grid; grid-template-columns:1fr 1fr; gap:16px 26px; }
   .mega-cat h5{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--coral); margin-bottom:8px; }
   .mega-cat ul{ list-style:none; }
@@ -125,6 +129,10 @@
   @media(max-width:640px){ .whatsapp-float{ right:16px; bottom:16px; width:52px; height:52px; } .whatsapp-float svg{ width:27px; height:27px; } }
   @media(prefers-reduced-motion: reduce){ .whatsapp-float{ transition:none; } }
 
+  .reveal{ opacity:0; transform:translateY(16px); transition:opacity 500ms var(--ease-out), transform 500ms var(--ease-out); }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media(prefers-reduced-motion: reduce){ .reveal{ transition:opacity 300ms ease; transform:none; } }
+
   .contact-form{ max-width:640px; margin:40px auto 0; text-align:left; background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:32px; }
   .contact-form .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
   @media(max-width:600px){ .contact-form .form-row{ grid-template-columns:1fr; } }
@@ -146,10 +154,16 @@
   .nav-close svg{ width:22px; height:22px; display:block; }
   @media(max-width:1050px){
     .navlinks{
-      display:none; position:fixed; inset:0; z-index:200; background:var(--ink);
+      display:flex; position:fixed; inset:0; z-index:200; background:var(--ink);
       flex-direction:column; overflow-y:auto; padding:16px 24px 40px; gap:0;
+      opacity:0; visibility:hidden; pointer-events:none; transform:translateX(4%);
+      transition:opacity 260ms var(--ease-drawer), transform 260ms var(--ease-drawer), visibility 0s linear 260ms;
     }
-    .navlinks.mobile-open{ display:flex; }
+    .navlinks.mobile-open{ opacity:1; visibility:visible; pointer-events:auto; transform:translateX(0); transition:opacity 260ms var(--ease-drawer), transform 260ms var(--ease-drawer), visibility 0s linear 0s; }
+    @media(prefers-reduced-motion: reduce){
+      .navlinks{ transition:opacity 200ms ease, visibility 0s linear 200ms; transform:none; }
+      .navlinks.mobile-open{ transition:opacity 200ms ease, visibility 0s linear 0s; transform:none; }
+    }
     body.mobile-nav-locked{ overflow:hidden; }
     /* header's backdrop-filter creates a containing block for position:fixed
        descendants, which would shrink .navlinks to header's own box instead
@@ -168,7 +182,7 @@
     .mega-toggle svg{ width:16px; height:16px; display:block; transition:transform .25s ease; }
     .mega-item.mobile-open .mega-toggle svg{ transform:rotate(180deg); }
     .mega-item-row > a::after{ display:none; }
-    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; }
+    .mega-panel{ display:none; position:static; transform:none; background:none; border:none; box-shadow:none; width:auto; margin-top:0; padding:0 0 18px 2px; opacity:1; visibility:visible; pointer-events:auto; transition:none; }
     .mega-panel::before{ display:none; }
     .mega-item.mobile-open .mega-panel{ display:block; }
     .mega-cats{ grid-template-columns:1fr; gap:16px; }
