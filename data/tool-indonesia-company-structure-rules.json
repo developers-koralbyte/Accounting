@@ -1,0 +1,86 @@
+{
+  "tool_id": "indonesia-company-structure",
+  "tool_name": "Indonesia Company Structure Finder",
+  "jurisdiction": "Indonesia",
+  "last_verified": "2026-10-13",
+  "disclaimer": "This tool gives general guidance based on publicly available regulatory sources. It is not legal advice and does not replace a review of your specific business activity (KBLI classification) by a qualified adviser. Rules on foreign investment in Indonesia change often and can vary by business sector.",
+  "sources": [
+    {
+      "id": "bkpm-reg-5-2025",
+      "title": "BKPM Regulation No. 5 of 2025 on risk-based business licensing and paid-up capital for PT PMA",
+      "url": "https://www.aoshearman.com/en/insights/risk-based-licensing-bkpm-regulation-5-2025-consolidates-and-clarifies-the-2021-regime",
+      "verified": "2026-10-13",
+      "note": "Secondary legal-adviser summary of BKPM Regulation No. 5 of 2025 (issued 2 October 2025). We have not located the regulation text itself. Figures should be confirmed against the official BKPM/OSS publication before being relied on for a specific filing."
+    },
+    {
+      "id": "perpres-10-2021",
+      "title": "Presidential Regulation No. 10 of 2021 on Investment Lines of Businesses (the Positive Investment List), as amended by Presidential Regulation No. 49 of 2021",
+      "url": "https://www.aseanbriefing.com/news/indonesias-positive-investment-list-and-the-sectors-open-restricted-to-foreign-businesses/",
+      "verified": "2026-10-13",
+      "note": "Secondary summary. Sources disagree on the exact current count of priority, restricted and closed business lines, so we do not quote specific sector counts in this tool. A sector-by-sector check against the current KBLI-linked list is required before a final decision."
+    },
+    {
+      "id": "kppa-restrictions",
+      "title": "Restrictions on representative offices (KPPA) earning Indonesian-sourced income or signing commercial contracts",
+      "url": "https://www.aseanbriefing.com/news/indonesia-representative-offices-what-they-can-and-cannot-do/",
+      "verified": "2026-10-13",
+      "note": "Secondary summary. Sources disagree on which BKPM regulation number currently governs representative offices (candidates include BKPM Regulation No. 4 or No. 5 of 2025, superseding 2021 rules). The core restriction, that a KPPA cannot invoice or sell in Indonesia, is consistent across sources."
+    },
+    {
+      "id": "nominee-risk",
+      "title": "Legal implications of nominee shareholder arrangements under Law No. 25/2007 on Investment and Law No. 40/2007 on Limited Liability Companies",
+      "url": "https://www.aseanbriefing.com/news/legal-implications-of-using-local-nominees-in-foreign-ownership-structures-in-indonesia/",
+      "verified": "2026-10-13",
+      "note": "Secondary legal-adviser summary. Sources agree nominee arrangements are prohibited or legally ineffective and can expose both parties to administrative and potential criminal consequences, but cite slightly different article numbers for the underlying prohibition."
+    }
+  ],
+  "outcomes": {
+    "pt_pma": {
+      "label": "PT PMA (foreign investment limited liability company)",
+      "summary": "The standard vehicle for any business in Indonesia with foreign shareholding that intends to trade, invoice, or operate commercially. As of BKPM Regulation No. 5 of 2025, the minimum paid-up capital is IDR 2.5 billion per business activity (KBLI), inside an overall investment plan of at least IDR 10 billion excluding land and buildings. Paid-up cash generally cannot leave the company's account for 12 months from deposit, other than for approved asset purchases, construction, or operating costs.",
+      "source_ids": ["bkpm-reg-5-2025", "perpres-10-2021"],
+      "caveat": "Some sources describe conflicting treatment of whether companies already registered before October 2025 must adjust to the new capital figure. Confirm your specific position with us or BKPM before filing.",
+      "service_links": [
+        { "label": "Foreign Investment Company (PT PMA)", "href": "koralbyte-advisory-indonesia.html#market-entry" },
+        { "label": "Corporate Secretary Services", "href": "koralbyte-advisory-indonesia.html#cfo-corporate-secretary" }
+      ]
+    },
+    "local_pt": {
+      "label": "Local PT (fully Indonesian-owned company, PT PMDN)",
+      "summary": "For a company with no foreign shareholding at all, a locally owned PT is the standard vehicle. It is not subject to the PT PMA foreign capital thresholds, and capital requirements are generally set by the company's own articles of association within Indonesian Company Law minimums rather than the PT PMA investment rules.",
+      "source_ids": ["bkpm-reg-5-2025"],
+      "caveat": "If foreign ownership is added later, even a minority share, the company will generally need to convert to a PT PMA and meet the PT PMA capital rules at that point.",
+      "service_links": [
+        { "label": "Local PT Company", "href": "koralbyte-advisory-indonesia.html#market-entry" },
+        { "label": "Accounting and Bookkeeping", "href": "koralbyte-advisory-indonesia.html#accounting" }
+      ]
+    },
+    "shelf_pt_pma": {
+      "label": "Off-the-shelf company (pre-registered PT PMA)",
+      "summary": "Legally this is still a PT PMA, the same entity type and capital rules apply. The difference is practical: a pre-registered shelf company can shorten the time to an active, tradeable entity when the sector is open to foreign investment and speed matters more than designing the structure from scratch.",
+      "source_ids": ["bkpm-reg-5-2025", "perpres-10-2021"],
+      "caveat": "Only available where the business sector is open to foreign ownership at the level needed. Not a way around sector restrictions or the capital requirement.",
+      "service_links": [
+        { "label": "Off-the-Shelf Company", "href": "koralbyte-advisory-indonesia.html#market-entry" }
+      ]
+    },
+    "rep_office": {
+      "label": "Representative office (KPPA)",
+      "summary": "Used to maintain a legal presence, supervise or liaise with local partners, or run market research before committing investment capital. A KPPA cannot invoice, sign sales or purchase contracts, or otherwise earn Indonesian-sourced income. It is not a trading vehicle.",
+      "source_ids": ["kppa-restrictions"],
+      "caveat": "If the plan is to generate any revenue in Indonesia, even modestly, a KPPA is not the right vehicle and a PT PMA will eventually be needed.",
+      "service_links": [
+        { "label": "Representative Office", "href": "koralbyte-advisory-indonesia.html#market-entry" }
+      ]
+    },
+    "talk_to_us": {
+      "label": "This needs a conversation",
+      "summary": "Based on your answers, the right structure depends on specifics we cannot verify through a general rules tool, such as your exact business classification (KBLI), sector-specific foreign ownership limits, or a structure a nominee arrangement was being considered for. We never recommend nominee shareholder arrangements. Indonesian law treats them as prohibited or legally ineffective, and both the foreign investor and the nominee can face administrative or criminal exposure.",
+      "source_ids": ["nominee-risk", "perpres-10-2021"],
+      "caveat": null,
+      "service_links": [
+        { "label": "Foreign Investment Company (PT PMA)", "href": "koralbyte-advisory-indonesia.html#market-entry" }
+      ]
+    }
+  }
+}

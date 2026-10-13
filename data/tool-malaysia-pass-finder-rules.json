@@ -1,0 +1,80 @@
+{
+  "tool_id": "malaysia-pass-finder",
+  "tool_name": "Malaysia Pass Finder",
+  "jurisdiction": "Malaysia",
+  "last_verified": "2026-10-13",
+  "disclaimer": "This tool gives general guidance on which Malaysian pass category is worth exploring. It never states that an applicant qualifies. Final eligibility is decided by the Expatriate Services Division, MDEC, or TalentCorp, as applicable, and depends on documents and facts this tool cannot see.",
+  "sources": [
+    {
+      "id": "ep-salary-thresholds-2026",
+      "title": "Revised Employment Pass minimum salary thresholds effective 1 June 2026",
+      "url": "https://www.bakermckenzie.com/en/insight/publications/2026/01/malaysia-increase-in-employment-pass-salary-requirements",
+      "verified": "2026-10-13",
+      "note": "Category I: RM20,000 and above. Category II: RM10,000 to RM19,999. Category III: RM5,000 to RM9,999, with a RM7,000 floor for manufacturing and related services. Effective for applications submitted from 1 June 2026, which has already passed as of this tool's last verification date. Category II and III employers face a Local Succession Plan requirement, reported as postponed to 1 January 2027 by a separate source. Confirm current status before relying on the succession plan date."
+    },
+    {
+      "id": "mdec-ep-route",
+      "title": "Employment Pass applications for Malaysia Digital (MD) status companies, processed through MDEC eXpats and the Xpats Gateway",
+      "url": "https://mishu.my/blog/visa/mdec-employment-pass/",
+      "verified": "2026-10-13",
+      "note": "Secondary service-provider summary, not an official MDEC page. Describes the employer needing active MD status and an MDEC eXpats employer account, and a requirement to advertise roles paying under RM15,000 on MyFutureJobs for 14 days before hiring a foreign candidate. We could not confirm current fees or paid-up capital figures against an official MDEC source, so this tool does not state specific fee amounts."
+    },
+    {
+      "id": "rpt-criteria",
+      "title": "Residence Pass-Talent (RP-T) minimum eligibility criteria",
+      "url": "https://www.humanresourcesonline.net/changes-announced-to-malaysia-s-residence-pass-talent-applications",
+      "verified": "2026-10-13",
+      "note": "Secondary summary citing TalentCorp-linked guidance. Minimum criteria reported: at least 3 consecutive years already employed in Malaysia under an Employment Pass with current validity of more than 3 months, basic monthly salary of at least RM15,000 excluding allowances, a Malaysian tax file with income tax paid for the most recent 2 years, a recognised degree, diploma or professional certificate, and at least 5 years total work experience. Approval is explicitly at the discretion of the RP-T panel even when minimum criteria are met, so this tool never predicts approval, only whether the minimum criteria are worth checking."
+    },
+    {
+      "id": "dependent-pass-conflict",
+      "title": "Dependent Pass eligibility by Employment Pass category",
+      "url": "https://speedhome.com/blog/dependent-pass-malaysia-conversion-cancellation/",
+      "verified": "2026-10-13",
+      "note": "Sources conflict on which EP categories can sponsor a Dependent Pass for a spouse or child, and on the child age cutoff (18 vs 21). This tool does not state a specific rule for family sponsorship and recommends confirming directly."
+    },
+    {
+      "id": "freelance-not-ep",
+      "title": "Independent and freelance work is generally not covered by the Employment Pass or Residence Pass-Talent",
+      "url": "https://digitalnomads.world/news/malaysia-de-rantau-eligibility-update/",
+      "verified": "2026-10-13",
+      "note": "Secondary summary. An Employment Pass requires a sponsoring Malaysian-incorporated employer. Independent or freelance work without an employer is generally addressed through a separate pass (such as the DE Rantau Nomad Pass), which is outside the scope of this tool. We do not cover that pass's rules here."
+    }
+  ],
+  "outcomes": {
+    "ep_mdec": {
+      "label": "Employment Pass, Malaysia Digital (MDEC) track",
+      "summary": "For roles with a Malaysia Digital status employer, processed through MDEC eXpats. The same revised salary categories apply as the standard Employment Pass. Roles paying under RM15,000 a month may require a local job advertisement before the application.",
+      "source_ids": ["mdec-ep-route", "ep-salary-thresholds-2026"],
+      "service_links": [
+        { "label": "Employment Pass (MDEC)", "href": "koralbyte-advisory-malaysia.html#immigration-visa" },
+        { "label": "Business Consulting", "href": "koralbyte-advisory-malaysia.html#advisory" }
+      ]
+    },
+    "ep_standard": {
+      "label": "Standard Employment Pass (Expatriate Services Division)",
+      "summary": "For roles with an employer that does not hold Malaysia Digital status, processed through the Expatriate Services Division (ESD). Category I is RM20,000 and above, Category II is RM10,000 to RM19,999, and Category III is RM5,000 to RM9,999 (RM7,000 floor in manufacturing and related services).",
+      "source_ids": ["ep-salary-thresholds-2026"],
+      "service_links": [
+        { "label": "Employment Pass (MDEC)", "href": "koralbyte-advisory-malaysia.html#immigration-visa" },
+        { "label": "Residence Pass Talent (TalentCorp)", "href": "koralbyte-advisory-malaysia.html#immigration-visa" }
+      ]
+    },
+    "rpt": {
+      "label": "Residence Pass-Talent (RP-T)",
+      "summary": "A longer-term pass for applicants already established in Malaysia on an Employment Pass. The minimum criteria reported are at least 3 consecutive years already on an EP, a basic monthly salary of at least RM15,000, 2 years of Malaysian income tax paid, a recognised qualification, and at least 5 years of total work experience. Meeting the minimum criteria does not guarantee approval, which is at the discretion of the RP-T panel.",
+      "source_ids": ["rpt-criteria"],
+      "service_links": [
+        { "label": "Residence Pass Talent (TalentCorp)", "href": "koralbyte-advisory-malaysia.html#immigration-visa" }
+      ]
+    },
+    "talk_to_us": {
+      "label": "This needs a conversation",
+      "summary": "Based on your answers, none of the three passes this tool checks is a clean fit, for example independent or freelance work without a sponsoring employer, a role split across multiple unrelated employers, or a case close to a threshold where current documents matter more than general rules. We would rather talk it through than guess.",
+      "source_ids": ["freelance-not-ep"],
+      "service_links": [
+        { "label": "Business Consulting", "href": "koralbyte-advisory-malaysia.html#advisory" }
+      ]
+    }
+  }
+}

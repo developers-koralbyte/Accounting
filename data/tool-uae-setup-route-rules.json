@@ -1,0 +1,84 @@
+{
+  "tool_id": "uae-setup-route",
+  "tool_name": "UAE Setup Route Finder",
+  "jurisdiction": "United Arab Emirates",
+  "last_verified": "2026-10-13",
+  "disclaimer": "This tool gives general guidance based on publicly available regulatory sources. It is not legal advice. UAE company rules vary by emirate, by free zone authority, and by licensed activity, and change frequently.",
+  "sources": [
+    {
+      "id": "ccl-full-ownership",
+      "title": "Federal Decree-Law No. 32 of 2021 on Commercial Companies (as amended), permitting up to 100 percent foreign ownership of mainland companies outside the strategic-impact activities list",
+      "url": "https://u.ae/en/information-and-services/business/Doing-business/doing-business-on-the-mainland/full-foreign-ownership-of-commercial-companies",
+      "verified": "2026-10-13",
+      "note": "Official UAE government source (u.ae). Sources differ on the exact effective date (some cite early 2021, one cites 2 January 2022), so we do not state a specific date in the tool. Each emirate's Department of Economic Development sets which activities foreign investors may conduct locally."
+    },
+    {
+      "id": "strategic-impact-list",
+      "title": "Cabinet Decision No. 55 of 2021 on activities with a strategic impact, which remain restricted or require special approval for full foreign ownership",
+      "url": "https://practiceguides.chambers.com/practice-guides/investing-in-2026/united-arab-emirates/trends-and-developments/O23499",
+      "verified": "2026-10-13",
+      "note": "Secondary legal-adviser summary. Examples commonly cited are oil and gas exploration, telecommunications, and utilities. The tool does not attempt to classify every activity against this list and recommends a direct check for sectors that may be sensitive."
+    },
+    {
+      "id": "local-service-agent",
+      "title": "Local Service Agent requirement for mainland professional (civil company) licenses",
+      "url": "https://www.flyingcolour.net/?p=448",
+      "verified": "2026-10-13",
+      "note": "Secondary consultancy sources. Consistent across sources: a professional license civil company can be 100 percent foreign owned, but in most emirates still requires a UAE national or wholly UAE-owned Local Service Agent, who holds no equity or management role and is paid a fixed annual fee. We could not confirm this against primary DET legislation text."
+    },
+    {
+      "id": "freezone-mainland-access",
+      "title": "Free zone companies and access to the UAE mainland market",
+      "url": "https://u.ae/en/information-and-services/business/Doing-business/doing-business-in-free-zones/running-a-business-in-a-free-zone-",
+      "verified": "2026-10-13",
+      "note": "Official UAE government source (u.ae). States that free zone companies trade freely within their zone and internationally, and generally need a licensed mainland distributor or their own mainland branch or company to sell directly into the UAE mainland market. One secondary source describes a 2025 Dubai mechanism (Resolution 11) allowing some free zone companies to obtain a mainland licence directly; we could not confirm this against the primary source, so the tool treats mainland access from a free zone as requiring an additional step rather than assuming it is automatic."
+    },
+    {
+      "id": "offshore-restrictions",
+      "title": "Offshore company restrictions on UAE trading and visa sponsorship (RAK ICC, JAFZA Offshore)",
+      "url": "https://practiceguides.chambers.com/practice-guides/doing-business-in-2025/uae",
+      "verified": "2026-10-13",
+      "note": "Secondary legal-adviser summary. RAK ICC offshore companies are consistently described as holding and international-structuring vehicles that cannot trade inside the UAE or sponsor UAE residence visas. One source describes a 2023 JAFZA regulation potentially allowing limited onshore activity under separate licensing; we could not confirm the current scope, so the tool treats offshore as not providing UAE trading rights or visas unless confirmed otherwise."
+    }
+  ],
+  "outcomes": {
+    "mainland": {
+      "label": "Mainland company",
+      "summary": "Licensed through the Department of Economic Development (or equivalent) in the relevant emirate. Can trade freely across the UAE mainland and with free zones, without needing a distributor. Most commercial and industrial activities now allow full foreign ownership. Professional (civil company) licenses, common for consultancies and personal-service businesses, generally still require a Local Service Agent, a UAE national or wholly UAE-owned entity who holds no equity but is paid a fixed fee for an administrative liaison role.",
+      "source_ids": ["ccl-full-ownership", "strategic-impact-list", "local-service-agent"],
+      "caveat": "A short list of activities with strategic impact (examples include oil and gas, telecommunications, and utilities) remain restricted or need special approval regardless of ownership structure.",
+      "service_links": [
+        { "label": "Mainland Company Setup", "href": "koralbyte-advisory-uae.html#company-formation" },
+        { "label": "PRO Services and Government Liaison", "href": "koralbyte-advisory-uae.html#corporate-governance" }
+      ]
+    },
+    "freezone": {
+      "label": "Free zone company",
+      "summary": "Licensed through a specific free zone authority. Offers full foreign ownership as standard and is usually the fastest and most predictable route to set up, with bundled office and visa packages. Can trade freely within its own zone and internationally. Selling directly into the UAE mainland market generally requires a licensed mainland distributor or a separate mainland branch or company.",
+      "source_ids": ["freezone-mainland-access"],
+      "caveat": "If most of your customers are inside the UAE mainland rather than outside the country or in the same free zone, factor in the extra distributor or branch step before choosing a free zone.",
+      "service_links": [
+        { "label": "Free Zone Company Setup", "href": "koralbyte-advisory-uae.html#company-formation" }
+      ]
+    },
+    "offshore": {
+      "label": "Offshore company",
+      "summary": "Used for holding assets, international trading outside the UAE, or group structuring, not for operating a business inside the UAE. An offshore company generally cannot sponsor UAE residence visas, cannot lease commercial office space on its own license, and cannot trade with UAE mainland customers.",
+      "source_ids": ["offshore-restrictions"],
+      "caveat": "If you need even one UAE residence visa or a physical UAE office for the business, offshore is not the right fit on its own.",
+      "service_links": [
+        { "label": "Offshore Company Formation", "href": "koralbyte-advisory-uae.html#company-formation" }
+      ]
+    },
+    "talk_to_us": {
+      "label": "This needs a conversation",
+      "summary": "Your answers point to a mix of needs, for example wanting both mainland trading rights and free zone cost or visa advantages, or an activity close to the strategic-impact list, that a general rules tool should not resolve on its own. We would rather confirm the right route with you directly than guess.",
+      "source_ids": ["ccl-full-ownership", "strategic-impact-list"],
+      "caveat": null,
+      "service_links": [
+        { "label": "Mainland Company Setup", "href": "koralbyte-advisory-uae.html#company-formation" },
+        { "label": "Free Zone Company Setup", "href": "koralbyte-advisory-uae.html#company-formation" }
+      ]
+    }
+  }
+}
