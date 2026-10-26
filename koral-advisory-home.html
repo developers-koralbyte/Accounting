@@ -151,23 +151,31 @@
   .cta-strip .btn-row{ margin:0; }
   .flex-note{ font-size:13.5px; color:var(--ink-soft-light); margin-top:14px; max-width:60ch; }
 
-  .svc-matrix-wrap{ overflow-x:auto; margin-top:28px; border:1px solid rgba(15,23,42,.08); border-radius:16px; background:var(--white); }
-  .svc-matrix{ width:100%; border-collapse:collapse; min-width:640px; }
-  .svc-matrix th, .svc-matrix td{ text-align:center; padding:14px 12px; border-bottom:1px solid rgba(15,23,42,.08); }
-  .svc-matrix thead th{ font-family:var(--font-mono); font-size:11px; letter-spacing:.04em; padding-top:20px; vertical-align:top; }
-  .svc-matrix thead th a{ display:block; font-size:12.5px; color:var(--ink); margin-bottom:4px; }
-  .svc-matrix thead th a:hover{ color:var(--coral); }
-  .svc-matrix thead th .region-tag{ display:block; font-size:9px; letter-spacing:.05em; color:var(--steel); text-transform:uppercase; font-weight:400; }
-  .svc-matrix thead th:first-child{ border-bottom:none; }
-  .svc-matrix tbody th{ text-align:left; font-weight:400; padding-left:20px; }
-  .matrix-row-btn{ font-family:var(--font-display); font-size:13.5px; color:var(--ink); background:none; border:none; cursor:pointer; text-align:left; padding:6px 0; transition:color .2s ease; }
-  .matrix-row-btn:hover{ color:var(--coral); }
-  .svc-matrix tbody tr.active .matrix-row-btn{ color:var(--coral); font-weight:600; }
-  .svc-matrix tbody tr.active{ background:rgba(3,105,161,.04); }
-  .svc-matrix td:last-child, .svc-matrix th:last-child{ padding-right:20px; }
-  .matrix-yes{ color:var(--coral); font-weight:700; font-size:15px; }
-  .matrix-no{ color:rgba(15,23,42,.2); }
-  @media(max-width:640px){ .svc-matrix thead th a{ font-size:11px; } .matrix-row-btn{ font-size:12.5px; } }
+  .services-hub{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; margin-top:36px; }
+  @media(max-width:900px){ .services-hub{ grid-template-columns:1fr; } }
+  .pillar-pills{ display:flex; flex-wrap:wrap; gap:10px; }
+  .pillar-pill{ font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:9px 16px; border-radius:100px; border:1px solid rgba(15,23,42,.15); background:var(--white); cursor:pointer; transition:all .2s ease; }
+  .pillar-pill:hover{ border-color:var(--coral); }
+  .pillar-pill.active{ background:var(--ink); color:var(--white); border-color:var(--ink); }
+  .pillar-detail{ background:var(--white); border:1px solid rgba(15,23,42,.08); border-radius:16px; padding:26px 28px; margin-top:22px; min-height:158px; transition:opacity 150ms ease-out, transform 150ms ease-out; }
+  .pillar-detail.is-updating{ opacity:0; transform:translateY(4px); }
+  @media(prefers-reduced-motion: reduce){ .pillar-detail.is-updating{ transform:none; } }
+  .pillar-detail h3{ font-family:var(--font-display); font-weight:600; font-size:18px; margin-bottom:8px; }
+  .pillar-detail p{ font-size:14px; line-height:1.7; color:var(--ink-soft-light); margin-bottom:14px; }
+  .pillar-avail-label{ font-family:var(--font-mono); font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:var(--steel); margin-bottom:8px; display:block; }
+  .pillar-avail{ display:flex; flex-wrap:wrap; gap:8px; }
+  .pillar-avail a{ font-family:var(--font-mono); font-size:10.5px; letter-spacing:.05em; padding:6px 12px; border-radius:100px; background:var(--paper-2); color:var(--coral); }
+  .pillar-avail a:hover{ background:var(--coral); color:var(--white); }
+  .orbit-wrap{ position:relative; width:100%; max-width:440px; aspect-ratio:1/1; margin:0 auto; }
+  .orbit-ring{ position:absolute; border:1px solid rgba(15,23,42,.09); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%); }
+  .orbit-ring.r1{ width:60%; height:60%; }
+  .orbit-ring.r2{ width:88%; height:88%; }
+  .orbit-hub{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:27%; aspect-ratio:1/1; border-radius:50%; background:var(--ink); color:var(--white); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; z-index:2; box-shadow:0 16px 32px rgba(15,23,42,.18); }
+  .orbit-hub .num{ font-family:var(--font-display); font-weight:700; font-size:clamp(20px,4vw,30px); line-height:1; }
+  .orbit-hub .lbl{ font-family:var(--font-mono); font-size:9px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft-dark); margin-top:4px; }
+  .orbit-node{ position:absolute; transform:translate(-50%,-50%); width:21%; aspect-ratio:1/1; border-radius:50%; background:var(--white); border:1.5px solid rgba(15,23,42,.12); display:flex; align-items:center; justify-content:center; text-align:center; padding:4%; cursor:pointer; font-family:var(--font-display); font-weight:600; font-size:clamp(9px,1.6vw,11.5px); line-height:1.15; color:var(--ink); transition:all .25s ease; z-index:1; box-shadow:0 8px 20px rgba(15,23,42,.08); }
+  .orbit-node:hover{ transform:translate(-50%,-50%) scale(1.06); }
+  .orbit-node.active{ background:var(--coral); color:var(--white); border-color:var(--coral); transform:translate(-50%,-50%) scale(1.08); box-shadow:0 14px 28px rgba(3,105,161,.28); }
   .tools-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:28px; }
   @media(max-width:900px){ .tools-grid{ grid-template-columns:1fr; } }
   .tool-grid-link{ display:block; border:1px solid rgba(15,23,42,.08); border-radius:14px; padding:24px 26px; background:var(--white); transition:transform .25s ease, box-shadow .25s ease; }
@@ -426,79 +434,22 @@
 <section class="pad" id="services">
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span>OUR SERVICES</div>
-    <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:12px 0 4px; max-width:26ch;">Six pillars, five markets, one team behind all of it.</h2>
-    <p style="font-size:14.5px; color:var(--ink-soft-light); max-width:66ch; margin-top:6px;">Select a pillar to see what it covers, or scan the matrix below for exactly which markets each one is available in. We only show combinations we actually deliver.</p>
-    <div class="reveal" style="margin-top:28px;">
-      <div class="pillar-pills" id="pillar-pills"><button type="button" class="pillar-pill active" data-idx="0">CFO & Finance Leadership</button><button type="button" class="pillar-pill" data-idx="1">Company Formation</button><button type="button" class="pillar-pill" data-idx="2">Accounting & Bookkeeping</button><button type="button" class="pillar-pill" data-idx="3">Tax & Compliance</button><button type="button" class="pillar-pill" data-idx="4">HR, Payroll & Visas</button><button type="button" class="pillar-pill" data-idx="5">Governance & Reporting Systems</button></div>
-      <div class="pillar-detail" id="pillar-detail">
-        <h3 id="pillar-title">CFO & Finance Leadership</h3>
-        <p id="pillar-desc">Senior finance leadership on a fractional basis, running board reporting, cash strategy, and investor readiness alongside your team.</p>
-        <span class="pillar-avail-label">Available in</span>
-        <div class="pillar-avail" id="pillar-avail"></div>
+    <h2 style="font-family:var(--font-display); font-weight:600; font-size:clamp(24px,3vw,32px); margin:12px 0 4px; max-width:22ch;">Six pillars, five markets, one team behind all of it.</h2>
+    <div class="services-hub reveal">
+      <div>
+        <div class="pillar-pills" id="pillar-pills"><button type="button" class="pillar-pill active" data-idx="0">CFO & Finance Leadership</button><button type="button" class="pillar-pill" data-idx="1">Company Formation</button><button type="button" class="pillar-pill" data-idx="2">Accounting & Bookkeeping</button><button type="button" class="pillar-pill" data-idx="3">Tax & Compliance</button><button type="button" class="pillar-pill" data-idx="4">HR, Payroll & Visas</button><button type="button" class="pillar-pill" data-idx="5">Governance & Reporting Systems</button></div>
+        <div class="pillar-detail" id="pillar-detail">
+          <h3 id="pillar-title">CFO & Finance Leadership</h3>
+          <p id="pillar-desc">Senior finance leadership on a fractional basis, running board reporting, cash strategy, and investor readiness alongside your team.</p>
+          <span class="pillar-avail-label">Available in</span>
+          <div class="pillar-avail" id="pillar-avail"></div>
+        </div>
       </div>
-      <div class="svc-matrix-wrap">
-        <table class="svc-matrix" id="svc-matrix">
-          <thead>
-            <tr>
-              <th></th>
-              <th><a href="koralbyte-advisory-malaysia.html">Malaysia</a><span class="region-tag">Group HQ</span></th>
-              <th><a href="koralbyte-advisory-indonesia.html">Indonesia</a><span class="region-tag">Regional Office</span></th>
-              <th><a href="koralbyte-advisory-uae.html">UAE</a><span class="region-tag">Service Region</span></th>
-              <th><a href="koralbyte-advisory-united-states.html">United States</a><span class="region-tag">Service Region</span></th>
-              <th><a href="koralbyte-advisory-canada.html">Canada</a><span class="region-tag">Service Region</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-idx="0" class="active">
-              <th><button type="button" class="matrix-row-btn" data-idx="0">CFO & Finance Leadership</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#advisory" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#cfo-corporate-secretary" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#corporate-advisory" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-united-states.html#cfo-finance-leadership" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-canada.html#cfo-finance-leadership" class="matrix-yes">&#10003;</a></td>
-            </tr>
-            <tr data-idx="1">
-              <th><button type="button" class="matrix-row-btn" data-idx="1">Company Formation</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#formation" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#market-entry" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#company-formation" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-united-states.html#company-formation" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-canada.html#company-formation" class="matrix-yes">&#10003;</a></td>
-            </tr>
-            <tr data-idx="2">
-              <th><button type="button" class="matrix-row-btn" data-idx="2">Accounting & Bookkeeping</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#accounting" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#accounting" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#accounting" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-united-states.html#core-accounting-bookkeeping" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-canada.html#core-accounting-bookkeeping" class="matrix-yes">&#10003;</a></td>
-            </tr>
-            <tr data-idx="3">
-              <th><button type="button" class="matrix-row-btn" data-idx="3">Tax & Compliance</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#tax" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#taxation" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#tax" class="matrix-yes">&#10003;</a></td>
-              <td class="matrix-no">-</td>
-              <td class="matrix-no">-</td>
-            </tr>
-            <tr data-idx="4">
-              <th><button type="button" class="matrix-row-btn" data-idx="4">HR, Payroll & Visas</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#hr-outsourcing" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#payroll" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#hr-payroll" class="matrix-yes">&#10003;</a></td>
-              <td class="matrix-no">-</td>
-              <td class="matrix-no">-</td>
-            </tr>
-            <tr data-idx="5">
-              <th><button type="button" class="matrix-row-btn" data-idx="5">Governance & Reporting Systems</button></th>
-              <td><a href="koralbyte-advisory-malaysia.html#corporate-governance" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-indonesia.html#business-services" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-uae.html#corporate-governance" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-united-states.html#systems-reporting" class="matrix-yes">&#10003;</a></td>
-              <td><a href="koralbyte-advisory-canada.html#systems-reporting" class="matrix-yes">&#10003;</a></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="orbit-wrap">
+        <div class="orbit-ring r2"></div>
+        <div class="orbit-ring r1"></div>
+        <div class="orbit-hub"><div class="num">5</div><div class="lbl">Countries</div></div>
+        <div class="orbit-node active" data-idx="0" style="left:48.9%; top:17.4%;">CFO & Finance Leadership</div><div class="orbit-node" data-idx="1" style="left:76.2%; top:33.2%;">Company Formation</div><div class="orbit-node" data-idx="2" style="left:76.2%; top:64.7%;">Accounting & Bookkeeping</div><div class="orbit-node" data-idx="3" style="left:48.9%; top:80.4%;">Tax & Compliance</div><div class="orbit-node" data-idx="4" style="left:21.6%; top:64.7%;">HR, Payroll & Visas</div><div class="orbit-node" data-idx="5" style="left:21.6%; top:33.2%;">Governance & Reporting Systems</div>
       </div>
     </div>
   </div>
@@ -708,8 +659,7 @@
   (function(){
     var pillars = [{"title": "CFO & Finance Leadership", "desc": "Senior finance leadership on a fractional basis, running board reporting, cash strategy, and investor readiness alongside your team.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#advisory"], ["Indonesia", "koralbyte-advisory-indonesia.html#cfo-corporate-secretary"], ["UAE", "koralbyte-advisory-uae.html#corporate-advisory"], ["United States", "koralbyte-advisory-united-states.html#cfo-finance-leadership"], ["Canada", "koralbyte-advisory-canada.html#cfo-finance-leadership"]]}, {"title": "Company Formation", "desc": "Entity setup and market entry handled correctly the first time, from initial registration through the structure investors expect to see.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#formation"], ["Indonesia", "koralbyte-advisory-indonesia.html#market-entry"], ["UAE", "koralbyte-advisory-uae.html#company-formation"], ["United States", "koralbyte-advisory-united-states.html#company-formation"], ["Canada", "koralbyte-advisory-canada.html#company-formation"]]}, {"title": "Accounting & Bookkeeping", "desc": "Monthly bookkeeping, reconciliation, and financial reporting that stays audit-ready and investor-ready every month, not just at year end.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#accounting"], ["Indonesia", "koralbyte-advisory-indonesia.html#accounting"], ["UAE", "koralbyte-advisory-uae.html#accounting"], ["United States", "koralbyte-advisory-united-states.html#core-accounting-bookkeeping"], ["Canada", "koralbyte-advisory-canada.html#core-accounting-bookkeeping"]]}, {"title": "Tax & Compliance", "desc": "Registration, filing, and ongoing compliance handled on schedule with the local tax authority in each market where this applies.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#tax"], ["Indonesia", "koralbyte-advisory-indonesia.html#taxation"], ["UAE", "koralbyte-advisory-uae.html#tax"]]}, {"title": "HR, Payroll & Visas", "desc": "Payroll processing and the visa and immigration filings that let you build a team on the ground, not just on paper.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#hr-outsourcing"], ["Indonesia", "koralbyte-advisory-indonesia.html#payroll"], ["UAE", "koralbyte-advisory-uae.html#hr-payroll"]]}, {"title": "Governance & Reporting Systems", "desc": "Corporate governance and audit where that is the local requirement, or NetSuite implementation and management reporting where the work is scaling a finance stack instead.", "avail": [["Malaysia", "koralbyte-advisory-malaysia.html#corporate-governance"], ["Indonesia", "koralbyte-advisory-indonesia.html#business-services"], ["UAE", "koralbyte-advisory-uae.html#corporate-governance"], ["United States", "koralbyte-advisory-united-states.html#systems-reporting"], ["Canada", "koralbyte-advisory-canada.html#systems-reporting"]]}];
     var pills = document.querySelectorAll('.pillar-pill');
-    var matrixRows = document.querySelectorAll('#svc-matrix tbody tr');
-    var matrixRowBtns = document.querySelectorAll('.matrix-row-btn');
+    var nodes = document.querySelectorAll('.orbit-node');
     var titleEl = document.getElementById('pillar-title');
     var descEl = document.getElementById('pillar-desc');
     var availEl = document.getElementById('pillar-avail');
@@ -728,7 +678,7 @@
         availEl.appendChild(a);
       });
       pills.forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(idx)); });
-      matrixRows.forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(idx)); });
+      nodes.forEach(function(el) { el.classList.toggle('active', el.getAttribute('data-idx') === String(idx)); });
     }
     function render(idx) {
       if (!detailEl) { renderContent(idx); return; }
@@ -738,11 +688,10 @@
         renderContent(idx);
         detailEl.classList.remove('is-updating');
         swapTimer = null;
-        detailEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }, 150);
     }
     pills.forEach(function(el) { el.addEventListener('click', function() { render(el.getAttribute('data-idx')); }); });
-    matrixRowBtns.forEach(function(el) { el.addEventListener('click', function() { render(el.getAttribute('data-idx')); }); });
+    nodes.forEach(function(el) { el.addEventListener('click', function() { render(el.getAttribute('data-idx')); }); });
     renderContent(0);
   })();
 
